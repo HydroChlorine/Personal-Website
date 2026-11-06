@@ -1,0 +1,50 @@
+[
+  {
+    "id": "spring-morning",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1086,
+    "height": 362,
+    "bytes": 605886
+  },
+  {
+    "id": "summer-dawn",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1086,
+    "height": 362,
+    "bytes": 597354
+  },
+  {
+    "id": "autumn-wind",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1086,
+    "height": 362,
+    "bytes": 865741
+  },
+  {
+    "id": "summer-rain",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1086,
+    "height": 362,
+    "bytes": 907298
+  },
+  {
+    "id": "autumn-rain",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1086,
+    "height": 362,
+    "bytes": 951851
+  },
+  {
+    "id": "winter-snow",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1086,
+    "height": 362,
+    "bytes": 713470
+  }
+]

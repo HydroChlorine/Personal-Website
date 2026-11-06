@@ -4,7 +4,8 @@ import { SiteHeader } from './layout/SiteHeader'
 import { Sidebar } from './layout/Sidebar'
 import { SiteFooter } from './layout/SiteFooter'
 import { AmbientScene } from './scene/AmbientScene'
-import type { Weather } from './scene/AmbientScene'
+import { useCampusScene } from '../hooks/useCampusScene'
+import { useEffect } from 'react'
 function initialMotion() {
   try {
     return (
@@ -16,8 +17,16 @@ function initialMotion() {
   }
 }
 export function SiteLayout() {
-  const [weather, setWeather] = useState<Weather>('clear')
   const [motion, changeMotion] = useState(initialMotion)
+  const { scene, selection, chooseScene, nextScene } = useCampusScene(motion)
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const pauseForPreference = () => {
+      if (preference.matches) changeMotion(false)
+    }
+    preference.addEventListener('change', pauseForPreference)
+    return () => preference.removeEventListener('change', pauseForPreference)
+  }, [])
   function setMotion(value: boolean) {
     changeMotion(value)
     try {
@@ -32,14 +41,15 @@ export function SiteLayout() {
         Skip to content
       </a>
       <SiteHeader />
-      <AmbientScene weather={weather} motion={motion} />
+      <AmbientScene scene={scene} motion={motion} />
       <div className="content-layout">
         <main id="main-content" tabIndex={-1}>
           <Outlet />
         </main>
         <Sidebar
-          weather={weather}
-          setWeather={setWeather}
+          selection={selection}
+          chooseScene={chooseScene}
+          nextScene={nextScene}
           motion={motion}
           setMotion={setMotion}
         />

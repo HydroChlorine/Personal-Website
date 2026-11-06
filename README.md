@@ -28,6 +28,8 @@ npm run lint    # Optional linting
 - [Content authoring guide](docs/CONTENT_GUIDE.md)
 - [Content plan](WEBSITE_CONTENT_PLAN.md)
 - [Attribution and reuse record](ATTRIBUTIONS.md)
+- [Seasonal art assets and refinement guide](docs/ART_ASSETS.md)
+- [Current pixel-art direction](docs/ART_DIRECTION.md)
 - [Dependency licenses](third-party-licenses/README.md)
 
 Page layouts live in `src/pages/`, reusable components in `src/components/`,

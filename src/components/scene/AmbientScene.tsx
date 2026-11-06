@@ -1,29 +1,35 @@
-export type Weather = 'clear' | 'rain' | 'snow'
+import { useState } from 'react'
+import type { CampusScene } from '../../content/scenes'
+
 export function AmbientScene({
-  weather,
+  scene,
   motion,
 }: {
-  weather: Weather
+  scene: CampusScene
   motion: boolean
 }) {
+  const [failedSource, setFailedSource] = useState<string | null>(null)
+  const source = motion ? scene.gif : scene.still
+  // A missing GIF falls back to that scene's still; the original SVG remains
+  // available as a final fallback rather than leaving an empty image region.
+  const displaySource = failedSource === source ? scene.still : source
   return (
-    <div className={`scene ${weather} ${motion ? '' : 'still'}`}>
-      <img src="/art/night-workshop.svg" alt="" className="scene-art" />
-      <div className="scene-grain" />
-      {weather !== 'clear' && (
-        <div className="weather-particles" aria-hidden="true">
-          {Array.from({ length: 28 }, (_, i) => (
-            <i
-              key={i}
-              style={{
-                left: `${(i * 37) % 100}%`,
-                animationDelay: `${-(i % 7)}s`,
-                animationDuration: `${weather === 'snow' ? 7 + (i % 4) : 0.8 + (i % 3) * 0.2}s`,
-              }}
-            />
-          ))}
-        </div>
-      )}
+    <figure
+      className={`scene campus-scene ${motion ? '' : 'still'}`}
+      data-scene-id={scene.id}
+    >
+      <img
+        src={displaySource}
+        alt={scene.description}
+        className="scene-art"
+        width={1152}
+        height={384}
+        onError={(event) => {
+          if (displaySource === scene.still)
+            event.currentTarget.src = '/art/night-workshop.svg'
+          else setFailedSource(source)
+        }}
+      />
       <div className="scene-copy">
         <span className="scene-kicker">LICHEN HUANG / HYDROCHLORINE</span>
         <p>
@@ -31,13 +37,16 @@ export function AmbientScene({
           <br />
           of the internet<span className="cursor">_</span>
         </p>
+        <p className="scene-subtitle">
+          Chemistry, mathematics & things I make.
+        </p>
       </div>
-      <div className="scene-caption">
-        <span className="lit-dot" /> A few lights on. A few ideas in progress.
-      </div>
-      <span className="scene-location" aria-hidden="true">
-        SCENE 001 · AFTER HOURS
-      </span>
-    </div>
+      <figcaption className="scene-caption">
+        <span>
+          <span className="lit-dot" /> Baker Lab + PSB · Cornell
+        </span>
+        <span>{scene.label}</span>
+      </figcaption>
+    </figure>
   )
 }

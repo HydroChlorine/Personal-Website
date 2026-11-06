@@ -68,9 +68,9 @@ The two initial research entries are explicitly content outlines. No coursework 
 
 ## Visual direction
 
-Original pixel workshop at night, muted green surfaces, warm highlights, and square edges. System monospace headings provide a temporary pixel-adjacent tone without redistributing a font. Art and palette are replaceable independently of the content.
+Coarse dark anime-influenced Baker Laboratory/PSB GIFs on a 384 × 128 logical grid, a shared 32-color palette, a compact banner, and overlaid headline. The original night workshop SVG remains archived. System monospace headings provide a temporary pixel-adjacent tone without redistributing a font. Art and palette are replaceable independently of the content.
 
-Weather is decorative and local. Clear/rain/snow controls do not access the network or location. Motion can be paused; the preference is stored if localStorage is available. CSS honors reduced-motion preferences even if the browser preference changes during a visit. No sound is used.
+The scene catalog and rotation hook choose a new random seasonal GIF every 10 seconds, excluding the current scene. Manual scene selection holds a season. Pausing substitutes a PNG still and stops rotation; reduced-motion settings are respected and monitored. No live weather or location is accessed. See `ART_ASSETS.md` for sources, prompts, animation, and asset directories.
 
 ## Current boundaries
 

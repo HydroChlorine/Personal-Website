@@ -2,15 +2,18 @@ import { Link, NavLink } from 'react-router'
 import { site } from '../../config/site'
 import { profile } from '../../content/profile'
 import { PixelIcon } from '../ui/PixelIcon'
-import type { Weather } from '../scene/AmbientScene'
+import { scenes } from '../../content/scenes'
+import type { SceneSelection } from '../../content/scenes'
 export function Sidebar({
-  weather,
-  setWeather,
+  selection,
+  chooseScene,
+  nextScene,
   motion,
   setMotion,
 }: {
-  weather: Weather
-  setWeather: (value: Weather) => void
+  selection: SceneSelection
+  chooseScene: (value: SceneSelection) => void
+  nextScene: () => void
   motion: boolean
   setMotion: (value: boolean) => void
 }) {
@@ -42,22 +45,33 @@ export function Sidebar({
       </section>
       <section className="sidebar-panel atmosphere">
         <h2 className="sidebar-title">Outside the window</h2>
-        <p>A little make-believe weather.</p>
-        <div
-          className="weather-controls"
-          role="group"
-          aria-label="Decorative weather"
+        <p>
+          {selection === 'shuffle'
+            ? motion
+              ? 'A new season every 10 seconds.'
+              : 'The seasons are paused.'
+            : 'Stay a little longer in this season.'}
+        </p>
+        <label className="scene-select-label" htmlFor="scene-selection">
+          Choose a scene
+        </label>
+        <select
+          id="scene-selection"
+          aria-label="Choose a scene"
+          className="scene-select"
+          value={selection}
+          onChange={(event) => chooseScene(event.target.value)}
         >
-          {(['clear', 'rain', 'snow'] as const).map((value) => (
-            <button
-              key={value}
-              aria-pressed={weather === value}
-              onClick={() => setWeather(value)}
-            >
-              {value === 'clear' ? 'Clear' : value === 'rain' ? 'Rain' : 'Snow'}
-            </button>
+          <option value="shuffle">Shuffle all seasons</option>
+          {scenes.map((scene) => (
+            <option key={scene.id} value={scene.id}>
+              {scene.label}
+            </option>
           ))}
-        </div>
+        </select>
+        <button className="next-scene" onClick={nextScene}>
+          Next random scene →
+        </button>
         <button
           className="motion-toggle"
           aria-pressed={!motion}
