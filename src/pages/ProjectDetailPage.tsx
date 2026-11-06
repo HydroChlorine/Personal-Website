@@ -1,0 +1,67 @@
+import { Link, useParams } from 'react-router'
+import { projects } from '../content/projects'
+import { subjects } from '../content/subjects'
+import { PageHeading } from '../components/ui/PageHeading'
+import { Panel, EmptyShelf } from '../components/ui/Panel'
+import { NotFoundPage } from './NotFoundPage'
+export function ProjectDetailPage() {
+  const { slug } = useParams()
+  const project = projects.find((item) => item.slug === slug)
+  if (!project) return <NotFoundPage />
+  return (
+    <>
+      <Link className="back-link" to="/projects">
+        ← Back to the workbench
+      </Link>
+      <PageHeading eyebrow={project.kind} title={project.title}>
+        {project.summary}
+      </PageHeading>
+      <Panel>
+        <div className="prose">
+          {project.body.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </div>
+        <div className="inline-links">
+          {subjects
+            .filter((s) => project.subjects.includes(s.id))
+            .map((s) => (
+              <Link key={s.id} to={`/${s.id}`}>
+                {s.name} ↗
+              </Link>
+            ))}
+        </div>
+      </Panel>
+      {project.media ? (
+        <figure className="panel">
+          <img
+            className="project-media"
+            src={project.media.src}
+            alt={project.media.alt}
+          />
+          {project.media.caption && (
+            <figcaption>{project.media.caption}</figcaption>
+          )}
+        </figure>
+      ) : (
+        <Panel>
+          <EmptyShelf title="A closer look, soon">
+            Pictures, examples, and the longer story still need to be collected
+            for this entry.
+          </EmptyShelf>
+        </Panel>
+      )}
+      {project.links.length > 0 && (
+        <Panel title="Further reading">
+          <div className="inline-links">
+            {project.links.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+        </Panel>
+      )}
+    </>
+  )
+}

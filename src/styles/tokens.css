@@ -1,0 +1,17 @@
+:root {
+  color-scheme: dark;
+  --bg: #101b1b;
+  --panel: #172322;
+  --panel-raised: #1c2b28;
+  --line: #34483f;
+  --line-bright: #56715a;
+  --text: #e4e5cc;
+  --muted: #9aa99a;
+  --gold: #e1bc73;
+  --green: #b6ce8a;
+  --chemistry: #b6ce8a;
+  --mathematics: #dbba79;
+  --computer-science: #91b9c9;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
