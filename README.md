@@ -17,6 +17,7 @@ npm run dev
 Open the URL printed by Vite, normally http://localhost:5173. Stop with Ctrl+C.
 
 ```sh
+npm test        # Seasonal ordering and timezone regression checks
 npm run build   # Strict TypeScript checks and production output in dist/
 npm run preview # Local preview of an existing production build
 npm run lint    # Optional linting
@@ -30,6 +31,7 @@ npm run lint    # Optional linting
 - [Attribution and reuse record](ATTRIBUTIONS.md)
 - [Seasonal art assets and refinement guide](docs/ART_ASSETS.md)
 - [Current pixel-art direction](docs/ART_DIRECTION.md)
+- [Seasons, palettes, and sky interactions](docs/SEASONS_AND_SKY.md)
 - [Dependency licenses](third-party-licenses/README.md)
 
 Page layouts live in `src/pages/`, reusable components in `src/components/`,

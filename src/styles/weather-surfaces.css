@@ -1,0 +1,200 @@
+/* Finite material response: decoration stays on frames/backgrounds, not text. */
+:is(.panel, .sidebar-panel, .scene, .project-card, .subject-links) {
+  position: relative;
+}
+[data-weather='snow'][data-weathered='true']
+  :is(.panel, .sidebar-panel, .scene, .project-card, .subject-links)::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  right: -1px;
+  width: auto;
+  height: calc(2px + var(--weather-amount) * 6px);
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, #c5dce6 0 48%, #819eb2 48% 100%);
+  opacity: min(0.88, calc(var(--weather-amount) * 6));
+  clip-path: polygon(
+    0 45%,
+    3% 45%,
+    3% 20%,
+    9% 20%,
+    9% 38%,
+    18% 38%,
+    18% 0,
+    26% 0,
+    26% 25%,
+    39% 25%,
+    39% 45%,
+    49% 45%,
+    49% 14%,
+    60% 14%,
+    60% 32%,
+    71% 32%,
+    71% 4%,
+    80% 4%,
+    80% 28%,
+    91% 28%,
+    91% 50%,
+    100% 50%,
+    100% 100%,
+    0 100%
+  );
+}
+[data-weather='snow'][data-weathered='true'] .scene::before {
+  top: 0;
+}
+[data-weather='snow'][data-weathered='true']
+  :is(.panel, .sidebar-panel, .project-card, .subject-links) {
+  background-image:
+    linear-gradient(
+      rgb(151 188 208 / calc(var(--weather-amount) * 0.5)),
+      rgb(151 188 208 / calc(var(--weather-amount) * 0.5))
+    ),
+    linear-gradient(
+      rgb(151 188 208 / calc(var(--weather-amount) * 0.32)),
+      rgb(151 188 208 / calc(var(--weather-amount) * 0.32))
+    );
+  background-repeat: no-repeat;
+  background-size:
+    2px calc(var(--weather-amount) * 19px),
+    2px calc(var(--weather-amount) * 12px);
+  background-position:
+    left 0 top 5px,
+    right 0 top 16px;
+}
+[data-weather='rain'][data-weathered='true']
+  :is(.panel, .sidebar-panel, .scene, .project-card, .subject-links) {
+  border-color: color-mix(
+    in srgb,
+    var(--accent) calc(var(--weather-amount) * 35%),
+    var(--line)
+  );
+  box-shadow:
+    inset 0 1px 0 rgb(188 218 238 / calc(var(--weather-amount) * 0.14)),
+    0 4px 12px
+      color-mix(
+        in srgb,
+        var(--accent) calc(var(--weather-amount) * 5%),
+        transparent
+      );
+}
+[data-weather='rain'][data-weathered='true']
+  :is(.panel, .sidebar-panel, .project-card, .subject-links) {
+  background-image:
+    linear-gradient(
+      115deg,
+      transparent 88%,
+      rgb(165 211 227 / calc(var(--weather-amount) * 0.035)) 88% 94%,
+      transparent 94%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 7%,
+      rgb(170 218 236 / calc(var(--weather-amount) * 0.22)) 7% 14%,
+      transparent 14% 68%,
+      rgb(170 218 236 / calc(var(--weather-amount) * 0.15)) 68% 78%,
+      transparent 78%
+    );
+  background-size:
+    100% 100%,
+    100% 2px;
+  background-position:
+    center,
+    left bottom 2px;
+  background-repeat: no-repeat;
+}
+[data-weather='rain'][data-weathered='true']
+  :is(.panel, .sidebar-panel, .project-card, .subject-links)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3%;
+  width: 94%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary) 16%,
+    transparent 40%,
+    var(--accent) 78%,
+    transparent
+  );
+  opacity: calc(var(--weather-amount) * 0.45);
+}
+.weather-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+[data-weather='snow'][data-weathered='true'] .weather-ground {
+  height: calc(var(--weather-amount) * 17px);
+  background: linear-gradient(180deg, #a6c4d5, #55758b);
+  opacity: 0.7;
+  clip-path: polygon(
+    0 50%,
+    5% 50%,
+    5% 30%,
+    13% 30%,
+    13% 44%,
+    20% 44%,
+    20% 5%,
+    28% 5%,
+    28% 30%,
+    35% 30%,
+    35% 50%,
+    42% 50%,
+    42% 20%,
+    51% 20%,
+    51% 38%,
+    62% 38%,
+    62% 10%,
+    70% 10%,
+    70% 32%,
+    80% 32%,
+    80% 0,
+    88% 0,
+    88% 35%,
+    100% 35%,
+    100% 100%,
+    0 100%
+  );
+}
+[data-weather='rain'][data-weathered='true'] .weather-ground {
+  height: 9px;
+  opacity: calc(var(--weather-amount) * 0.3);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      var(--accent) 2px 3px,
+      transparent 3px 5px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 15%,
+      var(--secondary) 45%,
+      var(--accent) 65%,
+      transparent 90%
+    );
+  clip-path: polygon(
+    4% 60%,
+    19% 60%,
+    19% 30%,
+    37% 30%,
+    37% 50%,
+    57% 50%,
+    57% 0,
+    72% 0,
+    72% 40%,
+    94% 40%,
+    94% 100%,
+    4% 100%
+  );
+}

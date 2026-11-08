@@ -1,11 +1,17 @@
 import { Link } from 'react-router'
-export function SiteFooter() {
+export function SiteFooter({ motion }: { motion: boolean }) {
   return (
     <footer className="site-footer">
       <div>
-        <span className="footer-mark" aria-hidden="true">
+        <button
+          className="footer-spark"
+          aria-label="Launch a firework in the sky"
+          title="Make a wish"
+          disabled={!motion}
+          onClick={() => window.dispatchEvent(new Event('site:sky-spark'))}
+        >
           ✦
-        </span>{' '}
+        </button>{' '}
         Lichen Huang <span className="muted">/ a work in progress</span>
       </div>
       <div>

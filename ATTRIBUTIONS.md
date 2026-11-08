@@ -60,3 +60,14 @@ For each new item, record: title/path, author, original URL, license and license
 - The project's own original SVG informed the simplified visual language. Baker/PSB geometry remains based on the previously documented architectural references; v2 does not incorporate photo pixels or v1 image pixels.
 - The original project animation script now targets v2. The prior animation recipe is preserved as `scripts/animate-campus-v1.py`; v1 art remains archived.
 - Public credits remain at `/credits`; active style rules are recorded in `docs/ART_DIRECTION.md`.
+
+## November 7 sky and palette work
+
+- Moonrise and Ion UI palettes (plus the retired Afterglow study), faint SVG moon/constellations, CSS stars/haze, and Canvas 2D pixel weather/fireworks are original project code. No external artwork or effect library was added.
+- The user's local CS 4620 Fireworks project was inspected to understand their particle-simulation interests. The website effect is a small independent implementation; no course framework, shader assets, source modules, or textures were imported or copied.
+- Existing v2 campus GIF files were not modified. Public acknowledgments for the sky/effects are in `/credits`.
+
+## Layered atmosphere refinement
+
+- Four-depth precipitation, smooth shared wind, Gaussian central launches, ballistic target solving, and finite CSS snow/wet-frame effects are original project implementations in `src/lib/skyPhysics.ts`, `src/components/sky/`, and `src/styles/weather-surfaces.css`.
+- The neon-street palette direction follows the user's description; no street photograph, third-party shader, effect code, texture, or additional dependency is incorporated. The approved campus GIFs remain unchanged.

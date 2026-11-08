@@ -24,3 +24,9 @@ The goal is a dark, expressive personal website with the charm of anime-influenc
 - The generated masters and prompts for each round are under `assets/art-source/baker-psb/`.
 
 Use this document when generating future illustrations, sprites, and website decorations. Do not drift back toward realistic tiny-pixel panoramas merely to improve likeness.
+
+## November 7 atmosphere refinement
+
+Keep the approved v2 GIFs unchanged. Retain two surrounding night palettes: Moonrise (ink blue, cool highlights and lantern amber) and Ion (navy/cyan with restrained warm neon). Retire purple-heavy Afterglow. The inspiration is distant neon in an old Hong Kong/Tokyo street photograph: dark space first, small colored light accents second.
+
+A faint original moon, stars, constellations and haze support the sky. Four precipitation depths and weak coherent wind add space; centrally launched pixel fireworks trace gravitational arcs. Snow caps and rain reflections gradually weather the rectangular frames without hiding their content. See `SEASONS_AND_SKY.md` for calendar defaults, exposure timing and implementation locations.

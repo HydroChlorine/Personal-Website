@@ -6,7 +6,7 @@
   position: relative;
 }
 .panel p {
-  color: #bac5b2;
+  color: var(--text-soft);
 }
 .panel p:last-child {
   margin-bottom: 0;
@@ -25,8 +25,8 @@
   align-items: center;
   gap: 28px;
   padding: 31px;
-  border-color: #4c604b;
-  box-shadow: 4px 4px 0 #080f0e;
+  border-color: var(--line-bright);
+  box-shadow: 4px 4px 0 var(--shadow);
   margin-bottom: 31px;
 }
 .welcome h1 {
@@ -48,7 +48,7 @@
   gap: 12px;
   text-align: center;
   transform: rotate(3deg);
-  background: #1d2e26;
+  background: var(--panel-raised);
 }
 .welcome-stamp .pixel-icon {
   width: 40px;
@@ -66,7 +66,7 @@
   color: var(--green);
   font: 11px/1.6 var(--mono);
   padding-block: 4px;
-  border-bottom: 1px solid #536348;
+  border-bottom: 1px solid var(--line-bright);
 }
 .section-label {
   display: flex;
@@ -92,12 +92,12 @@
   border: 1px solid var(--line);
 }
 .subject-link {
-  --subject: var(--green);
+  --subject: var(--chemistry);
   display: flex;
   gap: 21px;
   padding: 20px 23px;
   align-items: center;
-  background: #162320;
+  background: var(--panel);
   border-bottom: 1px solid var(--line);
   transition: background 150ms;
 }
@@ -105,7 +105,7 @@
   border-bottom: 0;
 }
 .subject-link:hover {
-  background: #203127;
+  background: var(--hover);
   color: var(--text);
 }
 .subject-link.mathematics,
@@ -118,14 +118,14 @@
 }
 .subject-icon {
   color: var(--subject);
-  background: #26372d;
+  background: var(--panel-raised);
   border: 1px solid var(--line);
   width: 51px;
   height: 51px;
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  box-shadow: 3px 3px 0 #0d1714;
+  box-shadow: 3px 3px 0 var(--shadow);
 }
 .subject-icon .pixel-icon {
   width: 27px;
@@ -159,14 +159,14 @@
   min-height: 202px;
   padding: 22px;
   border: 1px solid var(--line);
-  background: #182522;
+  background: var(--panel);
   transition:
     border-color 150ms,
     background 150ms;
 }
 .project-card:hover {
   border-color: var(--green);
-  background: #1d2d26;
+  background: var(--hover);
   color: var(--text);
 }
 .project-card-top {
@@ -201,7 +201,7 @@
   border-top: 1px dashed var(--line);
 }
 .draft-label {
-  color: #c7bb91;
+  color: var(--secondary);
 }
 .home-bottom {
   margin-top: 24px;
@@ -281,7 +281,7 @@
 .empty-shelf {
   padding: 22px;
   border: 1px dashed var(--line);
-  background: #14201d;
+  background: var(--shelf);
 }
 .empty-shelf h3 {
   margin: 12px 0 10px;
@@ -296,7 +296,7 @@
 }
 .shelf-mark {
   font: 13px var(--mono);
-  color: #53674b;
+  color: var(--line-bright);
   letter-spacing: 4px;
 }
 .shelf-list {

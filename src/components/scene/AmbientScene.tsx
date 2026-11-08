@@ -4,9 +4,11 @@ import type { CampusScene } from '../../content/scenes'
 export function AmbientScene({
   scene,
   motion,
+  onNext,
 }: {
   scene: CampusScene
   motion: boolean
+  onNext: () => void
 }) {
   const [failedSource, setFailedSource] = useState<string | null>(null)
   const source = motion ? scene.gif : scene.still
@@ -30,6 +32,17 @@ export function AmbientScene({
           else setFailedSource(source)
         }}
       />
+      <button
+        className="scene-portal"
+        type="button"
+        aria-label="Next seasonal scene"
+        title="A little change of season"
+        onClick={onNext}
+      >
+        <span className="scene-touch-cue" aria-hidden="true">
+          ✧
+        </span>
+      </button>
       <div className="scene-copy">
         <span className="scene-kicker">LICHEN HUANG / HYDROCHLORINE</span>
         <p>

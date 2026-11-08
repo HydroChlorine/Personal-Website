@@ -1,34 +1,31 @@
-import { useEffect, useState } from 'react'
-import { randomSceneIndex, scenes, SCENE_INTERVAL_MS } from '../content/scenes'
-import type { SceneSelection } from '../content/scenes'
+import { useCallback, useEffect, useState } from 'react'
+import {
+  initialSeasonState,
+  nextSeasonState,
+  SCENE_INTERVAL_MS,
+} from '../content/scenes'
 
 export function useCampusScene(motion: boolean) {
-  const [selection, setSelection] = useState<SceneSelection>('shuffle')
-  const [index, setIndex] = useState(() =>
-    Math.floor(Math.random() * scenes.length),
-  )
+  const [state, setState] = useState(() => initialSeasonState())
+  const nextScene = useCallback(() => {
+    // Keep the updater deterministic under React StrictMode.
+    const roll = Math.random()
+    setState((current) => nextSeasonState(current, () => roll))
+  }, [])
   useEffect(() => {
-    if (!motion || selection !== 'shuffle') return
-    const timer = window.setInterval(() => {
+    if (!motion) return
+    let timer: number | undefined
+    function arm() {
+      window.clearTimeout(timer)
       if (document.visibilityState === 'visible')
-        setIndex((current) => randomSceneIndex(current))
-    }, SCENE_INTERVAL_MS)
-    return () => window.clearInterval(timer)
-  }, [motion, selection])
-  function chooseScene(value: SceneSelection) {
-    if (value === 'shuffle') {
-      setSelection(value)
-      return
+        timer = window.setTimeout(nextScene, SCENE_INTERVAL_MS)
     }
-    const next = scenes.findIndex((scene) => scene.id === value)
-    if (next !== -1) {
-      setIndex(next)
-      setSelection(value)
+    arm()
+    document.addEventListener('visibilitychange', arm)
+    return () => {
+      window.clearTimeout(timer)
+      document.removeEventListener('visibilitychange', arm)
     }
-  }
-  function nextScene() {
-    setSelection('shuffle')
-    setIndex((current) => randomSceneIndex(current))
-  }
-  return { scene: scenes[index]!, selection, chooseScene, nextScene }
+  }, [motion, state.scene.id, nextScene])
+  return { scene: state.scene, nextScene }
 }

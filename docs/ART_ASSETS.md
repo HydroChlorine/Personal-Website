@@ -10,7 +10,7 @@ The current art direction is documented in [ART_DIRECTION.md](ART_DIRECTION.md).
 - Animation: `scripts/animate-campus.py` on a 384 × 128 logical grid, with a shared 32-color palette, exported at 1152 × 384 by 3× nearest-neighbor enlargement. 48 frames × 100 ms; 4.8-second infinite loops.
 - More expressive tree-canopy motion, leaf sprites, rain strokes, snowflakes, fireflies, and twinkles. Architecture remains fixed.
 - Banner: compact 304px desktop height, with the welcome headline and identity restored over the left-hand quiet area.
-- Playback: the existing 10-second random rotation, manual selection, and real PNG still-image pause behavior are preserved.
+- Playback: visitor-local seasonal start, natural seasonal ordering every 30 seconds, and click/tap on the banner to advance. Real PNG still-image pause behavior is preserved. See `SEASONS_AND_SKY.md`.
 
 | Active scene | GIF |
 | --- | --- |

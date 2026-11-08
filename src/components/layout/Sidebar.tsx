@@ -2,18 +2,26 @@ import { Link, NavLink } from 'react-router'
 import { site } from '../../config/site'
 import { profile } from '../../content/profile'
 import { PixelIcon } from '../ui/PixelIcon'
-import { scenes } from '../../content/scenes'
-import type { SceneSelection } from '../../content/scenes'
+import { AtmosphereSettings } from '../sky/AtmosphereSettings'
+import type {
+  PaletteId,
+  SkyWeather,
+  WeatherMode,
+} from '../../content/appearance'
 export function Sidebar({
-  selection,
-  chooseScene,
-  nextScene,
+  palette,
+  setPalette,
+  weather,
+  weatherMode,
+  setWeather,
   motion,
   setMotion,
 }: {
-  selection: SceneSelection
-  chooseScene: (value: SceneSelection) => void
-  nextScene: () => void
+  palette: PaletteId
+  setPalette: (value: PaletteId) => void
+  weather: SkyWeather
+  weatherMode: WeatherMode
+  setWeather: (value: WeatherMode) => void
   motion: boolean
   setMotion: (value: boolean) => void
 }) {
@@ -43,43 +51,15 @@ export function Sidebar({
         <p>{profile.now}</p>
         <Link to="/notebook">Visit the notebook →</Link>
       </section>
-      <section className="sidebar-panel atmosphere">
-        <h2 className="sidebar-title">Outside the window</h2>
-        <p>
-          {selection === 'shuffle'
-            ? motion
-              ? 'A new season every 10 seconds.'
-              : 'The seasons are paused.'
-            : 'Stay a little longer in this season.'}
-        </p>
-        <label className="scene-select-label" htmlFor="scene-selection">
-          Choose a scene
-        </label>
-        <select
-          id="scene-selection"
-          aria-label="Choose a scene"
-          className="scene-select"
-          value={selection}
-          onChange={(event) => chooseScene(event.target.value)}
-        >
-          <option value="shuffle">Shuffle all seasons</option>
-          {scenes.map((scene) => (
-            <option key={scene.id} value={scene.id}>
-              {scene.label}
-            </option>
-          ))}
-        </select>
-        <button className="next-scene" onClick={nextScene}>
-          Next random scene →
-        </button>
-        <button
-          className="motion-toggle"
-          aria-pressed={!motion}
-          onClick={() => setMotion(!motion)}
-        >
-          {motion ? 'Pause animation' : 'Resume animation'}
-        </button>
-      </section>
+      <AtmosphereSettings
+        palette={palette}
+        setPalette={setPalette}
+        weather={weather}
+        weatherMode={weatherMode}
+        setWeather={setWeather}
+        motion={motion}
+        setMotion={setMotion}
+      />
     </aside>
   )
 }

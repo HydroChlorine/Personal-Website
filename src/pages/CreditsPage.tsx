@@ -39,6 +39,14 @@ export function CreditsPage() {
           or reference-site artwork are included.
         </p>
       </Panel>
+      <Panel title="The little sky">
+        <p>
+          The faint moon, constellations, palette experiments, pixel weather,
+          and fireworks were created for this website. The firework interaction
+          is inspired by Lichen’s own particle-simulation work; no course
+          framework or third-party effect library is included.
+        </p>
+      </Panel>
       <Panel title="Open-source foundations">
         <p>
           Built with React, React Router, TypeScript, and Vite. React and React
