@@ -9,10 +9,13 @@ src/
   App.tsx                    Routes and navigation title/focus handling
   main.tsx                   React root
   config/site.ts             Main navigation
+  hooks/                     Season sequence, appearance preferences, finite weather exposure
+  lib/skyPhysics.ts          Shared wind, layered precipitation, ballistic flights
   components/
     SiteLayout.tsx           Shared shell and animation preference
     layout/                  Header, sidebar/navigation, footer
-    scene/                   Original illustration and decorative weather
+    scene/                   Campus window and discreet manual advance
+    sky/                     Original sky, pixel fireworks, and appearance controls
     ui/                      Panels, icons, project cards, subject links
   pages/
     HomePage.tsx             Welcome and connections into the site
@@ -29,6 +32,8 @@ src/
     NotFoundPage.tsx         Unknown paths and missing records
   content/
     types.ts                 Content schemas
+    scenes.ts                Scene catalog and pure seasonal transition rules
+    appearance.ts            Two UI palettes and local-calendar weather rules
     profile.ts               Bio, contact, timeline, personal details
     subjects/                Introductions, interests, planned shelves
     projects/                One file per selected project plus index
@@ -40,7 +45,9 @@ src/
     drafts/                  Unpublished collection templates
   styles/
     tokens.css               Colors and typography
-    scene.css                Illustration and weather
+    scene.css                Illustrated window and hidden advance surface
+    sky.css                  Faint background decoration and appearance controls
+    weather-surfaces.css     Finite snow/frost and wet material response
     layout.css               Shell, navigation, responsive rules
     components.css           Reusable components and page layouts
   index.css                  Global rules and reduced-motion support
@@ -68,9 +75,9 @@ The two initial research entries are explicitly content outlines. No coursework 
 
 ## Visual direction
 
-Original pixel workshop at night, muted green surfaces, warm highlights, and square edges. System monospace headings provide a temporary pixel-adjacent tone without redistributing a font. Art and palette are replaceable independently of the content.
+Coarse dark anime-influenced Baker Laboratory/PSB GIFs on a 384 × 128 logical grid, a shared 32-color palette, a compact banner, and overlaid headline. The original night workshop SVG remains archived. System monospace headings provide a temporary pixel-adjacent tone without redistributing a font. Art and palette are replaceable independently of the content.
 
-Weather is decorative and local. Clear/rain/snow controls do not access the network or location. Motion can be paused; the preference is stored if localStorage is available. CSS honors reduced-motion preferences even if the browser preference changes during a visit. No sound is used.
+The scene catalog chooses the initial season from the visitor's local month, completes both summer/autumn variants, and follows the natural seasonal order every 30 seconds. The banner itself advances the cycle on click/tap or keyboard activation. Pausing substitutes a PNG still and stops progression. See `SEASONS_AND_SKY.md` for the rules, tests, palette choices, original pixel sky/fireworks, and automatic local-calendar global weather. No live weather or location is accessed. GIF artwork is unchanged by these palette experiments.
 
 ## Current boundaries
 

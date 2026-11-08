@@ -1,4 +1,6 @@
 .site-shell {
+  position: relative;
+  z-index: 1;
   width: min(1120px, calc(100% - 64px));
   margin: 0 auto;
 }
@@ -24,9 +26,9 @@
   width: 30px;
   height: 32px;
   border: 1px solid var(--line-bright);
-  background: #24352d;
+  background: var(--panel-raised);
   color: var(--green);
-  box-shadow: 3px 3px 0 #070e0d;
+  box-shadow: 3px 3px 0 var(--shadow);
 }
 .brand-domain {
   font: 10px var(--mono);
@@ -37,7 +39,7 @@
 .header-links {
   display: flex;
   gap: 27px;
-  color: #bac7b0;
+  color: var(--text-soft);
   font-size: 11px;
 }
 .content-layout {
@@ -57,7 +59,7 @@ main {
 }
 .sidebar-panel {
   border: 1px solid var(--line);
-  background: #14201ff2;
+  background: var(--panel);
   padding: 20px 16px;
 }
 .sidebar-title {
@@ -90,12 +92,12 @@ nav .pixel-icon {
   opacity: 0.7;
 }
 nav a.active {
-  background: #29382b;
+  background: var(--selected);
   color: var(--green);
-  border-color: #40533b;
+  border-color: var(--line-bright);
 }
 nav a:hover {
-  background: #223129;
+  background: var(--hover);
   color: var(--text);
 }
 .nav-arrow {
@@ -125,25 +127,8 @@ nav a.active .nav-arrow {
   width: 5px;
   height: 5px;
   background: var(--green);
-  box-shadow: 0 0 7px #b6ce8a77;
+  box-shadow: 0 0 7px color-mix(in srgb, var(--accent) 45%, transparent);
   margin-right: 6px;
-}
-.weather-controls {
-  display: flex;
-  gap: 5px;
-}
-.weather-controls button {
-  flex: 1;
-  background: transparent;
-  border: 1px solid var(--line);
-  padding: 7px 4px;
-  color: var(--muted);
-  font: 10px var(--mono);
-}
-.weather-controls button[aria-pressed='true'] {
-  border-color: var(--green);
-  color: var(--green);
-  background: #27342a;
 }
 .motion-toggle {
   margin-top: 14px;
@@ -174,7 +159,7 @@ nav a.active .nav-arrow {
   margin-inline: 10px;
 }
 .site-footer a {
-  color: #c4ccad;
+  color: var(--text-soft);
 }
 @media (max-width: 960px) {
   .site-shell {
@@ -264,13 +249,6 @@ nav a.active .nav-arrow {
   }
   .atmosphere p {
     display: none;
-  }
-  .weather-controls {
-    flex: 1;
-    max-width: 240px;
-  }
-  .weather-controls button {
-    padding: 6px 12px;
   }
   .motion-toggle {
     margin-top: 0;

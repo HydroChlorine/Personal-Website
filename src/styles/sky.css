@@ -1,0 +1,210 @@
+.sky-backdrop {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--bg);
+}
+.sky-haze {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 15% 80%,
+      color-mix(in srgb, var(--haze-one) 20%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 95% 10%,
+      color-mix(in srgb, var(--haze-two) 14%, transparent),
+      transparent 50%
+    );
+}
+.sky-moon {
+  position: absolute;
+  top: 95px;
+  right: clamp(-120px, calc(50vw - 680px), 80px);
+  width: 280px;
+  height: 280px;
+  color: var(--sky-moon);
+  opacity: 0.075;
+  image-rendering: pixelated;
+}
+.sky-constellation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--sky-star);
+  stroke-width: 0.6;
+  opacity: 0.065;
+}
+.sky-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--sky-star);
+  opacity: 0.16;
+}
+.sky-star.large {
+  width: 3px;
+  height: 3px;
+  opacity: 0.2;
+  box-shadow:
+    -3px 0 color-mix(in srgb, var(--sky-star) 55%, transparent),
+    3px 0 color-mix(in srgb, var(--sky-star) 55%, transparent),
+    0 -3px color-mix(in srgb, var(--sky-star) 55%, transparent),
+    0 3px color-mix(in srgb, var(--sky-star) 55%, transparent);
+  animation: sky-twinkle 9s steps(3) infinite;
+}
+@keyframes sky-twinkle {
+  50% {
+    opacity: 0.06;
+  }
+}
+.sky-effects {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+.atmosphere-details {
+  width: 100%;
+}
+.atmosphere-details summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font: 12px/1.7 var(--mono);
+  color: var(--secondary);
+  cursor: pointer;
+  list-style: none;
+}
+.atmosphere-details summary::-webkit-details-marker {
+  display: none;
+}
+.atmosphere-details summary span {
+  color: var(--accent);
+  transition: transform 150ms;
+}
+.atmosphere-details[open] summary span {
+  transform: rotate(45deg);
+}
+.settings-group {
+  margin-top: 21px;
+}
+.atmosphere .settings-label {
+  font: 9px/1.6 var(--mono);
+  color: var(--muted);
+  margin: 0 0 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.palette-choices {
+  display: grid;
+  gap: 7px;
+}
+.palette-choices button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 9px;
+  font: 10px var(--mono);
+  text-align: left;
+}
+.palette-choices button[aria-pressed='true'] {
+  background: var(--selected);
+  color: var(--text);
+  border-color: var(--line-bright);
+}
+.palette-swatches {
+  display: flex;
+  gap: 2px;
+}
+.palette-swatches i {
+  width: 8px;
+  height: 8px;
+}
+.sky-weather-controls {
+  display: flex;
+  gap: 5px;
+}
+.sky-weather-controls button {
+  flex: 1;
+  font: 10px var(--mono);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 8px;
+}
+.sky-weather-controls button[aria-pressed='true'] {
+  color: var(--accent);
+  border-color: var(--line-bright);
+  background: var(--selected);
+}
+.footer-spark {
+  border: 0;
+  background: none;
+  color: var(--secondary);
+  padding: 0 5px;
+  margin-right: 5px;
+  font: inherit;
+}
+.footer-spark:hover {
+  color: var(--accent);
+}
+.footer-spark:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+@media (max-width: 760px) {
+  .sidebar .atmosphere {
+    align-items: flex-start;
+    padding: 13px;
+  }
+  .atmosphere-details {
+    flex: 1;
+    min-width: 140px;
+  }
+  .atmosphere .motion-toggle {
+    font-size: 9px;
+    padding-top: 4px;
+  }
+  .palette-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .palette-choices button {
+    flex-direction: column;
+    gap: 8px;
+    padding: 11px 5px;
+    text-align: center;
+    font-size: 9px;
+  }
+  .atmosphere-details[open] {
+    flex-basis: 100%;
+  }
+  .sky-moon {
+    width: 200px;
+    height: 200px;
+    top: 25px;
+    right: -70px;
+  }
+}
+
+.site-world {
+  position: relative;
+  min-height: 100svh;
+}
+.atmosphere .weather-auto-note {
+  margin: 10px 0 0;
+  font: 9px/1.7 var(--mono);
+  color: var(--muted);
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "spring-night",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1152,
+    "height": 384,
+    "nativeWidth": 384,
+    "nativeHeight": 128,
+    "paletteColors": 32,
+    "bytes": 155062
+  },
+  {
+    "id": "summer-dawn",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1152,
+    "height": 384,
+    "nativeWidth": 384,
+    "nativeHeight": 128,
+    "paletteColors": 32,
+    "bytes": 122570
+  },
+  {
+    "id": "autumn-wind",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1152,
+    "height": 384,
+    "nativeWidth": 384,
+    "nativeHeight": 128,
+    "paletteColors": 32,
+    "bytes": 153386
+  },
+  {
+    "id": "summer-rain",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1152,
+    "height": 384,
+    "nativeWidth": 384,
+    "nativeHeight": 128,
+    "paletteColors": 32,
+    "bytes": 369078
+  },
+  {
+    "id": "autumn-rain",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1152,
+    "height": 384,
+    "nativeWidth": 384,
+    "nativeHeight": 128,
+    "paletteColors": 32,
+    "bytes": 378295
+  },
+  {
+    "id": "winter-snow",
+    "frames": 48,
+    "loopMs": 4800,
+    "width": 1152,
+    "height": 384,
+    "nativeWidth": 384,
+    "nativeHeight": 128,
+    "paletteColors": 32,
+    "bytes": 197461
+  }
+]

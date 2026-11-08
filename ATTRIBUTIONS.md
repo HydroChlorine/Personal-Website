@@ -43,3 +43,31 @@ MIT permits reuse and modification with preservation of copyright/license notice
 ## Future asset register
 
 For each new item, record: title/path, author, original URL, license and license URL, date checked, permission basis, changes, retained notice path, and public credit location. Add original research/photography authors and collaborators when those assets are selected.
+
+## Baker Laboratory and PSB seasonal art v1
+
+- Paths: `assets/art-source/baker-psb/v1/` (generated masters and exact prompts), `public/art/baker-psb/v1/` (GIFs, stills, manifest).
+- Created November 6, 2026 with built-in OpenAI image generation; seasonal art edits preserve the initial generated composition. Animated/encoded with the original project script `scripts/animate-campus.py` using Pillow and NumPy as offline tools.
+- Architectural reference supplied by the user: Baker/PSB campus screenshot with visible © 2024 Google marks. Not directly pixelated, traced, copied into the public directory, or used as a GIF frame. The generated work is a recomposed artistic interpretation.
+- Additional visual study: https://chemistry.cornell.edu/ (Baker front) and https://nowack.lassp.cornell.edu/lab (PSB exterior). Consulted as architectural references only; no photograph is redistributed and no reuse license for those photographs is assumed.
+- Public reference acknowledgments: `/credits`, linked from every footer. The artwork is not official Cornell material and implies no institutional endorsement.
+- Original `public/art/night-workshop.svg` remains unchanged. See `docs/ART_ASSETS.md` for the full asset/motion recipe and refinements.
+
+## Baker and PSB art revision v2
+
+- Original generated coarse pixel artwork, produced with the built-in OpenAI image-generation tool. All scene-specific prompts are in `assets/art-source/baker-psb/v2/prompts.json`.
+- dimden.dev was revisited for visual study of pixel scale, dark atmosphere, and personal-site composition. No screenshot pixels, sprites, artwork, code, fonts, or audio from that site are included.
+- The project's own original SVG informed the simplified visual language. Baker/PSB geometry remains based on the previously documented architectural references; v2 does not incorporate photo pixels or v1 image pixels.
+- The original project animation script now targets v2. The prior animation recipe is preserved as `scripts/animate-campus-v1.py`; v1 art remains archived.
+- Public credits remain at `/credits`; active style rules are recorded in `docs/ART_DIRECTION.md`.
+
+## November 7 sky and palette work
+
+- Moonrise and Ion UI palettes (plus the retired Afterglow study), faint SVG moon/constellations, CSS stars/haze, and Canvas 2D pixel weather/fireworks are original project code. No external artwork or effect library was added.
+- The user's local CS 4620 Fireworks project was inspected to understand their particle-simulation interests. The website effect is a small independent implementation; no course framework, shader assets, source modules, or textures were imported or copied.
+- Existing v2 campus GIF files were not modified. Public acknowledgments for the sky/effects are in `/credits`.
+
+## Layered atmosphere refinement
+
+- Four-depth precipitation, smooth shared wind, Gaussian central launches, ballistic target solving, and finite CSS snow/wet-frame effects are original project implementations in `src/lib/skyPhysics.ts`, `src/components/sky/`, and `src/styles/weather-surfaces.css`.
+- The neon-street palette direction follows the user's description; no street photograph, third-party shader, effect code, texture, or additional dependency is incorporated. The approved campus GIFs remain unchanged.

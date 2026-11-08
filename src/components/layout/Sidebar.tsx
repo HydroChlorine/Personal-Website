@@ -2,15 +2,26 @@ import { Link, NavLink } from 'react-router'
 import { site } from '../../config/site'
 import { profile } from '../../content/profile'
 import { PixelIcon } from '../ui/PixelIcon'
-import type { Weather } from '../scene/AmbientScene'
+import { AtmosphereSettings } from '../sky/AtmosphereSettings'
+import type {
+  PaletteId,
+  SkyWeather,
+  WeatherMode,
+} from '../../content/appearance'
 export function Sidebar({
+  palette,
+  setPalette,
   weather,
+  weatherMode,
   setWeather,
   motion,
   setMotion,
 }: {
-  weather: Weather
-  setWeather: (value: Weather) => void
+  palette: PaletteId
+  setPalette: (value: PaletteId) => void
+  weather: SkyWeather
+  weatherMode: WeatherMode
+  setWeather: (value: WeatherMode) => void
   motion: boolean
   setMotion: (value: boolean) => void
 }) {
@@ -40,32 +51,15 @@ export function Sidebar({
         <p>{profile.now}</p>
         <Link to="/notebook">Visit the notebook →</Link>
       </section>
-      <section className="sidebar-panel atmosphere">
-        <h2 className="sidebar-title">Outside the window</h2>
-        <p>A little make-believe weather.</p>
-        <div
-          className="weather-controls"
-          role="group"
-          aria-label="Decorative weather"
-        >
-          {(['clear', 'rain', 'snow'] as const).map((value) => (
-            <button
-              key={value}
-              aria-pressed={weather === value}
-              onClick={() => setWeather(value)}
-            >
-              {value === 'clear' ? 'Clear' : value === 'rain' ? 'Rain' : 'Snow'}
-            </button>
-          ))}
-        </div>
-        <button
-          className="motion-toggle"
-          aria-pressed={!motion}
-          onClick={() => setMotion(!motion)}
-        >
-          {motion ? 'Pause animation' : 'Resume animation'}
-        </button>
-      </section>
+      <AtmosphereSettings
+        palette={palette}
+        setPalette={setPalette}
+        weather={weather}
+        weatherMode={weatherMode}
+        setWeather={setWeather}
+        motion={motion}
+        setMotion={setMotion}
+      />
     </aside>
   )
 }

@@ -19,9 +19,32 @@ export function CreditsPage() {
       </Panel>
       <Panel title="Artwork & type">
         <p>
+          The coarse moonlight and predawn Baker Laboratory and Physical
+          Sciences Building scenes were created with OpenAI image generation
+          using architectural references, then animated for this website. The
+          reference photographs are not published here. These are artistic
+          interpretations, not official Cornell imagery.
+        </p>
+        <div className="inline-links">
+          <a href="https://chemistry.cornell.edu/">
+            Baker architectural reference ↗
+          </a>
+          <a href="https://nowack.lassp.cornell.edu/lab">
+            PSB architectural reference ↗
+          </a>
+        </div>
+        <p>
           The nighttime workshop illustration and pixel icons were created for
           this website. The interface uses system fonts; no external font files
           or reference-site artwork are included.
+        </p>
+      </Panel>
+      <Panel title="The little sky">
+        <p>
+          The faint moon, constellations, palette experiments, pixel weather,
+          and fireworks were created for this website. The firework interaction
+          is inspired by Lichen’s own particle-simulation work; no course
+          framework or third-party effect library is included.
         </p>
       </Panel>
       <Panel title="Open-source foundations">

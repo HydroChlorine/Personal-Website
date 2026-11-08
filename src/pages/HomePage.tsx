@@ -23,9 +23,9 @@ export function HomePage() {
         <div className="welcome-stamp" aria-hidden="true">
           <PixelIcon name="chemistry" />
           <span>
-            ALWAYS
+            Lab
             <br />
-            CURIOUS
+            APPROVED
           </span>
         </div>
       </section>
