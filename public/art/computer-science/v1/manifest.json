@@ -1,0 +1,117 @@
+{
+  "checks": {
+    "truthTableRows": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "toyMachineFinal": {
+      "R0": 6,
+      "memory0x10": 5,
+      "memory0x11": 6
+    },
+    "cubeEdges": 12,
+    "proof": "conceptual Curry-Howard correspondence; typed function composition, not a live kernel session"
+  },
+  "scenes": {
+    "objects": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 113081
+    },
+    "logic": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 26016
+    },
+    "architecture": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 58481
+    },
+    "web": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 100946
+    },
+    "graphics": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 288908
+    },
+    "proof": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 173636
+    }
+  }
+}

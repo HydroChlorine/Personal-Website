@@ -84,10 +84,14 @@ The scene catalog chooses the initial season from the visitor's local month, com
 
 ## Current boundaries
 
-No deployment or Git push has been performed. No CMS or Markdown rendering has been added; typed content files are the current editing interface. Draft Markdown files are authoring worksheets and do not render automatically. Interactive demos, publication downloads, photos, and a public CV remain to be supplied. The initial client-rendered site is not prerendered for search engines; revisit static generation if publishing becomes a major focus.
+No deployment or Git push has been performed. No CMS or Markdown rendering has been added; typed content files are the current editing interface. Draft Markdown files are authoring worksheets and do not render automatically. A local interactive website miniature is included; publication downloads, project recordings, photos, and a public CV remain to be supplied. The initial client-rendered site is not prerendered for search engines; revisit static generation if publishing becomes a major focus.
 
-Chemistry routes and chemistry-tagged project/note details use their own six-scene laboratory window. The campus cycle remains on other pages. See `CHEMISTRY.md` for route context, GIF recipes, pause behavior, and the Catalyst Discovery article.
+Chemistry routes and chemistry-tagged project/note details use their own six-scene laboratory window. The campus cycle remains on pages outside the subject contexts. See `CHEMISTRY.md` for route context, GIF recipes, pause behavior, and the Catalyst Discovery article.
 
-Mathematics context, original numerical banner assets, responsive companions, and model checks are documented in [MATHEMATICS.md](MATHEMATICS.md). `sceneContext` resolves chemistry before mathematics for shared entries; `useSceneCycle` supplies the common subject-scene clock. Future project writing follows [CONTENT_STYLE.md](CONTENT_STYLE.md).
+Mathematics context, original numerical banner assets, responsive companions, and model checks are documented in [MATHEMATICS.md](MATHEMATICS.md). `sceneContext` resolves chemistry, then mathematics, then computer science for shared entries; `useSceneCycle` supplies the common subject-scene clock. Future project writing follows [CONTENT_STYLE.md](CONTENT_STYLE.md).
 
 The six illustrated math articles use `/mathematics/topics/:slug`, `src/content/mathematics/`, and `MathematicsTopicPage`. The shared article renderer accepts optional topic labels, equations, detail paragraphs, and table captions while preserving chemistry defaults. See [MATH_TOPICS.md](MATH_TOPICS.md) for assets, numerical checks, and content scope.
+
+CS banners use `ComputerScienceScene`, `computerScienceScenes`, and the same independent `useSceneCycle` clock. The original night-desk artwork, six animation recipes, responsive sources, pause behavior, route rules, and reference policy are documented in [COMPUTER_SCIENCE.md](COMPUTER_SCIENCE.md).
+
+CS projects and `/computer-science/topics/:slug` use `src/content/computer-science/` and the shared article renderer. Projects can specify `bannerSubject` (the math-tagged 4D project uses CS); chemistry keeps priority. `progress` marks ongoing work independently of article readiness. The local `SiteMiniature` appears as a sibling to project links, with parent motion passed by query string. It scales the shared homepage at `/miniature`, shows only two selected projects to prevent recursion, and sends its links to the parent page. See [CS_STORIES.md](CS_STORIES.md).

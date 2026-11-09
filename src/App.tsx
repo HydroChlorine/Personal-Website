@@ -18,6 +18,8 @@ import { CreditsPage } from './pages/CreditsPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { MathematicsTopicPage } from './pages/subjects/MathematicsTopicPage'
 import { mathTopics } from './content/mathematics'
+import { csTopics } from './content/computer-science'
+import { ComputerScienceTopicPage } from './pages/subjects/ComputerScienceTopicPage'
 const titles: Record<string, string> = {
   '/': 'Home',
   '/about': 'About',
@@ -34,7 +36,7 @@ const titles: Record<string, string> = {
 function RouteEffects() {
   const { pathname } = useLocation()
   useEffect(() => {
-    document.title = `${titles[pathname] ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
+    document.title = `${titles[pathname] ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? csTopics.find((topic) => pathname === `/computer-science/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
     window.scrollTo({ top: 0, behavior: 'instant' })
     document.getElementById('main-content')?.focus({ preventScroll: true })
   }, [pathname])
@@ -45,6 +47,9 @@ export default function App() {
     <BrowserRouter>
       <RouteEffects />
       <Routes>
+        <Route path="miniature" element={<SiteLayout miniature />}>
+          <Route index element={<HomePage miniature />} />
+        </Route>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
@@ -55,6 +60,10 @@ export default function App() {
             element={<MathematicsTopicPage />}
           />
           <Route path="computer-science" element={<ComputerSciencePage />} />
+          <Route
+            path="computer-science/topics/:slug"
+            element={<ComputerScienceTopicPage />}
+          />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:slug" element={<ProjectDetailPage />} />
           <Route path="notebook" element={<NotebookPage />} />

@@ -5,12 +5,13 @@ export const computerScience: Subject = {
   number: '03',
   tagline: 'Things to build, break, and understand.',
   introduction:
-    'Programming is another way I like to make things. My studies have taken me through software design, systems, algorithms, machine learning, formal verification, and computer graphics. Here is where the actual creations will go.',
+    'Programming is another way I like to make things—and to understand the tools I use. I’m interested in how software is organized, how a machine carries out an instruction, and how a mathematical idea becomes something I can compute, prove, or see.',
   interests: [
-    'Computer graphics',
     'Software & systems',
-    'Formal verification',
     'Scientific computing',
+    'Formal verification',
+    'Computer graphics',
+    '…',
   ],
   shelves: [
     {

@@ -153,6 +153,110 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 15px;
 }
+.project-card.project-card-interactive {
+  cursor: default;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+  gap: 24px;
+  align-items: start;
+}
+.project-card-interactive .site-miniature {
+  margin-top: 0;
+}
+.computer-science .project-card[href='/projects/critterworld'] {
+  grid-column: 1 / -1;
+}
+.project-card-interactive h3 a {
+  color: inherit;
+}
+.site-miniature {
+  margin: 18px 0;
+  max-width: 38rem;
+}
+.miniature-viewport {
+  width: 250px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--line-bright);
+  background: var(--bg);
+}
+.site-miniature iframe {
+  display: block;
+  width: 1440px;
+  height: 1440px;
+  border: 0;
+  transform: scale(0.1722222222);
+  transform-origin: top left;
+}
+/* A condensed edition of the real homepage, rendered at desktop resolution. */
+.miniature-home .site-shell {
+  width: 1380px;
+}
+.miniature-home .site-header {
+  min-height: 56px;
+}
+.miniature-home .scene {
+  height: 260px;
+}
+.miniature-home .content-layout {
+  margin-top: 16px;
+  gap: 20px;
+}
+.miniature-home .panel {
+  padding: 20px;
+}
+.miniature-home .welcome {
+  padding: 22px;
+}
+.miniature-home .welcome h1 {
+  font-size: 27px;
+}
+.miniature-home .welcome p {
+  margin: 10px 0;
+}
+.miniature-home .section-label {
+  margin: 18px 0 12px;
+}
+.miniature-home .subject-link {
+  padding: 15px;
+}
+.miniature-home .project-card {
+  min-height: 170px;
+  padding: 16px;
+}
+.miniature-home .home-bottom {
+  margin-top: 20px;
+}
+.miniature-home .home-postscript {
+  margin: 16px 0;
+}
+.miniature-home .site-footer {
+  margin-top: 20px;
+  padding: 16px 0;
+}
+.site-miniature p,
+.site-miniature .miniature-credit {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.cs-topic-grid {
+  margin-top: 24px;
+}
+.cs-topic-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .project-card.project-card-interactive {
+    grid-template-columns: 1fr;
+  }
+  .cs-topic-featured {
+    grid-template-columns: 1fr;
+  }
+}
 .project-card {
   display: flex;
   flex-direction: column;

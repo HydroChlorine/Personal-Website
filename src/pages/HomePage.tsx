@@ -6,7 +6,7 @@ import { Panel } from '../components/ui/Panel'
 import { ProjectCard } from '../components/ui/ProjectCard'
 import { SubjectLink } from '../components/ui/SubjectLink'
 import { PixelIcon } from '../components/ui/PixelIcon'
-export function HomePage() {
+export function HomePage({ miniature = false }: { miniature?: boolean }) {
   return (
     <>
       <section className="welcome panel">
@@ -46,7 +46,12 @@ export function HomePage() {
           <Link to="/projects">All projects ↗</Link>
         </div>
         <div className="project-grid">
-          {projects.map((project) => (
+          {(miniature
+            ? projects.filter((p) =>
+                ['catalyst-workflow', 'critterworld'].includes(p.slug),
+              )
+            : projects
+          ).map((project) => (
             <ProjectCard project={project} key={project.slug} />
           ))}
         </div>

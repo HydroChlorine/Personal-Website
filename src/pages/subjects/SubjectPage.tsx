@@ -11,14 +11,26 @@ export function SubjectPage({
   subject,
   explore,
   overlap,
+  projectOrder,
+  workTitle,
 }: {
   subject: Subject
   explore?: ReactNode
   overlap?: ReactNode
+  projectOrder?: string[]
+  workTitle?: string
 }) {
   const related = projects.filter((project) =>
     project.subjects.includes(subject.id),
   )
+  if (projectOrder)
+    related.sort((a, b) => {
+      const rank = (slug: string) => {
+        const i = projectOrder.indexOf(slug)
+        return i < 0 ? projectOrder.length : i
+      }
+      return rank(a.slug) - rank(b.slug)
+    })
   return (
     <div className={`subject-page ${subject.id}`}>
       <PageHeading
@@ -32,13 +44,21 @@ export function SubjectPage({
         <p>{subject.introduction}</p>
         <div className="topic-tags">
           {subject.interests.map((interest) => (
-            <span key={interest}>{interest}</span>
+            <span
+              key={interest}
+              aria-label={
+                interest === '…' ? 'More interests, still growing' : undefined
+              }
+              title={interest === '…' ? 'Still exploring' : undefined}
+            >
+              {interest}
+            </span>
           ))}
         </div>
       </Panel>
       <section className="work-section">
         <div className="section-label">
-          <h2>Things I’m working on</h2>
+          <h2>{workTitle ?? 'Things I’m working on'}</h2>
           <Link to={`/projects?subject=${subject.id}`}>Browse projects ↗</Link>
         </div>
         <div className="project-grid">

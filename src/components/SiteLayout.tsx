@@ -8,6 +8,8 @@ import { ChemistryScene } from './scene/ChemistryScene'
 import { useChemistryScene } from '../hooks/useChemistryScene'
 import { sceneContext } from '../content/sceneContext'
 import { mathematicsScenes } from '../content/mathematicsScenes'
+import { computerScienceScenes } from '../content/computerScienceScenes'
+import { ComputerScienceScene } from './scene/ComputerScienceScene'
 import { MathematicsScene } from './scene/MathematicsScene'
 import { useSceneCycle } from '../hooks/useSceneCycle'
 import { projects } from '../content/projects'
@@ -27,8 +29,14 @@ function initialMotion() {
     return false
   }
 }
-export function SiteLayout() {
-  const [motion, changeMotion] = useState(initialMotion)
+export function SiteLayout({ miniature = false }: { miniature?: boolean }) {
+  const [motion, changeMotion] = useState(() =>
+    miniature
+      ? new URLSearchParams(window.location.search).get('motion') !==
+          'paused' &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      : initialMotion(),
+  )
   const { pathname, search } = useLocation()
   const context = sceneContext(pathname, search, projects, notes)
   const { scene, nextScene } = useCampusScene(motion && context === 'campus')
@@ -40,6 +48,11 @@ export function SiteLayout() {
   )
   const { palette, setPalette, weather, weatherMode, setWeather } =
     useAppearance()
+  const computerScience = useSceneCycle(
+    computerScienceScenes.length,
+    context === 'computer-science',
+    motion,
+  )
   const coverage = useWeatherExposure(weather, motion)
   useEffect(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -59,7 +72,18 @@ export function SiteLayout() {
   }
   return (
     <div
-      className={`site-world ${motion ? '' : 'motion-paused'}`}
+      className={`site-world ${miniature ? 'miniature-home' : ''} ${motion ? '' : 'motion-paused'}`}
+      onClickCapture={
+        miniature
+          ? (event) => {
+              const anchor = (event.target as Element).closest('a')
+              if (anchor && !anchor.getAttribute('href')?.startsWith('#')) {
+                event.preventDefault()
+                window.open(anchor.href, '_top')
+              }
+            }
+          : undefined
+      }
       data-sky-surface
       data-weather={weather}
       data-weathered={coverage > 0}
@@ -82,6 +106,12 @@ export function SiteLayout() {
             scene={mathematicsScenes[mathematics.index]!}
             motion={motion}
             onNext={mathematics.nextScene}
+          />
+        ) : context === 'computer-science' ? (
+          <ComputerScienceScene
+            scene={computerScienceScenes[computerScience.index]!}
+            motion={motion}
+            onNext={computerScience.nextScene}
           />
         ) : (
           <AmbientScene scene={scene} motion={motion} onNext={nextScene} />
