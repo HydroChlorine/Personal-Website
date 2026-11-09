@@ -71,3 +71,17 @@ For each new item, record: title/path, author, original URL, license and license
 
 - Four-depth precipitation, smooth shared wind, Gaussian central launches, ballistic target solving, and finite CSS snow/wet-frame effects are original project implementations in `src/lib/skyPhysics.ts`, `src/components/sky/`, and `src/styles/weather-surfaces.css`.
 - The neon-street palette direction follows the user's description; no street photograph, third-party shader, effect code, texture, or additional dependency is incorporated. The approved campus GIFs remain unchanged.
+
+## Chemistry laboratory scenes and Catalyst Discovery article (November 8, 2026)
+
+- Six laboratory banner masters were created with the built-in OpenAI image-generation tool, using the project's own v2 campus illustration as a style-only reference. Exact prompts and untouched generated masters: `assets/art-source/chemistry/v1/`. No photograph or external artwork was used. `scripts/animate-chemistry.py` adds original local animation and encodes the shared-palette GIFs/stills under `public/art/chemistry/v1/` using offline Pillow/NumPy.
+- Chemistry instrument displays, colored solutions and chromatography bands are illustrative. They are not spectra, experimental records or a laboratory procedure.
+- The “Molecules, meet computation” article is based on the user's own https://github.com/HydroChlorine/Catalyst-Discovery at commit `212866d4f6cf813746d8251891038b9435eea012`. The repository has no LICENSE file at that snapshot. The site explains and links to it; Python source and the existing design-document image are not redistributed. See `docs/CATALYST_SOURCE_REVIEW.md` for the evidence and reuse boundary.
+- New workflow, generator and feature-bottleneck diagrams are original SVG drawings. The initial pixel workflow used Pillow’s built-in bitmap font; the revised figure set rasterizes local system monospace glyphs (Menlo when available), with no font files redistributed. The complete figure recipe is `scripts/draw-catalyst-figures.py`.
+- Public attribution is displayed at `/credits`; section-level article citations link to the reviewed source commit. No third-party browser library or external template was added. Campus art remains unchanged.
+
+## Chemistry refinement: screening, liquid levels, and article illustrations
+
+- The user's two supplied vial/reaction-block product images were consulted only to recognize slim dram vials and metal adapter blocks on a magnetic stir plate. No source photograph pixels or logos are redistributed. The replacement screening master was made with built-in OpenAI image generation; exact prompt and reference roles are in `assets/art-source/chemistry/v1/screening-revision-prompts.json`. The first master is retained under `archive/`.
+- The extraction animation now redraws both interfaces from a conserved-upper-volume approximation to the illustrated funnel silhouette, with a rising receiving level. This original finishing code alters no external artwork.
+- Seven original explanation diagrams now have paired SVG and animated pixel versions, including phone layouts: workflow, attached ring variants, extensible attachment sites/ring closure, geometry preparation, representation choice, shortlisting and a speculative energy-landscape idea. They contain no measured or calculated results. The original first diagram recipe is archived as `scripts/draw-catalyst-figures-v1.py`; the current recipe is `scripts/draw-catalyst-figures.py`.

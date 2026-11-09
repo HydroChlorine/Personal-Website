@@ -3,6 +3,7 @@ import { projects } from '../content/projects'
 import { subjects } from '../content/subjects'
 import { PageHeading } from '../components/ui/PageHeading'
 import { Panel, EmptyShelf } from '../components/ui/Panel'
+import { ProjectArticle } from '../components/articles/ProjectArticle'
 import { NotFoundPage } from './NotFoundPage'
 export function ProjectDetailPage() {
   const { slug } = useParams()
@@ -16,23 +17,27 @@ export function ProjectDetailPage() {
       <PageHeading eyebrow={project.kind} title={project.title}>
         {project.summary}
       </PageHeading>
-      <Panel>
-        <div className="prose">
-          {project.body.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </div>
-        <div className="inline-links">
-          {subjects
-            .filter((s) => project.subjects.includes(s.id))
-            .map((s) => (
-              <Link key={s.id} to={`/${s.id}`}>
-                {s.name} ↗
-              </Link>
+      {project.article ? (
+        <ProjectArticle article={project.article} />
+      ) : (
+        <Panel>
+          <div className="prose">
+            {project.body.map((p) => (
+              <p key={p}>{p}</p>
             ))}
-        </div>
-      </Panel>
-      {project.media ? (
+          </div>
+          <div className="inline-links">
+            {subjects
+              .filter((s) => project.subjects.includes(s.id))
+              .map((s) => (
+                <Link key={s.id} to={`/${s.id}`}>
+                  {s.name} ↗
+                </Link>
+              ))}
+          </div>
+        </Panel>
+      )}
+      {project.article ? null : project.media ? (
         <figure className="panel">
           <img
             className="project-media"

@@ -59,3 +59,5 @@ location data. Future values prefixed `VITE_` are exposed to visitors; local
 `.env` files and Vercel account state are ignored by Git.
 
 Run `npm run format` to format source files and `npm run licenses` after dependency changes to refresh copied legal notices. Review the license changes before publishing.
+
+Chemistry implementation and media recipes: [docs/CHEMISTRY.md](docs/CHEMISTRY.md). Catalyst Discovery source-review record: [docs/CATALYST_SOURCE_REVIEW.md](docs/CATALYST_SOURCE_REVIEW.md).

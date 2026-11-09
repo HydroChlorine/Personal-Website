@@ -30,3 +30,9 @@ Use this document when generating future illustrations, sprites, and website dec
 Keep the approved v2 GIFs unchanged. Retain two surrounding night palettes: Moonrise (ink blue, cool highlights and lantern amber) and Ion (navy/cyan with restrained warm neon). Retire purple-heavy Afterglow. The inspiration is distant neon in an old Hong Kong/Tokyo street photograph: dark space first, small colored light accents second.
 
 A faint original moon, stars, constellations and haze support the sky. Four precipitation depths and weak coherent wind add space; centrally launched pixel fireworks trace gravitational arcs. Snow caps and rain reflections gradually weather the rectangular frames without hiding their content. See `SEASONS_AND_SKY.md` for calendar defaults, exposure timing and implementation locations.
+
+## Chemistry scenes and explanatory figures
+
+The chemistry window carries the same coarse night palette into a laboratory: small glass highlights, cyan shadows, warm liquid/light accents, and broad simple apparatus shapes. Left-side words describe the current experiment. Animate only selected parts; preserve the fixed bench and clamp stands. Avoid making the glasswork photographic or filling the frame with fine labels.
+
+For the Catalyst Discovery story, animated pixel diagrams are the default, with higher-resolution raster labels for readability. Each figure also offers a crisp source-drawn SVG comparison. Both use the surrounding palette, but neither presents generated sketches as actual chemical structures, calculated results or instrument data. See `CHEMISTRY.md` for recipes and media paths.
