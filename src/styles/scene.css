@@ -160,3 +160,52 @@
 .chemistry-scene[data-scene-id='screening'] .scene-art {
   object-position: 70% 65%;
 }
+
+.mathematics-scene .scene-art {
+  object-fit: contain;
+  object-position: right center;
+}
+.mathematics-scene .scene-copy {
+  max-width: 44%;
+}
+.mathematics-scene .scene-copy .scene-subtitle {
+  max-width: 39ch;
+}
+@media (max-width: 760px) {
+  .mathematics-scene {
+    height: 236px;
+  }
+  .mathematics-scene .scene-art {
+    object-fit: contain;
+  }
+  .mathematics-scene .scene-copy {
+    top: 18px;
+    max-width: 44%;
+  }
+  .mathematics-scene .scene-copy p {
+    margin-top: 8px;
+    font-size: 23px;
+  }
+  .mathematics-scene::after {
+    background: none;
+  }
+  .mathematics-scene .scene-caption > span:first-child {
+    display: none;
+  }
+  .mathematics-scene .scene-caption {
+    bottom: 10px;
+    justify-content: flex-end;
+  }
+  .mathematics-scene .scene-touch-cue {
+    top: 65%;
+  }
+}
+@media (max-width: 540px) {
+  .mathematics-scene {
+    height: auto;
+    aspect-ratio: 256 / 224;
+  }
+  .mathematics-scene .scene-copy {
+    max-width: 92%;
+  }
+}

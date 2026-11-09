@@ -1,0 +1,88 @@
+{
+  "numericalChecks": {
+    "rungeMaxError": 1.9156430502192452,
+    "chebyshevMaxError": 0.13219643243666257,
+    "legendreGramError": 4.440892098500626e-16,
+    "schurResidual": 5.8407023988503875e-15
+  },
+  "scenes": {
+    "interpolation": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 78638
+    },
+    "legendre": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 96220
+    },
+    "matrices": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 69190
+    },
+    "algebra": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 118295
+    },
+    "lorenz": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 324426
+    },
+    "fourier": {
+      "logicalSize": [
+        384,
+        128
+      ],
+      "mobileLogicalSize": [
+        256,
+        224
+      ],
+      "durationMs": 16000,
+      "frames": 160,
+      "gifBytes": 86629
+    }
+  }
+}

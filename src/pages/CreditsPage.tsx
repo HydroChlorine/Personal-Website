@@ -1,6 +1,7 @@
 import { inspirations } from '../content/credits'
 import { PageHeading } from '../components/ui/PageHeading'
 import { Panel } from '../components/ui/Panel'
+import { mathematicsReferences } from '../content/mathematicsReferences'
 export function CreditsPage() {
   return (
     <>
@@ -55,6 +56,25 @@ export function CreditsPage() {
         <a href="https://github.com/HydroChlorine/Catalyst-Discovery">
           Catalyst Discovery source ↗
         </a>
+      </Panel>
+      <Panel title="At the mathematics desk">
+        <p>
+          The six night-study scenes, their desk artwork, and the diagrams were
+          drawn with original Python, NumPy, and Pillow code for this website.
+          Curves, matrix steps, the Lorenz trajectory, and the synthetic Fourier
+          example are calculated rather than copied from reference images. No
+          reference-site code or artwork is included.
+        </p>
+        <details>
+          <summary>Mathematical references</summary>
+          <ul>
+            {mathematicsReferences.map((reference) => (
+              <li key={reference.href}>
+                <a href={reference.href}>{reference.label} ↗</a>
+              </li>
+            ))}
+          </ul>
+        </details>
       </Panel>
       <Panel title="The little sky">
         <p>

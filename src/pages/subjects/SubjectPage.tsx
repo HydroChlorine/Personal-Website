@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import type { ReactNode } from 'react'
 import type { Subject } from '../../content/types'
 import { projects } from '../../content/projects'
 import { subjects } from '../../content/subjects'
@@ -6,7 +7,15 @@ import { PageHeading } from '../../components/ui/PageHeading'
 import { Panel, EmptyShelf } from '../../components/ui/Panel'
 import { ProjectCard } from '../../components/ui/ProjectCard'
 import { PixelIcon } from '../../components/ui/PixelIcon'
-export function SubjectPage({ subject }: { subject: Subject }) {
+export function SubjectPage({
+  subject,
+  explore,
+  overlap,
+}: {
+  subject: Subject
+  explore?: ReactNode
+  overlap?: ReactNode
+}) {
   const related = projects.filter((project) =>
     project.subjects.includes(subject.id),
   )
@@ -39,19 +48,23 @@ export function SubjectPage({ subject }: { subject: Subject }) {
         </div>
       </section>
       <Panel title="More to explore">
-        <div className="shelf-list">
-          {subject.shelves.map((shelf) => (
-            <EmptyShelf key={shelf.title} title={shelf.title}>
-              {shelf.description}
-            </EmptyShelf>
-          ))}
-        </div>
+        {explore ?? (
+          <div className="shelf-list">
+            {subject.shelves.map((shelf) => (
+              <EmptyShelf key={shelf.title} title={shelf.title}>
+                {shelf.description}
+              </EmptyShelf>
+            ))}
+          </div>
+        )}
       </Panel>
       <Panel eyebrow="FOLLOW ANOTHER THREAD" title="The ideas overlap">
-        <p>
-          Some projects belong in more than one place. Follow a connection, or
-          try something different.
-        </p>
+        {overlap ?? (
+          <p>
+            Some projects belong in more than one place. Follow a connection, or
+            try something different.
+          </p>
+        )}
         <div className="inline-links">
           {subjects
             .filter((other) => other.id !== subject.id)

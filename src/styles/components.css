@@ -420,6 +420,51 @@ figcaption {
 .note-list h2 {
   margin-top: 12px;
 }
+.math-sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 18px;
+  margin-top: 26px;
+}
+.math-sketch img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  border: 1px solid var(--line);
+}
+.math-sketch h3 {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 14px 0 9px;
+}
+.math-sketch p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.math-paper-note {
+  border-top: 1px dashed var(--line);
+  margin-top: 28px;
+  padding-top: 24px;
+}
+.math-paper-note h3 {
+  font-size: 15px;
+}
+.math-sources {
+  border-top: 1px dashed var(--line);
+  margin-top: 24px;
+  padding-top: 20px;
+  font-size: 12px;
+}
+.math-sources summary {
+  color: var(--accent);
+  cursor: pointer;
+}
+.math-sources ul {
+  padding-left: 18px;
+}
+.math-sources li {
+  margin-top: 10px;
+}
 @media (max-width: 960px) {
   .welcome {
     padding: 24px;
@@ -434,6 +479,9 @@ figcaption {
   }
 }
 @media (max-width: 540px) {
+  .math-sketch-grid {
+    grid-template-columns: 1fr;
+  }
   .panel {
     padding: 22px;
   }

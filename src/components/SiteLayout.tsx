@@ -6,7 +6,10 @@ import { Sidebar } from './layout/Sidebar'
 import { SiteFooter } from './layout/SiteFooter'
 import { ChemistryScene } from './scene/ChemistryScene'
 import { useChemistryScene } from '../hooks/useChemistryScene'
-import { isChemistryContext } from '../content/chemistryScenes'
+import { sceneContext } from '../content/sceneContext'
+import { mathematicsScenes } from '../content/mathematicsScenes'
+import { MathematicsScene } from './scene/MathematicsScene'
+import { useSceneCycle } from '../hooks/useSceneCycle'
 import { projects } from '../content/projects'
 import { notes } from '../content/notes'
 import { AmbientScene } from './scene/AmbientScene'
@@ -27,18 +30,14 @@ function initialMotion() {
 export function SiteLayout() {
   const [motion, changeMotion] = useState(initialMotion)
   const { pathname, search } = useLocation()
-  const chemistryContext = isChemistryContext(
-    pathname,
-    search,
-    projects
-      .filter((project) => project.subjects.includes('chemistry'))
-      .map((project) => project.slug),
-    notes
-      .filter((note) => note.subjects.includes('chemistry'))
-      .map((note) => note.slug),
+  const context = sceneContext(pathname, search, projects, notes)
+  const { scene, nextScene } = useCampusScene(motion && context === 'campus')
+  const laboratory = useChemistryScene(context === 'chemistry', motion)
+  const mathematics = useSceneCycle(
+    mathematicsScenes.length,
+    context === 'mathematics',
+    motion,
   )
-  const { scene, nextScene } = useCampusScene(motion && !chemistryContext)
-  const laboratory = useChemistryScene(chemistryContext, motion)
   const { palette, setPalette, weather, weatherMode, setWeather } =
     useAppearance()
   const coverage = useWeatherExposure(weather, motion)
@@ -72,11 +71,17 @@ export function SiteLayout() {
           Skip to content
         </a>
         <SiteHeader />
-        {chemistryContext ? (
+        {context === 'chemistry' ? (
           <ChemistryScene
             scene={laboratory.scene}
             motion={motion}
             onNext={laboratory.nextScene}
+          />
+        ) : context === 'mathematics' ? (
+          <MathematicsScene
+            scene={mathematicsScenes[mathematics.index]!}
+            motion={motion}
+            onNext={mathematics.nextScene}
           />
         ) : (
           <AmbientScene scene={scene} motion={motion} onNext={nextScene} />

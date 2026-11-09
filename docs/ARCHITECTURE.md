@@ -87,3 +87,5 @@ The scene catalog chooses the initial season from the visitor's local month, com
 No deployment or Git push has been performed. No CMS or Markdown rendering has been added; typed content files are the current editing interface. Draft Markdown files are authoring worksheets and do not render automatically. Interactive demos, publication downloads, photos, and a public CV remain to be supplied. The initial client-rendered site is not prerendered for search engines; revisit static generation if publishing becomes a major focus.
 
 Chemistry routes and chemistry-tagged project/note details use their own six-scene laboratory window. The campus cycle remains on other pages. See `CHEMISTRY.md` for route context, GIF recipes, pause behavior, and the Catalyst Discovery article.
+
+Mathematics context, original numerical banner assets, responsive companions, and model checks are documented in [MATHEMATICS.md](MATHEMATICS.md). `sceneContext` resolves chemistry before mathematics for shared entries; `useSceneCycle` supplies the common subject-scene clock. Future project writing follows [CONTENT_STYLE.md](CONTENT_STYLE.md).

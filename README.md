@@ -61,3 +61,5 @@ location data. Future values prefixed `VITE_` are exposed to visitors; local
 Run `npm run format` to format source files and `npm run licenses` after dependency changes to refresh copied legal notices. Review the license changes before publishing.
 
 Chemistry implementation and media recipes: [docs/CHEMISTRY.md](docs/CHEMISTRY.md). Catalyst Discovery source-review record: [docs/CATALYST_SOURCE_REVIEW.md](docs/CATALYST_SOURCE_REVIEW.md).
+
+Mathematics banners, numerical models, and asset verification: [docs/MATHEMATICS.md](docs/MATHEMATICS.md). Future project-story writing guide: [docs/CONTENT_STYLE.md](docs/CONTENT_STYLE.md).
