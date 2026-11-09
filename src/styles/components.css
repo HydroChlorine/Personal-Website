@@ -465,6 +465,59 @@ figcaption {
 .math-sources li {
   margin-top: 10px;
 }
+.math-sketch-link {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--shelf);
+  transition:
+    background 160ms,
+    border-color 160ms;
+}
+.math-sketch-link:hover {
+  border-color: var(--accent);
+  background: var(--hover);
+}
+.math-sketch-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.math-sketch-link img {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+.math-sketch-link .math-sketch-copy {
+  padding: 18px;
+}
+.math-sketch-copy .small-label {
+  color: var(--secondary);
+  font-size: 8px;
+  line-height: 1.8;
+}
+.math-read-more {
+  display: block;
+  color: var(--accent);
+  font: 10px/1.9 var(--mono);
+  margin-top: 18px;
+}
+.math-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border-color: var(--line-bright);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+.math-featured img {
+  border: 0;
+}
+.math-featured h3 {
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .math-featured {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 960px) {
   .welcome {
     padding: 24px;

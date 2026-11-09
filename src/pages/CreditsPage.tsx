@@ -59,6 +59,14 @@ export function CreditsPage() {
       </Panel>
       <Panel title="At the mathematics desk">
         <p>
+          The three illustrated topic stories add 21 original numerical
+          diagrams, with animated pixel views, crisp vector companions, and
+          phone layouts. Their source references are linked within each story.
+          The examples use synthetic data and analytic models, not experimental
+          results.
+        </p>
+        <a href="/mathematics">Explore the mathematics stories ↗</a>
+        <p>
           The six night-study scenes, their desk artwork, and the diagrams were
           drawn with original Python, NumPy, and Pillow code for this website.
           Curves, matrix steps, the Lorenz trajectory, and the synthetic Fourier

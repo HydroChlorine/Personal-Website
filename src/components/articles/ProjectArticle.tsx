@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useOutletContext } from 'react-router'
+import { figureSources } from './figureSources'
 import type {
   ArticleFigure as Figure,
   ProjectArticle as Article,
@@ -13,18 +14,11 @@ function ArticleFigure({
   motion: boolean
 }) {
   const [pixel, setPixel] = useState(Boolean(figure.pixel))
-  const source =
-    pixel && figure.pixel
-      ? motion
-        ? figure.pixel.gif
-        : figure.pixel.still
-      : figure.src
-  const mobileSource =
-    pixel && figure.pixel
-      ? motion
-        ? figure.pixel.mobileGif
-        : figure.pixel.mobileStill
-      : figure.mobileSrc
+  const { source, mobileSource, fullSize } = figureSources(
+    figure,
+    pixel,
+    motion,
+  )
   return (
     <figure className="article-figure">
       {figure.pixel && (
@@ -50,7 +44,7 @@ function ArticleFigure({
         </div>
       )}
       <a
-        href={pixel && figure.pixel ? figure.pixel.still : figure.src}
+        href={fullSize}
         target="_blank"
         rel="noreferrer"
         aria-label="Open this figure at full size"
@@ -81,7 +75,12 @@ function ArticleFigure({
 export function ProjectArticle({ article }: { article: Article }) {
   const { motion } = useOutletContext<{ motion: boolean }>()
   return (
-    <article className="panel project-article" aria-label="Project story">
+    <article
+      className="panel project-article"
+      aria-label={
+        article.kind === 'topic' ? 'Mathematics article' : 'Project story'
+      }
+    >
       <header className="article-opening">
         <p className="eyebrow">{article.kicker}</p>
         {article.introduction.map((paragraph) => (
@@ -89,11 +88,15 @@ export function ProjectArticle({ article }: { article: Article }) {
         ))}
       </header>
       <nav className="article-contents" aria-label="In this article">
-        <span className="small-label">Inside this project</span>
+        <span className="small-label">
+          Inside this {article.kind === 'topic' ? 'topic' : 'project'}
+        </span>
         <ol>
           {article.sections.map((section) => (
             <li key={section.id}>
-              <a href={`#${section.id}`}>{section.title.substring(5)}</a>
+              <a href={`#${section.id}`}>
+                {section.title.replace(/^\d+\s*\/\s*/, '')}
+              </a>
             </li>
           ))}
         </ol>
@@ -108,6 +111,14 @@ export function ProjectArticle({ article }: { article: Article }) {
           <h2 id={`${section.id}-heading`}>{section.title}</h2>
           {section.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
+          ))}
+          {section.equations?.map((equation) => (
+            <figure className="article-equation" key={equation.expression}>
+              <figcaption>{equation.label}</figcaption>
+              <pre>
+                <code>{equation.expression}</code>
+              </pre>
+            </figure>
           ))}
           {section.figure && (
             <ArticleFigure figure={section.figure} motion={motion} />
@@ -124,9 +135,17 @@ export function ProjectArticle({ article }: { article: Article }) {
           {(section.code ||
             section.table ||
             section.list ||
-            section.sources) && (
+            section.sources ||
+            section.detailParagraphs) && (
             <details className="article-details">
-              <summary>A little more detail & source code</summary>
+              <summary>
+                {article.kind === 'topic'
+                  ? 'Under the surface / mathematics & references'
+                  : 'A little more detail & source code'}
+              </summary>
+              {section.detailParagraphs?.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
               {section.code && (
                 <figure className="article-code">
                   <figcaption>{section.code.label}</figcaption>
@@ -138,7 +157,10 @@ export function ProjectArticle({ article }: { article: Article }) {
               {section.table && (
                 <div className="article-table">
                   <table>
-                    <caption>Six intended calculation states</caption>
+                    <caption>
+                      {section.table.caption ??
+                        'Six intended calculation states'}
+                    </caption>
                     <thead>
                       <tr>
                         {section.table.headers.map((header) => (
@@ -175,7 +197,9 @@ export function ProjectArticle({ article }: { article: Article }) {
               )}
               {section.sources && (
                 <div className="article-sources">
-                  <span>In the code</span>
+                  <span>
+                    {article.kind === 'topic' ? 'Read further' : 'In the code'}
+                  </span>
                   {section.sources.map((link) => (
                     <a key={link.href} href={link.href}>
                       {link.label} ↗

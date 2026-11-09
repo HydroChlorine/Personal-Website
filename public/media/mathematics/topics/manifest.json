@@ -1,0 +1,640 @@
+{
+  "numericalChecks": {
+    "uniformMeshRMSE": 0.046975426651257535,
+    "featureAwareMeshRMSE": 0.027296672091563452,
+    "normalizedGramError": 9.278621275539147e-14,
+    "randomizedRelativeError": 0.0417192481730341
+  },
+  "figures": {
+    "runge": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 21568,
+        "crispGifBytes": 128885,
+        "frameContentSha256": "3711157c4bc70a87c1d73eee4556b155087852d31bc1eff9e0950e8208f6664a"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 16932,
+        "crispGifBytes": 114968,
+        "frameContentSha256": "b0d4f267b9329763a6e45a237ec15cbc13d28f8660cfa4f13b6b3ac32af04dbc"
+      }
+    },
+    "remedies": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 25539,
+        "crispGifBytes": 147633,
+        "frameContentSha256": "30e80e4a9fe1e3c76816463be5e74808c155f89eee8e3004e361facc65936a60"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 21068,
+        "crispGifBytes": 143345,
+        "frameContentSha256": "46b5ad7185bc472bf471826d4ed6561547c8f337cca8f4d470fb326a94eb5ae3"
+      }
+    },
+    "noise-fit": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 17212,
+        "crispGifBytes": 111900,
+        "frameContentSha256": "fb336938a09cfc6dadbd349ea87072d4ff0be8b6e395415308d1ed6e77996b23"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 15145,
+        "crispGifBytes": 106711,
+        "frameContentSha256": "9bf606edbf30c407042a722d10ce4ee5bd440b750a3c45316e7517240de20132"
+      }
+    },
+    "meshes": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 33228,
+        "crispGifBytes": 260096,
+        "frameContentSha256": "832a0459b3283ccde838706ebfd4774f8d089988ae2eea02018d0b29144cd05d"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 30474,
+        "crispGifBytes": 263387,
+        "frameContentSha256": "83e43b9308995b9a8244bcf5d13b085071f47a40d34a38a0bc43369251386c39"
+      }
+    },
+    "conditions": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 39573,
+        "crispGifBytes": 250799,
+        "frameContentSha256": "0fc93b66477b2d2d9d46049583f6b25eb2606a9ec51c08e6f7122b8082974593"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 39522,
+        "crispGifBytes": 241263,
+        "frameContentSha256": "69d9f7b427144c8c28960d5633366b20fcb343592e335098d9cf735aaaee51c3"
+      }
+    },
+    "interactions": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 21706,
+        "crispGifBytes": 107862,
+        "frameContentSha256": "d01b059e53bde9b177ea90d778bbb7c9af6fcacf84691212423a9ce1f84579fc"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 20146,
+        "crispGifBytes": 102698,
+        "frameContentSha256": "40589306948e365aab46672d1dea542b8f8e1eb60f1a772ef08a077a5179a758"
+      }
+    },
+    "dimensions": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 14253,
+        "crispGifBytes": 78138,
+        "frameContentSha256": "9ec19c0de97f8138d3ad59c1e9965b71a3907fcf1023c1aa42a73a68d3b9f7fd"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 12439,
+        "crispGifBytes": 73275,
+        "frameContentSha256": "911c37f0e35486708bf83ab3db66576d8be78eb9e55a4aeba3a27e4718a30210"
+      }
+    },
+    "sequential": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 31648,
+        "crispGifBytes": 196476,
+        "frameContentSha256": "be2bedd8c707a9824d20039e3672d11cbaf3809018099b08a22042774c135971"
+      },
+      "mobile": {
+        "size": [
+          450,
+          960
+        ],
+        "crispSize": [
+          900,
+          1920
+        ],
+        "durationMs": 5760,
+        "gifBytes": 29895,
+        "crispGifBytes": 185019,
+        "frameContentSha256": "3b253da1433acfafc9ed9a510137213af7df21720ed0350a72cb3e209080dff3"
+      }
+    },
+    "legendre-family": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 25262,
+        "crispGifBytes": 148574,
+        "frameContentSha256": "156294a9ef282e67f7ab49ebbf5337500e9d2fac4c3b80fdc72333320822817b"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 22718,
+        "crispGifBytes": 135960,
+        "frameContentSha256": "66be213433c83bdb15873d4705c656b56389df6328a20b71d77708c612146bcc"
+      }
+    },
+    "orthogonality": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 16513,
+        "crispGifBytes": 112342,
+        "frameContentSha256": "8c686e18af4044cefdffb762853b1bf0dd65269311b9a8c6e045cb1ece959ade"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 14646,
+        "crispGifBytes": 96767,
+        "frameContentSha256": "2a0e4394c72f1aac3f3fb19369a538637dfc85e11af2c86dd5b77b87b1aea6c4"
+      }
+    },
+    "projection": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 17959,
+        "crispGifBytes": 114135,
+        "frameContentSha256": "5bcc10fc066298276f9fac09deccff5e483ea893c5dd08e85b4844ce2c9007fd"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 16254,
+        "crispGifBytes": 100955,
+        "frameContentSha256": "b6715a0105df1925d18c7b0a0efc2614c1f881d3512699b3167917a55480574e"
+      }
+    },
+    "boundary-modes": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 139426,
+        "crispGifBytes": 1048114,
+        "frameContentSha256": "cd5ed51baa932fa56153d023425d98fc37476dd184d69562900893049617bc47"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 135967,
+        "crispGifBytes": 1028833,
+        "frameContentSha256": "2525836d24f9de57c5014413f67c5da9abdc07eff5c0b4f77c43af14500ffbe0"
+      }
+    },
+    "angular-modes": {
+      "wide": {
+        "size": [
+          900,
+          650
+        ],
+        "crispSize": [
+          1800,
+          1300
+        ],
+        "durationMs": 5760,
+        "gifBytes": 37170,
+        "crispGifBytes": 174210,
+        "frameContentSha256": "6feec48add0d843587623c31a0173a9e418807bf90e9435ccf8840de49a103f0"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1300
+        ],
+        "crispSize": [
+          900,
+          2600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 24309,
+        "crispGifBytes": 143974,
+        "frameContentSha256": "ff628212a9dec6a32447d657f1d60093e1423bf67b3c4d41e4f7b2c5b14e0235"
+      }
+    },
+    "born": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 54141,
+        "crispGifBytes": 298535,
+        "frameContentSha256": "7265948047b422475c4a47a705cdaae36d7bb4912f67bc337540bc1a3c472700"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 55546,
+        "crispGifBytes": 303459,
+        "frameContentSha256": "5ee2031ea458ecd15d16eea195326f573151f8d261e25ef24e7719d04b58c9cc"
+      }
+    },
+    "quantum-layers": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 12038,
+        "crispGifBytes": 84839,
+        "frameContentSha256": "56dc10ff13775aaec62974ebba9d468df257ec9b99527cc11f01214798a06f18"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1100
+        ],
+        "crispSize": [
+          900,
+          2200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 12678,
+        "crispGifBytes": 93384,
+        "frameContentSha256": "092bafa834d4b4b250535bb53b4dd59020b403f4ae55905ca004c0f38a6fa421"
+      }
+    },
+    "matrix-cost": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 20440,
+        "crispGifBytes": 133798,
+        "frameContentSha256": "96c5cab715f70b0c87de2659becb3b745f998745bcb3da7934d58d04d15a08e6"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 20127,
+        "crispGifBytes": 132636,
+        "frameContentSha256": "7559c44a03faab2faecfbc077f3341affbbc2e46cd06fdb8d6a5ff0dc2c3a976"
+      }
+    },
+    "factor-once": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 11502,
+        "crispGifBytes": 67802,
+        "frameContentSha256": "ea658ae9818746a41706575c00aa57b167da87a4e3f9d942bbb70f4af300d37a"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 10246,
+        "crispGifBytes": 61575,
+        "frameContentSha256": "c30d32b130acef275ca3332c2aed70770ea76aff3189d28d75d69e06018b0ef5"
+      }
+    },
+    "schur-steps": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 74430,
+        "crispGifBytes": 296017,
+        "frameContentSha256": "ec7e0a7f251d4cf14a02d26b935135a4184c4d58cd8f80699f059cd663450dd7"
+      },
+      "mobile": {
+        "size": [
+          450,
+          800
+        ],
+        "crispSize": [
+          900,
+          1600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 68804,
+        "crispGifBytes": 277872,
+        "frameContentSha256": "d2e5e969b088f9090012ee034aa5518b6f45866f8b82be7c92e64851fd66ff3e"
+      }
+    },
+    "low-rank": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 26460,
+        "crispGifBytes": 119618,
+        "frameContentSha256": "b0bd08cc649e6255c57e3897afe82b2ff101691cac3f51b106997af683fa72cd"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 23017,
+        "crispGifBytes": 108655,
+        "frameContentSha256": "43a98aa4ff6ea6b94aba153f4208ed49a1dd975abb21159a4eb4ecdfa71d36c8"
+      }
+    },
+    "random-sketch": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 10670,
+        "crispGifBytes": 65386,
+        "frameContentSha256": "a914c7037be5b70b230c09d5d5bff697ca08d69380a1ba57b96719722baae43a"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1100
+        ],
+        "crispSize": [
+          900,
+          2200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 11152,
+        "crispGifBytes": 70385,
+        "frameContentSha256": "f2e5ef23c1ab79653ded355eafc5a957f6d5b1f6114a5f5a8aaf4bec68402934"
+      }
+    },
+    "preopt": {
+      "wide": {
+        "size": [
+          900,
+          520
+        ],
+        "crispSize": [
+          1800,
+          1040
+        ],
+        "durationMs": 5760,
+        "gifBytes": 19354,
+        "crispGifBytes": 124030,
+        "frameContentSha256": "3bd8e7e713b21f9857037e8ce46b3706c1b155199def25b2c2e920c08b6147fb"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 17902,
+        "crispGifBytes": 125497,
+        "frameContentSha256": "c8c8a0ae1f21f7819238c61e8d17e84e310ab8c3673ca79688ab3e3499641b9c"
+      }
+    }
+  }
+}

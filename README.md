@@ -63,3 +63,5 @@ Run `npm run format` to format source files and `npm run licenses` after depende
 Chemistry implementation and media recipes: [docs/CHEMISTRY.md](docs/CHEMISTRY.md). Catalyst Discovery source-review record: [docs/CATALYST_SOURCE_REVIEW.md](docs/CATALYST_SOURCE_REVIEW.md).
 
 Mathematics banners, numerical models, and asset verification: [docs/MATHEMATICS.md](docs/MATHEMATICS.md). Future project-story writing guide: [docs/CONTENT_STYLE.md](docs/CONTENT_STYLE.md).
+
+The first three math sketches now open illustrated topic pages under `/mathematics/topics/`. Article models, source references, and figure rebuild/verification commands: [docs/MATH_TOPICS.md](docs/MATH_TOPICS.md).
