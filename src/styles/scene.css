@@ -156,3 +156,7 @@
 .scene-caption {
   pointer-events: none;
 }
+/* Keep the stir-plate controls in view in the wide screening window. */
+.chemistry-scene[data-scene-id='screening'] .scene-art {
+  object-position: 70% 65%;
+}

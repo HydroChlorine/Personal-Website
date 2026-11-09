@@ -39,6 +39,23 @@ export function CreditsPage() {
           or reference-site artwork are included.
         </p>
       </Panel>
+      <Panel title="At the chemistry bench">
+        <p>
+          The six laboratory vignettes were created with OpenAI image
+          generation, then animated with original pixel sprites and motion for
+          this site. They are stylized illustrations; the instrument displays
+          are decorative. Prompts and source masters are retained with the
+          project.
+        </p>
+        <p>
+          The Catalyst Discovery article is based on Lichen’s own public Python
+          repository. Its workflow and representation diagrams were drawn anew
+          for the article; they show concepts, not measured results.
+        </p>
+        <a href="https://github.com/HydroChlorine/Catalyst-Discovery">
+          Catalyst Discovery source ↗
+        </a>
+      </Panel>
       <Panel title="The little sky">
         <p>
           The faint moon, constellations, palette experiments, pixel weather,

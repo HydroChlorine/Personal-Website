@@ -1,0 +1,80 @@
+{
+  "reflux": {
+    "size": [
+      1152,
+      384
+    ],
+    "logicalSize": [
+      384,
+      128
+    ],
+    "frames": 72,
+    "durationMs": 7200,
+    "gifBytes": 95625
+  },
+  "cold-reaction": {
+    "size": [
+      1152,
+      384
+    ],
+    "logicalSize": [
+      384,
+      128
+    ],
+    "frames": 80,
+    "durationMs": 8000,
+    "gifBytes": 165205
+  },
+  "screening": {
+    "size": [
+      1152,
+      384
+    ],
+    "logicalSize": [
+      384,
+      128
+    ],
+    "frames": 80,
+    "durationMs": 8000,
+    "gifBytes": 110562
+  },
+  "workup-column": {
+    "size": [
+      1152,
+      384
+    ],
+    "logicalSize": [
+      384,
+      128
+    ],
+    "frames": 160,
+    "durationMs": 16000,
+    "gifBytes": 326249
+  },
+  "hplc-ms": {
+    "size": [
+      1152,
+      384
+    ],
+    "logicalSize": [
+      384,
+      128
+    ],
+    "frames": 100,
+    "durationMs": 10000,
+    "gifBytes": 94070
+  },
+  "nmr": {
+    "size": [
+      1152,
+      384
+    ],
+    "logicalSize": [
+      384,
+      128
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "gifBytes": 144467
+  }
+}

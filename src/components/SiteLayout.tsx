@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
 import type { CSSProperties } from 'react'
-import { Outlet } from 'react-router'
+import { Outlet, useLocation } from 'react-router'
 import { SiteHeader } from './layout/SiteHeader'
 import { Sidebar } from './layout/Sidebar'
 import { SiteFooter } from './layout/SiteFooter'
+import { ChemistryScene } from './scene/ChemistryScene'
+import { useChemistryScene } from '../hooks/useChemistryScene'
+import { isChemistryContext } from '../content/chemistryScenes'
+import { projects } from '../content/projects'
+import { notes } from '../content/notes'
 import { AmbientScene } from './scene/AmbientScene'
 import { useCampusScene } from '../hooks/useCampusScene'
 import { useAppearance } from '../hooks/useAppearance'
@@ -21,7 +26,19 @@ function initialMotion() {
 }
 export function SiteLayout() {
   const [motion, changeMotion] = useState(initialMotion)
-  const { scene, nextScene } = useCampusScene(motion)
+  const { pathname, search } = useLocation()
+  const chemistryContext = isChemistryContext(
+    pathname,
+    search,
+    projects
+      .filter((project) => project.subjects.includes('chemistry'))
+      .map((project) => project.slug),
+    notes
+      .filter((note) => note.subjects.includes('chemistry'))
+      .map((note) => note.slug),
+  )
+  const { scene, nextScene } = useCampusScene(motion && !chemistryContext)
+  const laboratory = useChemistryScene(chemistryContext, motion)
   const { palette, setPalette, weather, weatherMode, setWeather } =
     useAppearance()
   const coverage = useWeatherExposure(weather, motion)
@@ -55,10 +72,18 @@ export function SiteLayout() {
           Skip to content
         </a>
         <SiteHeader />
-        <AmbientScene scene={scene} motion={motion} onNext={nextScene} />
+        {chemistryContext ? (
+          <ChemistryScene
+            scene={laboratory.scene}
+            motion={motion}
+            onNext={laboratory.nextScene}
+          />
+        ) : (
+          <AmbientScene scene={scene} motion={motion} onNext={nextScene} />
+        )}
         <div className="content-layout" data-sky-surface>
           <main id="main-content" tabIndex={-1} data-sky-surface>
-            <Outlet />
+            <Outlet context={{ motion }} />
           </main>
           <Sidebar
             palette={palette}

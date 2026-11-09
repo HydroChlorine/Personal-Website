@@ -14,7 +14,8 @@ src/
   components/
     SiteLayout.tsx           Shared shell and animation preference
     layout/                  Header, sidebar/navigation, footer
-    scene/                   Campus window and discreet manual advance
+    scene/                   Campus/laboratory windows and discreet manual advance
+    articles/                Structured project stories and figure comparison
     sky/                     Original sky, pixel fireworks, and appearance controls
     ui/                      Panels, icons, project cards, subject links
   pages/
@@ -34,6 +35,7 @@ src/
     types.ts                 Content schemas
     scenes.ts                Scene catalog and pure seasonal transition rules
     appearance.ts            Two UI palettes and local-calendar weather rules
+    chemistryScenes.ts       Six lab vignettes and chemistry route context
     profile.ts               Bio, contact, timeline, personal details
     subjects/                Introductions, interests, planned shelves
     projects/                One file per selected project plus index
@@ -50,6 +52,7 @@ src/
     weather-surfaces.css     Finite snow/frost and wet material response
     layout.css               Shell, navigation, responsive rules
     components.css           Reusable components and page layouts
+    article.css              Long-form project stories and figures
   index.css                  Global rules and reduced-motion support
 public/
   art/                       Original project illustration
@@ -71,7 +74,7 @@ Browser history and direct URL loads use React Router. `vercel.json` rewrites ap
 
 Content lives outside the page components. Shared project records can belong to several subjects, with a single detail page. Adding a project or note does not require a new page component. Per-subject page wrappers leave room for different subject layouts later.
 
-The two initial research entries are explicitly content outlines. No coursework project, mathematical demo, publication, personal favorite, or metric has been invented. Empty collections render designed placeholders; add actual entries before showcasing that work.
+Catalyst Discovery now has a source-linked retrospective article with original figures; the metathesis entry remains a content outline. No coursework project, mathematical demo, publication, personal favorite, or metric has been invented. Empty collections render designed placeholders; add actual entries before showcasing that work.
 
 ## Visual direction
 
@@ -82,3 +85,5 @@ The scene catalog chooses the initial season from the visitor's local month, com
 ## Current boundaries
 
 No deployment or Git push has been performed. No CMS or Markdown rendering has been added; typed content files are the current editing interface. Draft Markdown files are authoring worksheets and do not render automatically. Interactive demos, publication downloads, photos, and a public CV remain to be supplied. The initial client-rendered site is not prerendered for search engines; revisit static generation if publishing becomes a major focus.
+
+Chemistry routes and chemistry-tagged project/note details use their own six-scene laboratory window. The campus cycle remains on other pages. See `CHEMISTRY.md` for route context, GIF recipes, pause behavior, and the Catalyst Discovery article.
