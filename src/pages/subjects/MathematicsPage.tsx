@@ -14,8 +14,7 @@ export function MathematicsPage() {
             Some ideas from numerical analysis, computational algebra, and
             dynamics that I want to keep playing with. Start with interpolation:
             a small curve opens a bigger question about how we design
-            experiments. The first three pictures lead into longer illustrated
-            stories.
+            experiments. Each picture leads into a longer illustrated story.
           </p>
           <div className="math-sketch-grid">
             {mathematicsScenes.map((scene) => {
@@ -36,7 +35,9 @@ export function MathematicsPage() {
                       <span className="small-label">
                         {scene.id === 'interpolation'
                           ? 'START HERE / FROM CURVES TO EXPERIMENTS'
-                          : 'FOLLOW THE IDEA'}
+                          : scene.id === 'lorenz'
+                            ? 'FEATURED CONNECTION / CHAOS & CHIRALITY'
+                            : 'FOLLOW THE IDEA'}
                       </span>
                     )}
                     <h3>{scene.topic}</h3>
@@ -66,15 +67,6 @@ export function MathematicsPage() {
               )
             })}
           </div>
-          <aside className="math-paper-note">
-            <p className="eyebrow">A PAPER TAKING SHAPE</p>
-            <h3>Another thread in algebra</h3>
-            <p>
-              I’m planning an individual paper on algebraic structures this
-              semester. There’s room here for its question, examples, and the
-              pictures that make the idea click, once the topic takes shape.
-            </p>
-          </aside>
           <details className="math-sources">
             <summary>Behind the sketches / further reading</summary>
             <p>

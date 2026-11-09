@@ -407,10 +407,13 @@ def verify():
     assert energy(*FINE[-1],True)<energy(*FINE[0],True)
     return {'uniformMeshRMSE':MESH_ERRORS[0],'featureAwareMeshRMSE':MESH_ERRORS[1],'normalizedGramError':float(np.linalg.norm(gram-np.eye(6))),'randomizedRelativeError':float(np.linalg.norm(DATA-SKETCH)/np.linalg.norm(DATA))}
 
-def main():
-    OUT.mkdir(parents=True,exist_ok=True);checks=verify();manifest={}
-    sheet=Image.new('RGB',(900,math.ceil(len(RECIPES)/3)*190),BG);sd=ImageDraw.Draw(sheet)
-    for j,(name,recipe) in enumerate(RECIPES.items()):
+def main(recipes=None,sheet_name='contact-sheet.png',extra_checks=None):
+    recipes=RECIPES if recipes is None else recipes
+    OUT.mkdir(parents=True,exist_ok=True);checks=verify()
+    previous=json.loads((OUT/'manifest.json').read_text()) if (OUT/'manifest.json').exists() else {}
+    manifest=previous.get('figures',{})
+    sheet=Image.new('RGB',(900,math.ceil(len(recipes)/3)*190),BG);sd=ImageDraw.Draw(sheet)
+    for j,(name,recipe) in enumerate(recipes.items()):
         entry={}
         for mobile in [False,True]:
             art.SCALE=.5
@@ -442,8 +445,10 @@ def main():
         thumb=recipe(False,.72).raster();thumb.thumbnail((290,165),Image.Resampling.NEAREST)
         xx=j%3*300;yy=j//3*190;sheet.paste(thumb,(xx,yy+19));sd.text((xx+4,yy+3),name,fill=CYAN)
         print(name,flush=True)
-    dest=ROOT/'assets/art-source/mathematics/topics';dest.mkdir(parents=True,exist_ok=True);sheet.save(dest/'contact-sheet.png')
-    (OUT/'manifest.json').write_text(json.dumps({'numericalChecks':checks,'figures':manifest},indent=2)+'\n')
+    dest=ROOT/'assets/art-source/mathematics/topics';dest.mkdir(parents=True,exist_ok=True);sheet.save(dest/sheet_name)
+    previous.update({'numericalChecks':checks,'figures':manifest})
+    if extra_checks is not None:previous['connectionChecks']=extra_checks
+    (OUT/'manifest.json').write_text(json.dumps(previous,indent=2)+'\n')
     print(json.dumps(checks,indent=2))
 
 if __name__=='__main__':main()

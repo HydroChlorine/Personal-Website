@@ -99,3 +99,8 @@ The three mathematics topic essays and 21 paired diagrams in `public/media/mathe
 Scientific references are linked next to the applicable discussion and recorded in `src/content/mathematics/sources.ts`. See [MATH_TOPICS.md](docs/MATH_TOPICS.md) for models, limitations of the illustrations, authorship, sources, and rebuild/verification commands. The public credits page acknowledges these stories and diagrams.
 
 The math-topic crisp GIFs are original high-resolution rasterizations of the same frame recipes as the pixel animations, with antialiasing and fixed palettes. They use no new assets, dependencies, external renderers, or copied animation code. Static vector exports are retained for paused viewing and reuse. The sequential-sampling figure's enlarged layouts and footer-spacing checks are documented in `docs/MATH_TOPICS.md`.
+
+
+## Additional mathematics stories (2026-11-09)
+
+The symmetry, dynamics, and Fourier articles and their 25 new paired figure concepts are original work created for this website. `scripts/draw-math-connections.py` computes synthetic group operations, chirality measures, dynamical trajectories, and signal transforms and reuses the existing original drawing pipeline. Pixel and crisp GIFs share exact source-frame commands; SVG and PNG stills and phone layouts are included. No external imagery, code, measured data, or source passages are redistributed. Mathematical and historical references are linked in the articles, recorded in `src/content/mathematics/sources.ts`, and explained in `docs/MATH_TOPICS.md`. Public credits now cover all six stories and 46 concepts.

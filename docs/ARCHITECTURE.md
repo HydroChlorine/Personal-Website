@@ -90,4 +90,4 @@ Chemistry routes and chemistry-tagged project/note details use their own six-sce
 
 Mathematics context, original numerical banner assets, responsive companions, and model checks are documented in [MATHEMATICS.md](MATHEMATICS.md). `sceneContext` resolves chemistry before mathematics for shared entries; `useSceneCycle` supplies the common subject-scene clock. Future project writing follows [CONTENT_STYLE.md](CONTENT_STYLE.md).
 
-The three illustrated math articles use `/mathematics/topics/:slug`, `src/content/mathematics/`, and `MathematicsTopicPage`. The shared article renderer accepts optional topic labels, equations, detail paragraphs, and table captions while preserving chemistry defaults. See [MATH_TOPICS.md](MATH_TOPICS.md) for assets, numerical checks, and content scope.
+The six illustrated math articles use `/mathematics/topics/:slug`, `src/content/mathematics/`, and `MathematicsTopicPage`. The shared article renderer accepts optional topic labels, equations, detail paragraphs, and table captions while preserving chemistry defaults. See [MATH_TOPICS.md](MATH_TOPICS.md) for assets, numerical checks, and content scope.

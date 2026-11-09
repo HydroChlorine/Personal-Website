@@ -10,9 +10,9 @@ const publicRoot = fileURLToPath(new URL('../public', import.meta.url))
 const manifest = JSON.parse(
   readFileSync(`${publicRoot}/media/mathematics/topics/manifest.json`, 'utf8'),
 ).figures
-test('three distinct mathematics topic routes have complete stories and unique section anchors', () => {
-  assert.equal(mathTopics.length, 3)
-  assert.equal(new Set(mathTopics.map((topic) => topic.slug)).size, 3)
+test('six distinct mathematics topic routes have complete stories and unique section anchors', () => {
+  assert.equal(mathTopics.length, 6)
+  assert.equal(new Set(mathTopics.map((topic) => topic.slug)).size, 6)
   for (const topic of mathTopics) {
     assert.equal(
       sceneContext(`/mathematics/topics/${topic.slug}`, '', [], []),
@@ -29,7 +29,7 @@ test('three distinct mathematics topic routes have complete stories and unique s
     )
   }
 })
-test('all 21 article figures have pixel and crisp animations, static vectors, and mobile variants with matching metadata', () => {
+test('all 46 article figures have pixel and crisp animations, static vectors, and mobile variants with matching metadata', () => {
   let count = 0
   for (const topic of mathTopics)
     for (const section of topic.article.sections) {
@@ -70,7 +70,7 @@ test('all 21 article figures have pixel and crisp animations, static vectors, an
         )
       }
     }
-  assert.equal(count, 21)
+  assert.equal(count, 46)
 })
 
 test('math styles both animate when playing, and both become static when motion is paused', () => {

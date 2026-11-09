@@ -9,8 +9,10 @@ from PIL import Image, ImageSequence, ImageFont
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('figures',ROOT/'scripts/draw-math-topics.py')
 art=importlib.util.module_from_spec(spec);spec.loader.exec_module(art)
-checks=art.verify();count=0
-for name in art.RECIPES:
+spec2=importlib.util.spec_from_file_location('connections',ROOT/'scripts/draw-math-connections.py')
+connections=importlib.util.module_from_spec(spec2);spec2.loader.exec_module(connections)
+checks={**art.verify(),**connections.verify()};count=0
+for name in {**art.RECIPES,**connections.RECIPES}:
     for mobile in [False,True]:
         suffix='-mobile' if mobile else ''
         root=ET.parse(art.OUT/f'{name}{suffix}.svg').getroot()

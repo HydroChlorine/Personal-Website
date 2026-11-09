@@ -1,18 +1,21 @@
 # Illustrated mathematics topics
 
-Three original articles extend the math collection under `/mathematics/topics/`:
+Six original articles extend the math collection under `/mathematics/topics/`:
 
 | Route | Story | Original figures |
 | --- | --- | --- |
 | `mind-the-edges` | Runge interpolation → remedies → meshes → experimental design | 8 |
 | `a-family-of-curves` | Legendre families → orthogonal projection → angular quantum states → modeling assumptions | 7 |
 | `same-matrix-new-view` | Dense cost → QR/Schur → truncated SVD → randomized sketches → electronic-structure warm starts | 6 |
+| `patterns-into-rules` | Symmetry groups → representations → crystals → invariants → chirality and amplification | 7 |
+| `a-butterfly-made-of-motion` | Predictable falls → chaos → solvers → scales and hydrogen → chiral feedback | 9 |
+| `a-signal-unfolded` | Heat modes → roots of unity → FFT → NMR/FTIR → averaging and resolution | 9 |
 
-The first three picture-and-copy cards are full links. Interpolation is featured across the collection width, with an explicit experiment-design question. Remaining topics keep their existing sketches until their articles are written. Back links, in-article anchors, and links to the other two stories support navigation. Topic titles update the browser title; direct routes use the existing SPA fallback. The math context keeps the established rotating math banners; the Catalyst story still resolves to chemistry.
+All six picture-and-copy cards are full links. Interpolation is featured across the collection width, with an explicit experiment-design question. The dynamics card also highlights its chaos-and-chirality connection. Back links, in-article anchors, and links to the other five stories support navigation. Topic titles update the browser title; direct routes use the existing SPA fallback. The math context keeps the established rotating math banners; the Catalyst story still resolves to chemistry.
 
 ## Content and rendering
 
-- `src/content/mathematics/` holds the three stories, shared figure helper, references, and topic catalog. These are conceptual essays, not claims of completed research or new experimental methods.
+- `src/content/mathematics/` holds the six stories, shared figure helper, references, and topic catalog. These are conceptual essays, not claims of completed research or new experimental methods.
 - `MathematicsTopicPage.tsx` uses the existing `ProjectArticle` renderer. Optional `kind: 'topic'` changes the accessible label, contents caption, details summary, and reference caption. Equation blocks, detail paragraphs, and per-table captions generalize the renderer; existing chemistry defaults are preserved.
 - Equations are selectable Unicode text, with wrapping on phones. No math-rendering service, external font, or new runtime dependency is required. The typeset examples use real matrices; complex analogues are explained where useful.
 - Figures default to pixel animation while motion plays, switch to PNG when paused, and offer a crisp animated GIF view. Both styles animate from the same 48 source frames and timing, with portrait companions. Paused crisp views use the retained static SVGs. Changing topics remounts the article so figures start in the default style. Images are lazy loaded.
@@ -20,9 +23,9 @@ The first three picture-and-copy cards are full links. Interpolation is featured
 
 ## Artwork and reproducibility
 
-`python3 scripts/draw-math-topics.py` draws all 21 concepts. It reuses the repository's original `Drawing` primitives from `draw-catalyst-figures.py`, without changing or regenerating chemistry assets. NumPy and Pillow run offline; they are authoring tools, not browser dependencies.
+`python3 scripts/draw-math-topics.py` draws the first 21 concepts. `python3 scripts/draw-math-connections.py` draws the next 25, importing the shared rendering pipeline. Each command preserves the other generator’s manifest entries. It reuses the repository's original `Drawing` primitives from `draw-catalyst-figures.py`, without changing or regenerating chemistry assets. NumPy and Pillow run offline; they are authoring tools, not browser dependencies.
 
-Outputs: `public/media/mathematics/topics/`. Each concept has wide and mobile static SVGs, pixel GIFs, pixel pause PNGs, and crisp GIFs: 168 files plus a manifest. Wide drawings are 900px across; phone drawings are 450px across with vertical stacking. Pixel drawing is at half logical resolution and enlarged 2× using nearest-neighbor sampling. GIFs contain 48 authored steps at 120ms, with identical frames merged while preserving the 5.76-second duration. Crisp GIFs are newly rasterized from the same drawing commands at 4× resolution, antialiased down to 2× display dimensions (1800px wide desktop, 900px wide phone), then encoded with a fixed 256-color palette per scene. They are not enlarged pixel GIFs. The fixed palette preserves static detail between frames and enables efficient delta compression. Every generated crisp frame is checked against the pixel frame’s vector-command sequence before encoding. The local system Menlo font is rasterized; no font file is distributed. The contact sheet is `assets/art-source/mathematics/topics/contact-sheet.png`.
+Outputs: `public/media/mathematics/topics/`. Each concept has wide and mobile static SVGs, pixel GIFs, pixel pause PNGs, and crisp GIFs: 368 files plus a manifest. Wide drawings are 900px across; phone drawings are 450px across with vertical stacking. Pixel drawing is at half logical resolution and enlarged 2× using nearest-neighbor sampling. GIFs contain 48 authored steps at 120ms, with identical frames merged while preserving the 5.76-second duration. Crisp GIFs are newly rasterized from the same drawing commands at 4× resolution, antialiased down to 2× display dimensions (1800px wide desktop, 900px wide phone), then encoded with a fixed 256-color palette per scene. They are not enlarged pixel GIFs. The fixed palette preserves static detail between frames and enables efficient delta compression. Every generated crisp frame is checked against the pixel frame’s vector-command sequence before encoding. The local system Menlo font is rasterized; no font file is distributed. The contact sheets are `assets/art-source/mathematics/topics/contact-sheet.png` and `connections-contact-sheet.png`.
 
 `python3 scripts/verify-math-topics.py` validates mathematical invariants, SVG and raster-label bounds, dimensions, pause files, exact pixel blocks, GIF loop timing, and actual frame variation. It does not rewrite assets. `tests/math-topics.test.ts` checks the topic catalog, unique anchors, math routing, all eight variants per figure, and matching height metadata.
 
@@ -71,3 +74,42 @@ The sequential Gaussian-process figure is now 900×600 in the wide layout and 45
 The asset validator checks all 42 crisp GIFs for 2× dimensions, looping, 5.76-second duration, actual motion, and fine detail within the blocks that would result from upscaling pixel art. Renderer tests cover playing/paused source selection in both styles and unchanged legacy static diagrams.
 
 Refinement verification: all 23 tests, the production build, targeted formatting checks, and asset validation passed. Browser checks confirmed the 1800×1200 wide crisp GIF and 900×1920 phone crisp GIF for the enlarged sequential figure, animated crisp sources on all three topic pages, and SVG/PNG fallback when paused. The x-axis and orange status text are separated in both styles. No browser warnings/errors were recorded; motion was restored and the viewport override cleared. Final desktop preview: `docs/previews/2026-11-08/math-crisp-sequential.png`.
+
+
+## Symmetry, dynamics, and spectroscopy (2026-11-09)
+
+The three new articles add 25 original concepts with eight variants apiece. Existing figures and banners are retained. The same 48-frame command sequence produces each pixel/crisp pair, including mobile layouts and motion-pause stills.
+
+### Models
+
+- Square group: eight integer matrices, an actual composition table, MRM=R⁻¹, invariant x²+y² and x²y². Three-dimensional sign changes distinguish C₂(z), σ(xy), and inversion. Endpoint operations are exact; connecting frames only illustrate the mapping. Crystal translations use a toy square lattice, not a measured structure.
+- Handedness uses the signed volume of four labeled tetrahedral vertices; proper rotations preserve it and reflection changes its sign. SN2 is an umbrella-inversion geometry cartoon, not an energetic reaction model. Labels R/S require CIP reassignment after substitution. The illustrative active-pair curve is ee_out=2e/(1+e²), not Kagan data or a universal catalytic law.
+- Lorenz uses RK4 at (σ,ρ,β)=(10,28,8/3), initial (1,1,1) versus (1.000001,1,1), dt=.005 for 40 model time units. A separate step-refinement plot compares dt=.02,.01,.005 against .0025 on a shared .02 grid; early errors converge, while long trajectories diverge. Euler’s y′=−y example separately shows numerical instability at h=2.2 versus decay at h=.5. The logistic map uses r=2.7,3.3,3.9 with a discarded transient.
+- Coarse-graining shows the same 36 seeded, noninteracting periodic particles as positions, occupancy bins, and a profile; it does not derive fluid mechanics. The hydrogen radial distribution is 4r²e^(−2r) in Bohr units; H⁻ is schematic. H ionization and extra-electron detachment are distinct energy differences.
+- Chiral feedback first uses the symmetry-breaking normal form q′=μq−q³. Potential, time evolution, and parameter bifurcation are separate panels. The second model uses L′=L(1−L−3D), D′=D(1−D−3L), RK4 dt=.01, initial .501/.499, time 30. It is an effective open competition model with stable axis states and a symmetric saddle, not a mass-balanced closed reaction or Soai simulation. An exactly symmetric deterministic initial state does not select a side. These models do not settle life’s homochirality.
+- Fourier figures compute finite heat modes, eight-sample phasor sums, and an original radix-two butterfly checked against a direct DFT and NumPy. NMR uses 512 complex samples at 512Hz with damped components at 12,28,47Hz, decay constants .35,.5,.25s and amplitudes 1,.65,.4. FTIR uses synthetic reference/sample spectra with 256-point inverse transforms; transforming back and taking −log₁₀ of their intensity ratio recovers the constructed absorbance.
+- Scan averaging uses 16 independent seeded complex-noise realizations and averages 1,4,16 of them. The acquisition duration stays fixed. Resolution compares 32 samples of 40/44Hz resonances at dt=1/256s, the same record padded to 4096, and 256 genuinely measured samples. Apodization exponentially weights a .15s decay with seeded noise and compares normalized peak shapes. Aliasing shows 8 and 40Hz cosines agreeing at every sample when fs=32Hz.
+
+### Scientific framing and attribution
+
+Direct sources include IUCr crystallography, IUPAC chirality/CIP definitions, OpenStax SN2, Kagan and Soai’s original papers, Frank’s amplification model, Lorenz’s paper, Hilbert’s original 1900 lecture, NIST hydrogen data, Fourier’s 1822 treatise, Cooley–Tukey’s paper, FFTW definitions, SDSU/Weizmann NMR teaching, and Shimadzu FTIR documentation. ACS’s 2026 Nobel coverage was checked for the joint award to Kagan and Soai. These sources supply context, not copied figures or code.
+
+The prose distinguishes symmetry groups from invariant rings; σ planes from inversion centers; R/S from D/L and optical rotation; chaos from solver instability, many-body computational cost, and quantum-to-classical questions; and scan averaging from frequency resolution. Hilbert VI is described in its historical scope. Biological handedness is presented as a research question with exceptions and model-dependent feedback, not a solved universal equilibrium.
+
+
+### Verification of the new stories
+
+- All 23 Node tests and the TypeScript/Vite production build passed; catalog tests now cover all six routes and all 46 figures with their eight asset variants.
+- The offline validator passed all 92 wide/mobile sets, including timing, motion, exact pixel blocks, crisp detail, label bounds, metadata, group invariants, orientation reversal, early RK4 refinement, competition equilibria, DFT agreement, FTIR round-trip absorbance, and sampling alias equivalence.
+- Browser checks at 1280×900 and 390×844 confirmed the three new articles, all new crisp figure switches, phone sources, selectable wrapped equations without horizontal overflow, pause-to-SVG fallback, and related-story/back links. All six collection cards link to their stories, with the dynamics connection highlighted. No console warnings/errors were recorded. Motion was restored to playing and the viewport override reset after testing.
+- Preview captures: `docs/previews/2026-11-09/chiral-dynamics.png`, `fourier-resolution.png`, and `fourier-mobile.png`.
+
+
+## Diagram and project refinements (2026-11-09)
+
+- The aliasing comparison now plots the continuous difference cos(2π·8t)−cos(2π·40t) against seconds, on the same time range as the two waves. Orange markers show the acquired samples at zero difference. The continuous curve between samples is intentionally visible in both animated styles.
+- The SN2 cartoon now places the incoming nucleophile below the carbon and the departing leaving group above it, aligned with the vertical inversion of the spectator-bond umbrella. Wide/mobile pixel and crisp animations and their stills were regenerated together.
+- The former “A paper taking shape” note is now a mathematics-only project, directly beside Catalyst Discovery on the mathematics page. `/projects/algebraic-structure-representations` is a clearly marked work in progress about algebraic structure representations, expected mid December 2026. Its banner follows the existing mathematics project context. The project progress metadata provides the status/date without the generic missing-media placeholder.
+- The two refined figure concepts are previewed in `assets/art-source/mathematics/topics/refinements-contact-sheet.png`.
+
+Refinement checks: all 23 tests, the production build, targeted formatting, and all 92 wide/mobile figure sets passed. Browser review confirmed the continuous aliasing difference, vertically aligned SN2 cartoon, pixel/crisp sources, phone sources, adjacent project cards, and the new project’s math banner, expected date, and absence of the generic missing-media placeholder. No browser warnings/errors or phone overflow were found. Screenshots: `docs/previews/2026-11-09/aliasing-refined.png`, `sn2-refined.png`, and `algebra-project-grid.png`.

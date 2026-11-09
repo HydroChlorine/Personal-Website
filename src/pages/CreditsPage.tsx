@@ -59,11 +59,11 @@ export function CreditsPage() {
       </Panel>
       <Panel title="At the mathematics desk">
         <p>
-          The three illustrated topic stories add 21 original numerical
-          diagrams, with animated pixel views, crisp vector companions, and
-          phone layouts. Their source references are linked within each story.
-          The examples use synthetic data and analytic models, not experimental
-          results.
+          The six illustrated topic stories add 46 original mathematical
+          diagrams, with animated pixel and crisp views, static pause
+          companions, and phone layouts. Their source references are linked
+          within each story. The examples use synthetic data and analytic
+          models, not experimental results.
         </p>
         <a href="/mathematics">Explore the mathematics stories ↗</a>
         <p>

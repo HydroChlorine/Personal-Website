@@ -64,4 +64,4 @@ Chemistry implementation and media recipes: [docs/CHEMISTRY.md](docs/CHEMISTRY.m
 
 Mathematics banners, numerical models, and asset verification: [docs/MATHEMATICS.md](docs/MATHEMATICS.md). Future project-story writing guide: [docs/CONTENT_STYLE.md](docs/CONTENT_STYLE.md).
 
-The first three math sketches now open illustrated topic pages under `/mathematics/topics/`. Article models, source references, and figure rebuild/verification commands: [docs/MATH_TOPICS.md](docs/MATH_TOPICS.md).
+All six math sketches now open illustrated topic pages under `/mathematics/topics/`. Article models, source references, and figure rebuild/verification commands: [docs/MATH_TOPICS.md](docs/MATH_TOPICS.md).

@@ -441,14 +441,6 @@ figcaption {
   font-size: 12px;
   line-height: 1.9;
 }
-.math-paper-note {
-  border-top: 1px dashed var(--line);
-  margin-top: 28px;
-  padding-top: 24px;
-}
-.math-paper-note h3 {
-  font-size: 15px;
-}
 .math-sources {
   border-top: 1px dashed var(--line);
   margin-top: 24px;
