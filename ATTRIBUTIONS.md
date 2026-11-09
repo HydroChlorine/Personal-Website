@@ -104,3 +104,35 @@ The math-topic crisp GIFs are original high-resolution rasterizations of the sam
 ## Additional mathematics stories (2026-11-09)
 
 The symmetry, dynamics, and Fourier articles and their 25 new paired figure concepts are original work created for this website. `scripts/draw-math-connections.py` computes synthetic group operations, chirality measures, dynamical trajectories, and signal transforms and reuses the existing original drawing pipeline. Pixel and crisp GIFs share exact source-frame commands; SVG and PNG stills and phone layouts are included. No external imagery, code, measured data, or source passages are redistributed. Mathematical and historical references are linked in the articles, recorded in `src/content/mathematics/sources.ts`, and explained in `docs/MATH_TOPICS.md`. Public credits now cover all six stories and 46 concepts.
+
+## Computer science desk scenes (2026-11-09)
+
+The six CS banners and their mobile/still/study companions in
+`public/art/computer-science/v1/` are original drawings and animations made for
+this website. `scripts/animate-computer-science.py` reuses this repository's
+original mathematics desk, palette, and raster helpers, and adds new monitor
+artwork for Java objects, Boolean logic, a toy machine, a web request,
+perspective graphics, and conceptual typed proof objects. No external artwork,
+logos, course material screenshots, or third-party implementation code is
+redistributed. The local system Menlo font is rasterized, not bundled.
+
+Oracle, MDN, and Rocq documentation supplied conceptual references, linked in
+`src/content/computerScienceReferences.ts` and the public credits page. Models,
+source files, interpretation, and verification are documented in
+[COMPUTER_SCIENCE.md](docs/COMPUTER_SCIENCE.md).
+
+The formal-verification scene was revised to visualize the Curry–Howard
+correspondence through function blocks, matching types, composition, and a
+conceptual kernel check. The replacement is original artwork, not a screenshot
+or live proof-assistant output. Rocq’s core-language documentation is linked
+on the credits page for the proof-term/type-checking connection.
+
+## Computer science stories and local miniature (2026-11-09)
+
+The five CS project stories, formal-verification topic and 23 paired figure concepts in `public/media/computer-science/stories/` are original writing and procedural illustrations developed with AI assistance for this website. Wide/phone pixel and crisp animations share the same frame recipes; stills support paused viewing. No external project source, artwork or datasets are copied into these figures. Models, checks, contribution boundaries and source review are documented in [CS_STORIES.md](docs/CS_STORIES.md).
+
+CritterWorld credits Ibrahim Ahmed, Lichen Huang, John Karaca and Michael Zhang. The fireworks story distinguishes Lichen's infrastructure/initial implementation from collaboratively developed ideas and the AniGraph course framework. The ongoing Godot story credits gameplay and some mathematics to Lichen and links the collaborative project and upstream. The internship uses invented records and original schematics, without employer code or private data.
+
+Software Foundations supplies the red-black-tree chapter framework; Lichen completed the exercise proofs. The short attributed proof excerpt is covered by the retained MIT notices in [SOFTWARE_FOUNDATIONS_MIT.txt](public/licenses/SOFTWARE_FOUNDATIONS_MIT.txt). Primary documentation and the chapter are linked in the article and public credits.
+
+The interactive miniature-site idea is explicitly inspired by [dimden's WebTiles miniature](https://dimden.dev/). The local miniature implementation, canvas drawings and controls are original. It does not use WebTiles code, runtime, hosting, external embeds or dimden's artwork. This inspiration is credited beside the miniature, in its project story and on the credits page.

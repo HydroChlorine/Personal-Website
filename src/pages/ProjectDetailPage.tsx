@@ -5,6 +5,7 @@ import { PageHeading } from '../components/ui/PageHeading'
 import { Panel, EmptyShelf } from '../components/ui/Panel'
 import { ProjectArticle } from '../components/articles/ProjectArticle'
 import { NotFoundPage } from './NotFoundPage'
+import { SiteMiniature } from '../components/ui/SiteMiniature'
 export function ProjectDetailPage() {
   const { slug } = useParams()
   const project = projects.find((item) => item.slug === slug)
@@ -17,14 +18,21 @@ export function ProjectDetailPage() {
       <PageHeading eyebrow={project.kind} title={project.title}>
         {project.summary}
       </PageHeading>
+      {project.interactiveDemo && (
+        <Panel title="A little version of this place">
+          <SiteMiniature />
+        </Panel>
+      )}
       {project.article ? (
-        <ProjectArticle article={project.article} />
+        <ProjectArticle key={project.slug} article={project.article} />
       ) : (
         <Panel>
           {project.progress && (
             <>
               <p className="eyebrow">WORK IN PROGRESS</p>
-              <h2>Expected {project.progress.expected}</h2>
+              {project.progress.expected && (
+                <h2>Expected {project.progress.expected}</h2>
+              )}
             </>
           )}
           <div className="prose">

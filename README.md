@@ -65,3 +65,7 @@ Chemistry implementation and media recipes: [docs/CHEMISTRY.md](docs/CHEMISTRY.m
 Mathematics banners, numerical models, and asset verification: [docs/MATHEMATICS.md](docs/MATHEMATICS.md). Future project-story writing guide: [docs/CONTENT_STYLE.md](docs/CONTENT_STYLE.md).
 
 All six math sketches now open illustrated topic pages under `/mathematics/topics/`. Article models, source references, and figure rebuild/verification commands: [docs/MATH_TOPICS.md](docs/MATH_TOPICS.md).
+
+The CS section has six original animated night-desk banners, mobile/pause companions, and an initial cross-subject introduction. Artwork, models, and verification: [docs/COMPUTER_SCIENCE.md](docs/COMPUTER_SCIENCE.md).
+
+The CS collection includes five illustrated project stories, a formal-verification topic, and an original local interactive miniature. Source/contribution notes, 23 paired animation recipes, Rocq checks, and validation: [docs/CS_STORIES.md](docs/CS_STORIES.md).

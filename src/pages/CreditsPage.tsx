@@ -2,6 +2,7 @@ import { inspirations } from '../content/credits'
 import { PageHeading } from '../components/ui/PageHeading'
 import { Panel } from '../components/ui/Panel'
 import { mathematicsReferences } from '../content/mathematicsReferences'
+import { computerScienceReferences } from '../content/computerScienceReferences'
 export function CreditsPage() {
   return (
     <>
@@ -83,6 +84,77 @@ export function CreditsPage() {
             ))}
           </ul>
         </details>
+      </Panel>
+      <Panel title="At the keyboard">
+        <p>
+          The six computer science scenes were drawn and animated for this site
+          with original Python, NumPy, and Pillow code. They share the original
+          mathematics desk and palette, with new monitor artwork for objects,
+          logic, architecture, the web, graphics, and Rocq proofs. Phone layouts
+          and static pause images are included.
+        </p>
+        <p>
+          The machine and web exchange are teaching sketches; the proof scene
+          illustrates typed proof objects and kernel checking. No course
+          screenshots, external artwork, logos, or third-party implementation
+          code are included.
+        </p>
+        <details>
+          <summary>Computer science references</summary>
+          <ul>
+            {computerScienceReferences.map((reference) => (
+              <li key={reference.href}>
+                <a href={reference.href}>{reference.label} ↗</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </Panel>
+      <Panel title="Computer science stories & the miniature">
+        <p>
+          The five project stories and the formal-verification article add 23
+          original diagram concepts, with paired pixel/crisp animations, phone
+          layouts, and pause stills. The schematics and synthetic examples were
+          created for this website with AI-assisted illustration code.
+        </p>
+        <p>
+          CritterWorld was created by Ibrahim Ahmed, Lichen Huang, John Karaca,
+          and Michael Zhang for Cornell CS 2112. The fireworks story credits
+          Lichen’s infrastructure and initial implementation, the collaborators’
+          shared ideas, and the AniGraph course framework. The ongoing 4D game
+          credits Lichen’s gameplay and mathematical contributions within the
+          collaborative 4Dto3D project. The internship illustrations contain
+          invented records and no employer source code.
+        </p>
+        <div className="inline-links">
+          <a href="https://github.com/johnkaraca/critterworld">
+            CritterWorld team overview ↗
+          </a>
+          <a href="https://github.com/wonhochoi25/4Dto3D">4Dto3D upstream ↗</a>
+        </div>
+        <p>
+          The red-black-tree case study uses Lichen’s completed Software
+          Foundations exercises. The chapter, algorithm, and supporting
+          definitions retain their own authorship; the short excerpt is
+          accompanied by the retained MIT notices.
+        </p>
+        <div className="inline-links">
+          <a href="https://softwarefoundations.cis.upenn.edu/vfa-current/Redblack.html">
+            Software Foundations chapter ↗
+          </a>
+          <a href="/licenses/SOFTWARE_FOUNDATIONS_MIT.txt">
+            Read the MIT notices ↗
+          </a>
+        </div>
+        <p>
+          The interactive miniature is original local HTML, CSS, and drawing
+          code. The idea of a miniature personal website comes from dimden’s
+          WebTiles example, explicitly credited beside the widget. This site
+          hosts its own miniature.
+        </p>
+        <a href="https://dimden.dev/">
+          dimden’s original miniature-site idea ↗
+        </a>
       </Panel>
       <Panel title="The little sky">
         <p>

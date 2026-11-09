@@ -78,7 +78,11 @@ export function ProjectArticle({ article }: { article: Article }) {
     <article
       className="panel project-article"
       aria-label={
-        article.kind === 'topic' ? 'Mathematics article' : 'Project story'
+        article.kind === 'topic'
+          ? article.subject === 'computer-science'
+            ? 'Computer science article'
+            : 'Mathematics article'
+          : 'Project story'
       }
     >
       <header className="article-opening">
@@ -139,9 +143,12 @@ export function ProjectArticle({ article }: { article: Article }) {
             section.detailParagraphs) && (
             <details className="article-details">
               <summary>
-                {article.kind === 'topic'
-                  ? 'Under the surface / mathematics & references'
-                  : 'A little more detail & source code'}
+                {article.detailsLabel ??
+                  (article.kind === 'topic'
+                    ? article.subject === 'computer-science'
+                      ? 'Under the surface / logic & references'
+                      : 'Under the surface / mathematics & references'
+                    : 'A little more detail & source code')}
               </summary>
               {section.detailParagraphs?.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -198,7 +205,11 @@ export function ProjectArticle({ article }: { article: Article }) {
               {section.sources && (
                 <div className="article-sources">
                   <span>
-                    {article.kind === 'topic' ? 'Read further' : 'In the code'}
+                    {article.kind === 'topic'
+                      ? 'Read further'
+                      : article.subject === 'computer-science'
+                        ? 'References & credits'
+                        : 'In the code'}
                   </span>
                   {section.sources.map((link) => (
                     <a key={link.href} href={link.href}>

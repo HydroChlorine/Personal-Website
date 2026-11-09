@@ -8,6 +8,8 @@ import { ChemistryScene } from './scene/ChemistryScene'
 import { useChemistryScene } from '../hooks/useChemistryScene'
 import { sceneContext } from '../content/sceneContext'
 import { mathematicsScenes } from '../content/mathematicsScenes'
+import { computerScienceScenes } from '../content/computerScienceScenes'
+import { ComputerScienceScene } from './scene/ComputerScienceScene'
 import { MathematicsScene } from './scene/MathematicsScene'
 import { useSceneCycle } from '../hooks/useSceneCycle'
 import { projects } from '../content/projects'
@@ -40,6 +42,11 @@ export function SiteLayout() {
   )
   const { palette, setPalette, weather, weatherMode, setWeather } =
     useAppearance()
+  const computerScience = useSceneCycle(
+    computerScienceScenes.length,
+    context === 'computer-science',
+    motion,
+  )
   const coverage = useWeatherExposure(weather, motion)
   useEffect(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -82,6 +89,12 @@ export function SiteLayout() {
             scene={mathematicsScenes[mathematics.index]!}
             motion={motion}
             onNext={mathematics.nextScene}
+          />
+        ) : context === 'computer-science' ? (
+          <ComputerScienceScene
+            scene={computerScienceScenes[computerScience.index]!}
+            motion={motion}
+            onNext={computerScience.nextScene}
           />
         ) : (
           <AmbientScene scene={scene} motion={motion} onNext={nextScene} />
