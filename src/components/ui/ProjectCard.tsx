@@ -22,7 +22,11 @@ export function ProjectCard({ project }: { project: Project }) {
             .join(' / ')}
         </span>
         <span className="draft-label">
-          {project.readiness === 'outline' ? 'Notes taking shape' : 'Read more'}
+          {project.progress
+            ? 'Work in progress'
+            : project.readiness === 'outline'
+              ? 'Notes taking shape'
+              : 'Read more'}
         </span>
       </div>
     </Link>

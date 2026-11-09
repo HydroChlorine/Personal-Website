@@ -16,6 +16,8 @@ import { PersonalPage } from './pages/PersonalPage'
 import { ContactPage } from './pages/ContactPage'
 import { CreditsPage } from './pages/CreditsPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { MathematicsTopicPage } from './pages/subjects/MathematicsTopicPage'
+import { mathTopics } from './content/mathematics'
 const titles: Record<string, string> = {
   '/': 'Home',
   '/about': 'About',
@@ -32,7 +34,7 @@ const titles: Record<string, string> = {
 function RouteEffects() {
   const { pathname } = useLocation()
   useEffect(() => {
-    document.title = `${titles[pathname] ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
+    document.title = `${titles[pathname] ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
     window.scrollTo({ top: 0, behavior: 'instant' })
     document.getElementById('main-content')?.focus({ preventScroll: true })
   }, [pathname])
@@ -48,6 +50,10 @@ export default function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="chemistry" element={<ChemistryPage />} />
           <Route path="mathematics" element={<MathematicsPage />} />
+          <Route
+            path="mathematics/topics/:slug"
+            element={<MathematicsTopicPage />}
+          />
           <Route path="computer-science" element={<ComputerSciencePage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:slug" element={<ProjectDetailPage />} />

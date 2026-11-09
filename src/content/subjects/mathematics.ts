@@ -5,12 +5,13 @@ export const mathematics: Subject = {
   number: '02',
   tagline: 'Patterns worth following. Problems worth getting lost in.',
   introduction:
-    'Numerical methods, differential equations, dynamics, and algebra are some of the areas I’ve been studying. This corner will hold explanations, computations, and the ideas I want to spend more time with.',
+    'I like being able to draw an idea, try it in a computation, and then ask why it works. Numerical analysis, computational algebra, and dynamics keep giving me reasons to do all three. This is where I’m collecting those connections, including the ones that lead back to chemistry.',
   interests: [
     'Numerical analysis',
     'Differential equations',
     'Dynamics',
-    'Algebra',
+    'Computational algebra',
+    'Fourier analysis',
   ],
   shelves: [
     {

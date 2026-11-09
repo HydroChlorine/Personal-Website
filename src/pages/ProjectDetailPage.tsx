@@ -21,6 +21,12 @@ export function ProjectDetailPage() {
         <ProjectArticle article={project.article} />
       ) : (
         <Panel>
+          {project.progress && (
+            <>
+              <p className="eyebrow">WORK IN PROGRESS</p>
+              <h2>Expected {project.progress.expected}</h2>
+            </>
+          )}
           <div className="prose">
             {project.body.map((p) => (
               <p key={p}>{p}</p>
@@ -48,7 +54,7 @@ export function ProjectDetailPage() {
             <figcaption>{project.media.caption}</figcaption>
           )}
         </figure>
-      ) : (
+      ) : project.progress ? null : (
         <Panel>
           <EmptyShelf title="A closer look, soon">
             Pictures, examples, and the longer story still need to be collected

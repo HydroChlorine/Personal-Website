@@ -225,3 +225,23 @@
 .article-details .article-sources {
   border-top: 0;
 }
+.article-equation {
+  margin: 25px 0;
+  padding: 18px;
+  background: var(--bg);
+  border-left: 2px solid var(--accent);
+}
+.article-equation figcaption {
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+.article-equation pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font: 13px/1.9 var(--mono);
+  color: var(--text);
+}
+.article-details p {
+  font-size: 13px;
+}

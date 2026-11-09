@@ -85,3 +85,22 @@ For each new item, record: title/path, author, original URL, license and license
 - The user's two supplied vial/reaction-block product images were consulted only to recognize slim dram vials and metal adapter blocks on a magnetic stir plate. No source photograph pixels or logos are redistributed. The replacement screening master was made with built-in OpenAI image generation; exact prompt and reference roles are in `assets/art-source/chemistry/v1/screening-revision-prompts.json`. The first master is retained under `archive/`.
 - The extraction animation now redraws both interfaces from a conserved-upper-volume approximation to the illustrated funnel silhouette, with a rising receiving level. This original finishing code alters no external artwork.
 - Seven original explanation diagrams now have paired SVG and animated pixel versions, including phone layouts: workflow, attached ring variants, extensible attachment sites/ring closure, geometry preparation, representation choice, shortlisting and a speculative energy-landscape idea. They contain no measured or calculated results. The original first diagram recipe is archived as `scripts/draw-catalyst-figures-v1.py`; the current recipe is `scripts/draw-catalyst-figures.py`.
+
+## Mathematics night-study scenes (2026-11-08)
+
+The six GIF banners, portrait companions, pause stills, desk art, and study diagrams in `public/art/mathematics/v1/` are original procedural pixel drawings. `scripts/animate-mathematics.py` uses NumPy and Pillow to calculate and draw the mathematical examples; it does not copy reference-site artwork, reference photographs, or external implementation code. The user-supplied Legendre chart informed the topic, not the pixels. A local system font is rasterized into the artwork; no font file is redistributed. No new runtime library was added.
+
+Mathematical definitions and instrument context were checked against Chebfun, NIST DLMF, LAPACK, Macaulay2, Lorenz (1963), University of Wyoming NMR Basics, and Shimadzu FTIR materials. Links and precise interpretations are recorded in [MATHEMATICS.md](docs/MATHEMATICS.md), and appear in the public math-page reading disclosure and credits. References are citations, not sources of reused code or media.
+
+## Illustrated mathematics topics (2026-11-08)
+
+The three mathematics topic essays and 21 paired diagrams in `public/media/mathematics/topics/` were written and drawn for this website. `scripts/draw-math-topics.py` reuses this repository's original drawing primitives and computes synthetic interpolation, mesh, Gaussian-process, polynomial, QR, SVD, and optimization examples using NumPy and Pillow. SVG, animated pixel, PNG pause, and portrait variants share the same recipes. No external code, diagrams, photographs, datasets, or passages were copied; no new browser dependency or third-party asset was introduced.
+
+Scientific references are linked next to the applicable discussion and recorded in `src/content/mathematics/sources.ts`. See [MATH_TOPICS.md](docs/MATH_TOPICS.md) for models, limitations of the illustrations, authorship, sources, and rebuild/verification commands. The public credits page acknowledges these stories and diagrams.
+
+The math-topic crisp GIFs are original high-resolution rasterizations of the same frame recipes as the pixel animations, with antialiasing and fixed palettes. They use no new assets, dependencies, external renderers, or copied animation code. Static vector exports are retained for paused viewing and reuse. The sequential-sampling figure's enlarged layouts and footer-spacing checks are documented in `docs/MATH_TOPICS.md`.
+
+
+## Additional mathematics stories (2026-11-09)
+
+The symmetry, dynamics, and Fourier articles and their 25 new paired figure concepts are original work created for this website. `scripts/draw-math-connections.py` computes synthetic group operations, chirality measures, dynamical trajectories, and signal transforms and reuses the existing original drawing pipeline. Pixel and crisp GIFs share exact source-frame commands; SVG and PNG stills and phone layouts are included. No external imagery, code, measured data, or source passages are redistributed. Mathematical and historical references are linked in the articles, recorded in `src/content/mathematics/sources.ts`, and explained in `docs/MATH_TOPICS.md`. Public credits now cover all six stories and 46 concepts.

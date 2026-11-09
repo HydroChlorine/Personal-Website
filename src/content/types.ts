@@ -17,6 +17,7 @@ export interface Project {
   body: string[]
   // Content readiness, not a claim about the status of the underlying work.
   readiness: 'outline' | 'published'
+  progress?: { expected: string }
   article?: ProjectArticle
   media?: { src: string; alt: string; caption?: string }
   links: { label: string; href: string }[]
@@ -47,6 +48,7 @@ export interface CollectedLink {
 }
 
 export interface ArticleFigure {
+  crisp?: { gif: string; mobileGif: string }
   width?: number
   height?: number
   mobileHeight?: number
@@ -62,20 +64,23 @@ export interface ArticleFigure {
   }
 }
 export interface ProjectArticle {
+  kind?: 'topic'
   kicker: string
   introduction: string[]
   sections: {
     id: string
     title: string
     paragraphs: string[]
+    equations?: { label: string; expression: string }[]
+    detailParagraphs?: string[]
     figure?: ArticleFigure
     figures?: ArticleFigure[]
     code?: { label: string; text: string }
     list?: string[]
-    table?: { headers: string[]; rows: string[][] }
+    table?: { caption?: string; headers: string[]; rows: string[][] }
     aside?: { title: string; text: string }
     sources?: { label: string; href: string }[]
   }[]
-  sourceCommit: string
+  sourceCommit?: string
   reviewed: string
 }
