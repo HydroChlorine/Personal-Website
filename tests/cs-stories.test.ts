@@ -84,13 +84,14 @@ test('the website demo is local, its assets are shipped, and hosting preserves i
     csProjects.find((p) => p.slug === 'this-website')?.interactiveDemo,
     'site-miniature',
   )
-  for (const name of ['index.html', 'miniature.js'])
+  for (const name of ['index.html'])
     assert.ok(existsSync(`${publicRoot}/demos/site-miniature/${name}`))
   const config = JSON.parse(
     readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'),
   )
   const route = new RegExp('^' + config.rewrites[0].source + '$')
   assert.ok(!route.test('/demos/site-miniature/'))
+  assert.ok(route.test('/miniature'))
   assert.ok(route.test('/projects/this-website'))
   assert.ok(route.test('/computer-science/topics/proofs-as-programs'))
 })

@@ -227,38 +227,126 @@ def key_aperture(m,t):
         note(d,b,'fits / release onto plate' if key_fit(wpos) else 'blocked / part still too narrow')
     return d
 
-ROWS=[{'id':1,'team':'amber','status':'open','owner':1},{'id':2,'team':'cyan','status':'open','owner':2},{'id':3,'team':'amber','status':'closed','owner':1},{'id':4,'team':'amber','status':'open','owner':2}]
-OWNERS={1:'Ari',2:'Bo'}
-RESULT=[(r['id'],OWNERS[r['owner']]) for r in ROWS if r['team']=='amber' and r['status']=='open']
+def record_card(d,x,y,w,col=CYAN,selected=False):
+    d.rect(x,y,w,62,BG,col if selected else LINE,2)
+    d.rect(x+10,y+12,14,14,col,col)
+    for j in range(2):d.path([(x+34,y+18+j*17),(x+w-12-j*15,y+18+j*17)],col if selected else MUTED,3)
+
 def request_flow(m,t):
-    d,bs=setup(m,'A FILTER BECOMES A RESPONSE','A representative flow, not an employer system diagram',3,1300)
-    labels=['Request','Application + data','Response DTO']
-    values=[['team: amber','status: open'],['validate input','filter + join','shape the result'],['id: 1, owner: Ari','id: 4, owner: Bo']]
-    for j,(b,title,ls) in enumerate(zip(bs,labels,values)):
-        label(d,b,title);words(d,b,ls,top=100,gap=40,col=CYAN if t*3>=j else MUTED)
-        note(d,b,['frontend asks','backend coordinates','frontend can render'][j])
+    d,bs=setup(m,'BEHIND THE NEXT CLICK','Create / read / update / delete',3,1300)
+    stage=min(2,int(t*3))
+    for j,b in enumerate(bs):
+        x,y,w,h=b;cx=x+w/2;cy=y+h*.47
+        label(d,b,['The screen','The application','Stored information'][j])
+        if j==0:
+            outline(d,cx-83,cy-65,166,120,CYAN)
+            for k in range(3):d.path([(cx-62,cy-42+k*22),(cx+48,cy-42+k*22)],LINE,4)
+            d.rect(cx+20,cy+14,44,22,AMBER,AMBER);d.text(cx+42,cy+30,'save',11,BG,'middle')
+            d.path([(cx-30,cy+57),(cx+30,cy+57)],CYAN,3)
+        elif j==1:
+            for k,txt in enumerate(['+','?','~','-']):
+                xx=cx-47+(k%2)*94;yy=cy-38+(k//2)*76
+                node(d,xx,yy,txt,[MINT,CYAN,AMBER,CORAL][k],64,52)
+            d.text(cx,cy+100,'check / act / reply',13,MUTED,'middle')
+        else:
+            for k in range(3):record_card(d,cx-80,cy-88+k*67,160,[MINT,CYAN,AMBER][k],k==int(t*3))
+        if j==stage:dot(d,x+20+(w-40)*(t*3%1),y+h-58,AMBER,9)
+        note(d,b,['an intention leaves the interface','rules turn intention into action','a change kept / an answer returned'][j])
     return d
+
 def relational_filter(m,t):
-    d,bs=setup(m,'JOIN THE CONTEXT / KEEP THE MATCHES','All names, entities, and records here are fictional',3,1300)
-    label(d,bs[0],'Work items');b=bs[0]
-    for j,r in enumerate(ROWS):words(d,b,[f'{r["id"]} {r["team"]}',f'{r["status"]} / owner {r["owner"]}'],top=75+j*65,gap=23,size=16,col=AMBER if j==int(t*4) else MUTED)
-    note(d,b,'team=amber AND status=open')
-    label(d,bs[1],'Owner lookup');words(d,bs[1],['1 -> Ari','2 -> Bo'],top=100,gap=55,col=MINT);note(d,bs[1],'link by owner ID')
-    label(d,bs[2],'Selected response');words(d,bs[2],[f'{i} -> {owner}' for i,owner in RESULT],top=100,gap=55,col=CYAN);note(d,bs[2],'only requested fields leave')
+    d,bs=setup(m,'BRING THE RIGHT PIECES TOGETHER','Relationships become an answer the interface can use',3,1300)
+    for j,b in enumerate(bs):
+        x,y,w,h=b;cx=x+w/2;cy=y+h*.5
+        label(d,b,['Related collections','A useful selection','Ready for the screen'][j])
+        if j==0:
+            for k,col in enumerate([CYAN,MINT,AMBER]):
+                yy=cy-98+k*82
+                record_card(d,x+20,yy,78,col,True);record_card(d,x+w-98,yy,78,col,True)
+                d.path([(x+98,yy+30),(x+w-98,yy+30)],col,2)
+                dot(d,x+98+(w-196)*(t+k/3)%max(1,w-196),yy+30,col,6)
+        elif j==1:
+            for k,col in enumerate([CYAN,MINT,AMBER]):
+                yy=cy-90+k*82;record_card(d,x+20,yy,105,col,k!=1)
+                if k!=1:link(d,(x+130,yy+30),(x+w-30,cy),col)
+            outline(d,x+w-65,cy-35,36,70,AMBER,3)
+        else:
+            outline(d,x+20,cy-116,w-40,239,CYAN,2)
+            d.path([(x+20,cy-89),(x+w-20,cy-89)],LINE,2)
+            for k,col in enumerate([CYAN,AMBER]):record_card(d,x+35,cy-65+k*84,w-70,col,True)
+            dot(d,x+40+(w-80)*t,cy+112,MINT,6)
+        note(d,b,['connect the matching pieces','keep what the request asks for','a clear shape for the frontend'][j])
     return d
+
+def night_canvas(m,title,subtitle):
+    d= c.Drawing(450 if m else 900,1300 if m else 600)
+    d.text(25,34,title,14 if m else 18,CYAN)
+    for j,line in enumerate(textwrap.wrap(subtitle,38 if m else 100)):d.text(25,62+j*16,line,12 if m else 13,MUTED)
+    w=d.w;h=d.h
+    for k in range(55):
+        x=24+(k*137)%(w-48);y=110+(k*73)%(h-150)
+        dot(d,x,y,LINE if k%4 else MUTED,2)
+    # A stepped, quiet moon rather than an explanatory panel.
+    mx=w*.79;my=155 if not m else 210
+    c.polygon(d,[(mx-28,my-32),(mx+12,my-32),(mx+12,my-24),(mx+30,my-24),(mx+30,my+24),(mx+12,my+24),(mx+12,my+32),(mx-28,my+32),(mx-28,my+20),(mx-40,my+20),(mx-40,my-20),(mx-28,my-20)],LINE)
+    c.polygon(d,[(mx-6,my-34),(mx+30,my-34),(mx+30,my+34),(mx-6,my+34),(mx-6,my+22),(mx-19,my+22),(mx-19,my-22),(mx-6,my-22)],BG)
+    return d
+
+def snow(d,t,front=True):
+    # The four depth bands share wind, but size, brightness and speed differ.
+    for layer,(count,size,col,speed) in enumerate([(95,2,LINE,27),(60,3,MUTED,44),(32,4,CYAN,68),(13,7,TEXT,110)]):
+        if (layer>=2)!=front:continue
+        for k in range(count):
+            x=12+(k*89+layer*57+math.sin(t*math.tau+k*.7)*9+t*speed*.32)%(d.w-24)
+            y=100+(k*61+layer*97+t*speed)%(d.h-130)
+            dot(d,x,y,col,size)
+            if layer==3:
+                d.path([(x-5,y),(x+5,y)],col,2);d.path([(x,y-5),(x,y+5)],col,2)
+
+def neon_sign(d,x,y,w,h,title,col,cap=0):
+    d.rect(x+7,y+7,w,h,BG,LINE,3)
+    d.rect(x,y,w,h,PANEL,LINE,3)
+    outline(d,x+8,y+8,w-16,h-16,col,2)
+    d.text(x+w/2,y+h*.56,title,20,col,'middle')
+    for k in range(5):
+        xx=x+k*w/5
+        if cap>0:
+            ch=cap*(.65+.35*math.sin(k*2.7)**2)
+            d.rect(xx,y-ch,w/5+1,ch+3,TEXT,TEXT)
+    if cap>5:d.rect(x-2,y+2,5,cap*1.9,CYAN,CYAN)
+
 def site_layers(m,t):
-    d,bs=setup(m,'ONE PLACE / SEPARATE RESPONSIBILITIES','The website is the project; the miniature is its invitation',3,1300)
-    for j,(b,title,ls) in enumerate(zip(bs,['Content','Presentation','Interaction'],[['project stories','topic articles','references'],['shared layout','pixel artwork','phone views'],['scene rotation','weather + motion','sky fireworks']])):
-        label(d,b,title);words(d,b,ls,top=95,gap=50,col=CYAN if t*3>=j else MUTED);note(d,b,'change one without rewriting all')
+    d=night_canvas(m,'A LITTLE DISTANCE IN THE SNOW','A quiet sky, with flakes passing nearer and farther away')
+    snow(d,t,False)
+    if m:
+        for i,(title,col) in enumerate([('CHEMISTRY',MINT),('MATHEMATICS',CYAN),('COMPUTER SCIENCE',AMBER)]):neon_sign(d,55,390+i*220,330,125,title,col,7)
+    else:
+        for i,(title,col) in enumerate([('CHEMISTRY',MINT),('MATHEMATICS',CYAN),('COMPUTER SCIENCE',AMBER)]):neon_sign(d,40+i*285,310+[-28,20,-5][i],250,105,title,col,7)
+    snow(d,t,True)
     return d
+
 def local_atmosphere(m,t):
-    d,bs=setup(m,'A SMALL SKY / LOCAL CHOICES','The local calendar supplies a starting atmosphere',3,1300)
-    for b,title,ls in zip(bs,['Visitor clock','Starting scene','Visitor control'],[['November','winter scene','snow'],['July','summer scene','rain'],['pause motion','change palette','advance scene']]):
-        label(d,b,title);words(d,b,ls,top=100,gap=50,col=CYAN)
-        x,y,w,h=b
-        for k in range(8):
-            xx=x+25+(k*29)%(w-50);yy=y+h-115+(k*13+t*35)%35;dot(d,xx,yy,MINT if title=='Visitor clock' else CYAN,5)
-        note(d,b,'no live weather or location lookup')
+    d=night_canvas(m,'A LIGHT LEFT ON','Snow gathers. A wish opens in the sky.')
+    snow(d,t,False)
+    cap=4+19*t
+    if m:
+        neon_sign(d,55,650,330,155,'STAY A LITTLE',CYAN,cap)
+        neon_sign(d,90,920,280,130,'MAKE A WISH',AMBER,cap*.75)
+    else:
+        neon_sign(d,65,375,335,115,'STAY A LITTLE',CYAN,cap)
+        neon_sign(d,505,365,310,115,'MAKE A WISH',AMBER,cap*.75)
+    cx=d.w*.4;cy=330 if m else 220
+    if t<.32:
+        u=t/.32;xx=d.w*.52+(cx-d.w*.52)*u;yy=d.h-30+(cy-(d.h-30))*u-100*math.sin(math.pi*u)
+        dot(d,xx,yy,AMBER,6)
+        for j in range(6):dot(d,xx+j*2,yy+j*7,LINE,3)
+    else:
+        u=(t-.32)/.68
+        for k in range(28):
+            a=k*math.tau/28;r=125*u;xx=cx+r*math.cos(a);yy=cy+r*math.sin(a)+50*u*u
+            d.path([(cx+r*.8*math.cos(a),cy+r*.8*math.sin(a)+40*u*u),(xx,yy)],[AMBER,CORAL,CYAN][k%3],3)
+            dot(d,xx,yy,TEXT if u<.55 else MUTED,4)
+    snow(d,t,True)
     return d
 
 # Nodes are (color, key, left, right); empty leaves have black height zero.
@@ -351,14 +439,13 @@ def verify():
         segs=slice_edges(offset);assert len(segs)>=12
         assert all(abs(p[3]-offset)<1e-10 for seg in segs for p in seg)
     assert not key_fit(0) and not key_fit(2.1) and key_fit(3)
-    assert RESULT==[(1,'Ari'),(4,'Bo')]
     assert inorder(BEFORE)==inorder(BALANCED)==inorder(BLACKENED)==[10,20,30]
     assert not rb_ok(BEFORE) and rb_ok(BALANCED) and rb_ok(BLACKENED)
     for tree in [INVARIANT_TREE,HEIGHT_TREE]:
         assert rb_ok(tree) and inorder(tree)==sorted(inorder(tree))
         assert height(tree)<=2*mindepth(tree)+1
     assert (height(HEIGHT_TREE),mindepth(HEIGHT_TREE))==(4,2)
-    return {'tesseractEdges':len(E4),'tesseractFaces':len(F4),'filteredIDs':[r[0] for r in RESULT],'heightExample':[4,2,5],'originalFigureConcepts':len(RECIPES)}
+    return {'tesseractEdges':len(E4),'tesseractFaces':len(F4),'heightExample':[4,2,5],'originalFigureConcepts':len(RECIPES)}
 
 if __name__=='__main__':
     c.main(recipes=RECIPES,source_dir=SOURCE,checks=verify())

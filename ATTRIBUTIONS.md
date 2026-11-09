@@ -135,4 +135,6 @@ CritterWorld credits Ibrahim Ahmed, Lichen Huang, John Karaca and Michael Zhang.
 
 Software Foundations supplies the red-black-tree chapter framework; Lichen completed the exercise proofs. The short attributed proof excerpt is covered by the retained MIT notices in [SOFTWARE_FOUNDATIONS_MIT.txt](public/licenses/SOFTWARE_FOUNDATIONS_MIT.txt). Primary documentation and the chapter are linked in the article and public credits.
 
-The interactive miniature-site idea is explicitly inspired by [dimden's WebTiles miniature](https://dimden.dev/). The local miniature implementation, canvas drawings and controls are original. It does not use WebTiles code, runtime, hosting, external embeds or dimden's artwork. This inspiration is credited beside the miniature, in its project story and on the credits page.
+The interactive miniature-site idea is explicitly inspired by [dimden's WebTiles miniature](https://dimden.dev/). The local miniature reuses this website’s own React homepage sections, artwork and interactions in a condensed layout. It does not use WebTiles code, runtime, hosting, external embeds or dimden's artwork. This inspiration is credited beside the miniature, in its project story and on the credits page.
+
+The revised internship figures use abstract CRUD and connected-record drawings without named people. The two website-story figures are original atmospheric snow/neon/firework scenes; no external artwork was reused.

@@ -2,10 +2,6 @@
   "numericalChecks": {
     "tesseractEdges": 32,
     "tesseractFaces": 24,
-    "filteredIDs": [
-      1,
-      4
-    ],
     "heightExample": [
       4,
       2,
@@ -385,9 +381,9 @@
           1200
         ],
         "durationMs": 5760,
-        "gifBytes": 12349,
-        "crispGifBytes": 91148,
-        "frameContentSha256": "15760b46f4a25e052b8b2d7b760f5434f6f47f675de16a070c8d47084337b630"
+        "gifBytes": 21612,
+        "crispGifBytes": 129646,
+        "frameContentSha256": "8370d50cc3974b4afb8d4f9b340cffaaf0df892b09c94bbbefd23701f157561c"
       },
       "mobile": {
         "size": [
@@ -399,9 +395,9 @@
           2600
         ],
         "durationMs": 5760,
-        "gifBytes": 11718,
-        "crispGifBytes": 91693,
-        "frameContentSha256": "8de037d46beaaecda01f90f5cc4ba2eb61e835f478a28bc89e1d3a9ba0ba1e8a"
+        "gifBytes": 22808,
+        "crispGifBytes": 132873,
+        "frameContentSha256": "7605769b0f3b73fd4a7b6942e0fad8a85271dcb4d1886f9523f1ddb973d8bae6"
       }
     },
     "relational-filter": {
@@ -415,9 +411,9 @@
           1200
         ],
         "durationMs": 5760,
-        "gifBytes": 13826,
-        "crispGifBytes": 110042,
-        "frameContentSha256": "9da0d05fa5d4ed54c556f3ebc8e27c835cb7f5177152f77b0ddbe40c995d6d0a"
+        "gifBytes": 49473,
+        "crispGifBytes": 219705,
+        "frameContentSha256": "72933025c843061179515072943160dd60c132e7bf109267609a91094b8f3633"
       },
       "mobile": {
         "size": [
@@ -429,9 +425,9 @@
           2600
         ],
         "durationMs": 5760,
-        "gifBytes": 13080,
-        "crispGifBytes": 109473,
-        "frameContentSha256": "9cf1ad84e7013864bef76a5fb48f8177535aa8d11fef06e2ddcdc117855a26ab"
+        "gifBytes": 56858,
+        "crispGifBytes": 237695,
+        "frameContentSha256": "6b579b4c8a52ab1cb6b1ab5ead3b68e69ce98b29efd02856eef2384c7efc73eb"
       }
     },
     "site-layers": {
@@ -445,9 +441,9 @@
           1200
         ],
         "durationMs": 5760,
-        "gifBytes": 13862,
-        "crispGifBytes": 106526,
-        "frameContentSha256": "66c4a7be32d244abecd5c3f059bef3db27f32766bc315e282f4c826301943aa8"
+        "gifBytes": 153259,
+        "crispGifBytes": 1038902,
+        "frameContentSha256": "cd502e2ffa14d238fcc2bc8af6b2961f3e2a1faadbfa17642dfd3e19d995c5e5"
       },
       "mobile": {
         "size": [
@@ -459,9 +455,9 @@
           2600
         ],
         "durationMs": 5760,
-        "gifBytes": 13019,
-        "crispGifBytes": 107584,
-        "frameContentSha256": "6c47f742c048ccece18e5483c640950bf7d7d7054fc10f92d91c29086db656a4"
+        "gifBytes": 158456,
+        "crispGifBytes": 1072871,
+        "frameContentSha256": "be92da335ffdca4e0d9f12e2b96561dbfe61438d0baa3f99d5b50e24b3df3505"
       }
     },
     "local-atmosphere": {
@@ -475,9 +471,9 @@
           1200
         ],
         "durationMs": 5760,
-        "gifBytes": 27289,
-        "crispGifBytes": 219106,
-        "frameContentSha256": "d53459143f929a2df8645d8c1b43ce06c6eb2847e197cf2de69823bf9155451d"
+        "gifBytes": 188118,
+        "crispGifBytes": 1374079,
+        "frameContentSha256": "8bb085a74e7be3bb9f1434baafddbe05f27a0f3ae2fab2e87c5339eee20b716e"
       },
       "mobile": {
         "size": [
@@ -489,9 +485,9 @@
           2600
         ],
         "durationMs": 5760,
-        "gifBytes": 47519,
-        "crispGifBytes": 276014,
-        "frameContentSha256": "f7f6ce89c302e3d43cc444683b38269cac285f4af83672710ccbb650d2f3543a"
+        "gifBytes": 199440,
+        "crispGifBytes": 1444218,
+        "frameContentSha256": "508d6062cc6dfcfaf2907671c443a5b46bae1edb57ecd2819288e2de007739bf"
       }
     },
     "tests-property": {

@@ -47,6 +47,9 @@ export default function App() {
     <BrowserRouter>
       <RouteEffects />
       <Routes>
+        <Route path="miniature" element={<SiteLayout miniature />}>
+          <Route index element={<HomePage miniature />} />
+        </Route>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />

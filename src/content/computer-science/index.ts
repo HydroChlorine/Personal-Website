@@ -65,7 +65,7 @@ export const csProjects: Project[] = [
     kind: 'A personal place on the web',
     readiness: 'published',
     summary:
-      'Three subjects, one growing home. Explore a small interactive version, then follow the design decisions.',
+      'Three subjects, one growing home. A little night sky with room to wander.',
     interactiveDemo: 'site-miniature',
     body: [],
     article: websiteArticle,

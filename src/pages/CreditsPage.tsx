@@ -124,7 +124,7 @@ export function CreditsPage() {
           shared ideas, and the AniGraph course framework. The ongoing 4D game
           credits Lichen’s gameplay and mathematical contributions within the
           collaborative 4Dto3D project. The internship illustrations contain
-          invented records and no employer source code.
+          abstract records and no employer source code.
         </p>
         <div className="inline-links">
           <a href="https://github.com/johnkaraca/critterworld">
@@ -147,10 +147,10 @@ export function CreditsPage() {
           </a>
         </div>
         <p>
-          The interactive miniature is original local HTML, CSS, and drawing
-          code. The idea of a miniature personal website comes from dimden’s
-          WebTiles example, explicitly credited beside the widget. This site
-          hosts its own miniature.
+          The interactive miniature reuses this site’s own homepage sections and
+          artwork in a condensed layout. The idea of a miniature personal
+          website comes from dimden’s WebTiles example, explicitly credited
+          beside the widget. This site hosts its own miniature.
         </p>
         <a href="https://dimden.dev/">
           dimden’s original miniature-site idea ↗

@@ -10,8 +10,8 @@ export const profile = {
   cvUrl: null as string | null,
   now: 'Building a home for my projects, experiments, and notes.',
   about: [
-    'I like making things and figuring out how they work. That has taken me from building little boats and airplanes with my family to making molecules, writing programs, and studying mathematics.',
-    'At Cornell, I study chemistry, mathematics, and computer science. I also work with the Lambert Group on organocatalysis. Each subject gives me a different way to ask questions—and sometimes they meet in the same project.',
+    'Hi there this is lichen, someone who should primarily be categorized as a chemist, love dreaming and thinking about silly things.',
+    'During undergrad, I study chemistry, mathematics, and computer science. Work in the Lambert Group on organocatalysis.',
     'This site is just getting started. Over time, I want it to hold research stories, class projects, small experiments, and a few things that don’t belong on a CV.',
   ],
   // Personal favorites and hobbies can be added here once chosen.
