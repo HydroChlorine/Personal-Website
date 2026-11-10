@@ -156,6 +156,31 @@ export function CreditsPage() {
           dimden’s original miniature-site idea ↗
         </a>
       </Panel>
+      <Panel title="The playground / browser editions">
+        <p>
+          The fireworks workshop adapts the collaborative project’s pattern and
+          simulation core, with a new browser renderer and interface. Lichen
+          built the infrastructure and initial working version; the ideas came
+          from both collaborators. No AniGraph engine or course rendering assets
+          are bundled.
+        </p>
+        <p>
+          CritterWorld’s browser edition was written independently for this
+          site, inspired by the team project by Ibrahim Ahmed, Lichen Huang,
+          John Karaca and Michael Zhang. Its smaller teaching language and
+          ecosystem use no original Java course implementation. Both browser
+          editions were developed with AI assistance.
+        </p>
+        <p>
+          The separate-tab game-launch format was inspired by Michael Xing’s
+          website. No code or media from that site was reused. The Godot game
+          remains work in progress, with project/release links rather than an
+          unverified playable build.
+        </p>
+        <a href="https://michaelxing.com/">
+          Michael Xing’s games &amp; website ↗
+        </a>
+      </Panel>
       <Panel title="The little sky">
         <p>
           The faint moon, constellations, palette experiments, pixel weather,

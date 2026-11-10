@@ -69,3 +69,5 @@ All six math sketches now open illustrated topic pages under `/mathematics/topic
 The CS section has six original animated night-desk banners, mobile/pause companions, and an initial cross-subject introduction. Artwork, models, and verification: [docs/COMPUTER_SCIENCE.md](docs/COMPUTER_SCIENCE.md).
 
 The CS collection includes five illustrated project stories, a formal-verification topic, and an original local interactive miniature. Source/contribution notes, 23 paired animation recipes, Rocq checks, and validation: [docs/CS_STORIES.md](docs/CS_STORIES.md).
+
+Playable browser demos now live at `/playground/fireworks` and `/playground/critterworld`, launched in separate tabs from the playground. Godot remains clearly work in progress. Engines, source/attribution boundaries, hosting and checks: [docs/PLAYGROUND.md](docs/PLAYGROUND.md).
