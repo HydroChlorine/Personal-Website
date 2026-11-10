@@ -1,0 +1,345 @@
+.demo-shell {
+  width: min(1500px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 28px 0;
+}
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+.demo-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+.demo-header p {
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+.demo-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.demo-header nav a {
+  border: 1px solid var(--line);
+  color: var(--gold);
+}
+.demo-workspace {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+.firework-workspace {
+  grid-template-columns: 320px minmax(0, 1fr);
+}
+.critter-workspace {
+  grid-template-columns: minmax(0, 1fr) 350px;
+}
+.demo-controls,
+.demo-stage {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 20px;
+}
+.demo-controls h2,
+.demo-stage h2 {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.demo-controls label,
+.demo-toolbar label {
+  display: grid;
+  gap: 5px;
+  font: 12px/1.6 var(--mono);
+  color: var(--text-soft);
+}
+.demo-controls label {
+  margin: 12px 0;
+}
+.demo-shell button,
+.demo-shell select,
+.demo-shell input:not([type='range']):not([type='checkbox']),
+.demo-shell textarea {
+  border: 1px solid var(--line-bright);
+  background: var(--bg);
+  color: var(--text);
+  padding: 9px 11px;
+  font: 12px/1.5 var(--mono);
+  max-width: 100%;
+}
+.demo-shell input,
+.demo-shell select,
+.demo-shell textarea {
+  width: 100%;
+  min-width: 0;
+  accent-color: var(--accent);
+}
+.demo-shell textarea {
+  resize: vertical;
+  tab-size: 2;
+  min-height: 210px;
+}
+.demo-shell button:hover {
+  border-color: var(--accent);
+  background: var(--hover);
+}
+.demo-shell button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.demo-shell .demo-primary {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.demo-shell button:focus-visible,
+.demo-shell input:focus-visible,
+.demo-shell textarea:focus-visible,
+.demo-shell canvas:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.demo-button-row,
+.demo-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+.demo-button-row > * {
+  flex: 1;
+}
+.demo-stage-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+}
+.demo-stage-heading span {
+  color: var(--gold);
+  font: 11px var(--mono);
+}
+.demo-shell canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: #080e1b;
+}
+.pattern-canvas {
+  touch-action: none;
+  cursor: crosshair;
+}
+.firework-sky,
+.critter-canvas {
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+.demo-help {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.demo-status {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 2px solid var(--gold);
+  background: var(--bg);
+  font: 12px/1.8 var(--mono);
+  min-height: 44px;
+}
+.material-swatches {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+  margin: 15px 0;
+}
+.material-swatches button {
+  background: var(--swatch);
+  height: 26px;
+  padding: 0;
+  border: 2px solid transparent;
+}
+.material-swatches button[aria-pressed='true'] {
+  border-color: white;
+  box-shadow: 0 0 0 2px var(--bg) inset;
+}
+.material-swatches button:hover {
+  background: var(--swatch);
+  transform: translateY(-2px);
+}
+.demo-slider > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.demo-slider output {
+  color: var(--gold);
+}
+.demo-shell .check-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.demo-shell input[type='checkbox'] {
+  width: auto;
+}
+.demo-shell details {
+  margin: 18px 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.demo-shell summary {
+  color: var(--gold);
+  cursor: pointer;
+  font: 12px/1.7 var(--mono);
+}
+.demo-shell details p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.demo-shell code {
+  color: var(--text-soft);
+  overflow-wrap: anywhere;
+}
+.demo-shell pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.demo-footer {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 24px;
+  display: flex;
+  gap: 14px;
+}
+.demo-footer a {
+  color: var(--gold);
+}
+.world-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font: 12px var(--mono);
+  color: var(--muted);
+  margin: 20px 0;
+}
+.world-stats strong {
+  color: var(--text);
+}
+.demo-toolbar label:has(input[type='number']) {
+  width: 76px;
+}
+.critter-inspector {
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 20px;
+}
+.critter-inspector dl {
+  font: 12px/1.8 var(--mono);
+}
+.critter-inspector dl > div {
+  display: flex;
+  justify-content: space-between;
+}
+.critter-inspector dt {
+  color: var(--muted);
+}
+.critter-inspector dd {
+  margin: 0;
+  color: var(--gold);
+}
+.playground-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.playground-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.playground-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  margin-bottom: 20px;
+  image-rendering: pixelated;
+}
+.playground-card h2 {
+  margin: 5px 0 12px;
+}
+.playground-card p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.playground-card .inline-links {
+  margin-top: auto;
+  padding-top: 12px;
+}
+.playground-card .text-link {
+  color: var(--gold);
+}
+.playground-card.wip {
+  grid-column: 1/-1;
+}
+@media (max-width: 1000px) {
+  .demo-workspace {
+    grid-template-columns: 1fr;
+  }
+  .firework-workspace .demo-stage {
+    grid-row: 1;
+  }
+  .firework-workspace .demo-controls {
+    max-width: 600px;
+  }
+  .pattern-canvas {
+    max-width: 340px;
+    margin: auto;
+  }
+}
+@media (max-width: 600px) {
+  .demo-shell {
+    width: calc(100% - 24px);
+    padding-top: 16px;
+  }
+  .demo-header {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+  .demo-header h1 {
+    font-size: 23px;
+  }
+  .demo-header p {
+    font-size: 12px;
+  }
+  .demo-controls,
+  .demo-stage {
+    padding: 13px;
+  }
+  .demo-toolbar {
+    gap: 8px;
+  }
+  .demo-toolbar > label:has(input[type='range']) {
+    width: 100%;
+  }
+  .playground-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -138,3 +138,11 @@ Software Foundations supplies the red-black-tree chapter framework; Lichen compl
 The interactive miniature-site idea is explicitly inspired by [dimden's WebTiles miniature](https://dimden.dev/). The local miniature reuses this website’s own React homepage sections, artwork and interactions in a condensed layout. It does not use WebTiles code, runtime, hosting, external embeds or dimden's artwork. This inspiration is credited beside the miniature, in its project story and on the credits page.
 
 The revised internship figures use abstract CRUD and connected-record drawings without named people. The two website-story figures are original atmospheric snow/neon/firework scenes; no external artwork was reused.
+
+## Playable playground editions (2026-11-09)
+
+The fireworks demo adapts the author's collaborative CS 4620 pattern and simulation core with the user's explicit migration authorization. Lichen Huang credits his infrastructure/initial implementation and the collaborators' shared ideas. The browser renderer, interface and smooth value-noise implementation were created for this site with AI assistance; no AniGraph framework, course renderer, shader or asset is bundled.
+
+CritterWorld's browser demo is independently written TypeScript inspired by the team project of Ibrahim Ahmed, Lichen Huang, John Karaca and Michael Zhang. No Java course implementation, original example program or JavaFX/course asset is copied. It is labeled a simplified browser edition, and credits appear in the demo and public credits. Playground card images are screenshots of these actual local canvases.
+
+[Michael Xing's website](https://michaelxing.com/) informed the separate-tab game-launch format. No source, artwork or styles were reused. The Godot entry links the existing collaborative project/release page; no unlicensed game source or export is redistributed. Source boundaries, engine assessment and tests: [PLAYGROUND.md](docs/PLAYGROUND.md).

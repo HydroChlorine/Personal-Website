@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router'
 import { projects } from './content/projects'
 import { SiteLayout } from './components/SiteLayout'
@@ -20,6 +20,16 @@ import { MathematicsTopicPage } from './pages/subjects/MathematicsTopicPage'
 import { mathTopics } from './content/mathematics'
 import { csTopics } from './content/computer-science'
 import { ComputerScienceTopicPage } from './pages/subjects/ComputerScienceTopicPage'
+const FireworksDemo = lazy(() =>
+  import('./playground/fireworks/FireworksDemo').then((m) => ({
+    default: m.FireworksDemo,
+  })),
+)
+const CritterDemo = lazy(() =>
+  import('./playground/critters/CritterDemo').then((m) => ({
+    default: m.CritterDemo,
+  })),
+)
 const titles: Record<string, string> = {
   '/': 'Home',
   '/about': 'About',
@@ -29,6 +39,8 @@ const titles: Record<string, string> = {
   '/projects': 'Projects',
   '/notebook': 'Notebook',
   '/playground': 'Playground',
+  '/playground/fireworks': 'Paint a firework',
+  '/playground/critterworld': 'CritterWorld / browser edition',
   '/personal': 'Personal corner',
   '/contact': 'Contact',
   '/credits': 'Credits',
@@ -47,6 +59,24 @@ export default function App() {
     <BrowserRouter>
       <RouteEffects />
       <Routes>
+        <Route
+          path="playground/fireworks"
+          element={
+            <Suspense
+              fallback={<p role="status">Opening the fireworks workshop…</p>}
+            >
+              <FireworksDemo />
+            </Suspense>
+          }
+        />
+        <Route
+          path="playground/critterworld"
+          element={
+            <Suspense fallback={<p role="status">Opening CritterWorld…</p>}>
+              <CritterDemo />
+            </Suspense>
+          }
+        />
         <Route path="miniature" element={<SiteLayout miniature />}>
           <Route index element={<HomePage miniature />} />
         </Route>

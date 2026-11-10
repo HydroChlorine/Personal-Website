@@ -33,6 +33,10 @@ export interface Note {
   paragraphs: string[]
 }
 export interface PlaygroundEntry {
+  image: string
+  imageAlt: string
+  story: string
+  label: string
   title: string
   description: string
   href: string
