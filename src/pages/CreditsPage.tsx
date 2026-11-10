@@ -58,6 +58,31 @@ export function CreditsPage() {
           Catalyst Discovery source ↗
         </a>
       </Panel>
+      <Panel title="Laboratory experiences">
+        <p>
+          The fifteen chemistry experiences draw on Lichen’s CHEM 3020 and CHEM
+          3030 laboratory work. Their fifteen pixel preview paintings and 46
+          explanatory figure concepts were created for this website with
+          AI-assisted Python, NumPy, and Pillow code. Pixel and crisp animations
+          use the same drawing instructions, with separate phone layouts and
+          static pause companions.
+        </p>
+        <p>
+          Most curves are synthetic teaching examples. The tonic-water and
+          chlorophyll point plots are explicitly labeled transcriptions of
+          report measurements. No course handouts, commercial spectral-library
+          images, product photographs, or full laboratory reports are
+          reproduced.
+        </p>
+        <p>
+          The original counting-experiment report used decay data shared by
+          Stephanie Chen with TA approval after an original file was lost. The
+          website uses newly generated illustrative data instead. The tonic
+          bottle is an original stylized drawing, without copied Schweppes
+          artwork.
+        </p>
+        <a href="/chemistry">Visit the laboratory experiences ↗</a>
+      </Panel>
       <Panel title="At the mathematics desk">
         <p>
           The six illustrated topic stories add 46 original mathematical

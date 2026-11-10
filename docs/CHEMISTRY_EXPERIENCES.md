@@ -1,0 +1,50 @@
+# Chemistry experiences / implementation
+
+Implemented on `chemistry-section-implementation`, 2026-11-10. The source review and original fifteen-story plan remain in `CHEMISTRY_EXPERIENCES_PLAN.md`.
+
+## Visitor experience
+
+`/chemistry` now has a featured tonic-water experience followed by fourteen illustrated cards. The whole PNG/title/summary card is one keyboard-accessible link. Every story lives at `/chemistry/experiences/:slug`, inherits the chemistry banner, has its own title, and links back to the collection and onward to another experience. Ring-closing research, Molecules in pictures, and Papers & presentations remain outside this implementation.
+
+There are 46 figure concepts: four for tonic water and three for every other story. Each offers Pixel sketch (default) and Crisp diagram, both animated from exactly the same frame commands. The existing global motion setting substitutes static PNG/SVG companions for both styles. Figures load lazily; article bodies form a separate route chunk so other visitors do not download all the new prose upfront. The collection metadata is separate from the article bodies.
+
+## Content and assets
+
+- `src/content/chemistry/experiences/index.ts`: lightweight cards/titles/route slugs.
+- `src/content/chemistry/experiences/articles.ts`: fifteen short experiences, captions and optional notes.
+- `src/pages/subjects/ChemistryExperiencePage.tsx`: shared experience presentation and onward navigation.
+- `scripts/draw-chemistry-experiences.py`: original scientific/physical drawing recipes and synthetic models.
+- `public/media/chemistry/experiences/`: fifteen 384×216 preview PNGs; eight assets per figure (wide/phone × pixel GIF, pixel PNG, crisp GIF and SVG), plus manifest.
+- `assets/art-source/chemistry/experiences/`: review contact sheets and browser screenshots.
+
+Wide figures use a 900×600 logical canvas; phone compositions use 450×1000 with vertically stacked panels. Crisp GIFs are independently rasterized at 4× and antialiased to 2× logical resolution, never upscaled from pixel frames. Each loop is 48 frames at 120 ms (5.76 seconds); GIF encoders may combine unchanged frames. The manifest records per-layout dimensions, sizes, durations and command hashes. Total new public artwork is about 36 MB, loaded selectively rather than all at once.
+
+## Scientific boundaries
+
+The reports are source material, not instructions to execute their embedded scripts. No embedded report code was run, and no report PDF, course handout, commercial spectral-library output, or product photo is copied into the public directory.
+
+Tonic-water figure data: CHEM 3020 Expr 4, printed PDF page 24. At 1000-fold dilution, readings are 137.1, 74.4, 61.5, 52.4, 48.9 fsu for 0, 10, 20, 30, 40 µL additions of 6.14 M salt to 5000 µL. The 100-fold readings are 127.4 and 48.5 at 0 and 10 µL. The displayed added chloride includes added volume. Page 36 documents different calibration slopes: 2000 and 200 fsu/ppm respectively. Thus nearly equal initial displayed readings do not establish an instrument malfunction. The user’s recollection of a large baseline and poor weak-signal accuracy remains explicitly a recollection. The article explains the linked-dilution model idea but makes no newly validated superiority claim. The reported quinine estimate is labeled as reported; the chloride fit reaches an upper bound with very large uncertainty, discussed in optional notes. Chloride is not an independent sodium determination.
+
+Chlorophyll figure data: CHEM 3030 Expr 5, page 5. Concentrations 0.909, 1.25, 1.67, 2.5, 3.33, 5, 6.67, 7.5 µM; signals 168, 222, 275, 366, 418, 484, 500, 502 fsu. No unique plateau mechanism or molecular distance is inferred.
+
+GC percentage bars quote 26.10%, 61.92%, 25.91% (sum 113.93%) from CHEM 3020 Expr 3 as an inconsistent result, not validated composition. Native standard presence alone is not declared invalid. The NMR animation uses an equal-population two-site exchange response, with fixed 73.4 Hz separation and illustrative rates; lab work used provided Igor tools. The reaction crossing is synthetic at 440 nm, distinguished from the report’s near-426/444 nm crossings. The acetone isotope experiment is distinguished from the cyclopentanone rate series. Calorimetry omits disputed reported heat/sign values. IR spectra are identified as illustrative or supplied where appropriate. All remaining plots are synthetic teaching examples. Shared counting data are credited to Stephanie Chen but not redistributed.
+
+Other source report references and care notes are in the plan. Primary definitions/reference links appear in optional article notes. The recalled tonic-water brand is Schweppes from Wegmans; exact package/lot is unconfirmed. No brand photograph or logo is used.
+
+## Reproduction and validation
+
+Use the project Python environment with NumPy and Pillow:
+
+```sh
+python3 scripts/draw-chemistry-experiences.py
+python3 scripts/verify-chemistry-experiences.py
+npm test
+npm run build
+npm run lint
+```
+
+The read-only asset verifier checks model sanity, all 92 wide/phone sets, label bounds, raster dimensions, true crisp rasterization, visible animation, durations and pixel-grid integrity. Generation itself asserts identical vector commands at every frame for pixel and crisp views. Node tests check all fifteen pages, 46 concepts, eight asset paths per concept, dimensions, motion fallbacks, unique anchors and chemistry banner context.
+
+Browser QA: all fifteen routes checked at desktop 1280 px and phone 390 px, with three/four figures and pixel defaults; no horizontal overflow. Pixel→crisp uses the correct animated asset, including the 900×2000 phone GIF; global pause swaps styles to PNG/SVG. Collection cards, navigation, report-vs-illustration captions, unknown-route fallback and console errors are checked. Screenshots are retained with source art. Public credits and `ATTRIBUTIONS.md` record provenance.
+
+Validation result (2026-11-10): production build passed; 34 Node tests passed; 92 figure/layout sets passed the read-only asset validator. Browser checks found no console errors and no horizontal overflow at 1280 and 390 px. The production article route chunk is approximately 35.25 kB (13.54 kB gzip); the main chunk remains below Vite’s 500 kB warning threshold. Lint exits successfully with six pre-existing warnings in weather/footer/playground files; none originate in these changes. The temporary preview tab and owned preview server are closed after QA.

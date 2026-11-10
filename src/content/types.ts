@@ -70,7 +70,7 @@ export interface ArticleFigure {
   }
 }
 export interface ProjectArticle {
-  kind?: 'topic'
+  kind?: 'topic' | 'experience'
   subject?: SubjectId
   detailsLabel?: string
   kicker: string
