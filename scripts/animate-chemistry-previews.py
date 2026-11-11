@@ -82,7 +82,7 @@ def glass(d,x,y,w,h,color=None,level=.73,cap=False):
 def bottle(d,x,y):
  pts=[(x+20,y),(x+40,y),(x+40,y+22),(x+54,y+39),(x+58,y+107),(x+51,y+116),(x+9,y+116),(x+2,y+107),(x+6,y+39),(x+20,y+22)]
  poly(d,pts,'#1a3743',MUTED);line(d,[(x+11,y+42),(x+9,y+102)],'#70999e',2);line(d,[(x+47,y+42),(x+51,y+104)],'#2c5361',2)
- rect(d,(x+6,y+61,x+54,y+89),GOLD);text(d,x+12,y+66,'TONIC',INK);text(d,x+11,y+77,'QUININE',INK,True)
+ rect(d,(x+6,y+61,x+54,y+89),GOLD);text(d,x+12,y+66,'TONIC',INK);text(d,x+14,y+77,'WATER',INK,True)
  rect(d,(x+18,y-4,x+42,y+4),EDGE);line(d,[(x+20,y-3),(x+39,y-3)],WHITE)
  ellipse(d,(x,y+118,x+61,y+123),INK)
 def beam(d,start,end,t,col=GOLD,width=1):
@@ -260,20 +260,25 @@ def methane(t):
  return im
 
 def interferogram(t):
- im,d=room('AN EMPTY CELL / A HIDDEN ECHO','CENTERBURST > GHOST > DISTANCE',t)
- screen(d,(57,47,340,173));x=np.linspace(-1,1,550)
+ im,d=room('AN EMPTY CELL / MEASURE THE ECHO','CENTER TO GHOST / A LENGTH TO EXPLAIN',t)
+ screen(d,(57,47,340,173))
+ # Camera enlarges the entire center-to-right-ghost interval, never the peak alone.
+ zoom=min(1,max(0,(t-.22)/.30));lo=-1*(1-zoom)-.10*zoom;hi=1*(1-zoom)+.72*zoom
+ x=np.linspace(lo,hi,600)
  signal=np.cos(110*x)*np.exp(-(x/.06)**2)+.18*np.cos(110*(x-.6))*np.exp(-((x-.6)/.06)**2)+.18*np.cos(110*(x+.6))*np.exp(-((x+.6)/.06)**2)
- zoom=t>.36;by=84 if zoom else 112;scale=25 if zoom else 42
- line(d,[(65,by),(332,by)],EDGE)
- line(d,[(65+(u+1)*133,by-z*scale) for u,z in zip(x,signal)],CYAN)
- origin=198;ghost=278
- if t>.17:
-  extent=min(1,(t-.17)/.18);line(d,[(origin,by+29),(origin+(ghost-origin)*extent,by+29)],GOLD);line(d,[(origin,by+25),(origin,by+33)],GOLD);line(d,[(ghost,by+25),(ghost,by+33)],GOLD);text(d,222,by+16,'dx',GOLD,True)
- if zoom:
-  rect(d,(266,69,291,98),None,GOLD);line(d,[(266,99),(77,123)],GRID);line(d,[(291,99),(323,123)],GRID)
-  zz=np.linspace(.43,.77,250);yy=np.cos(110*(zz-.6))*np.exp(-((zz-.6)/.06)**2)
-  line(d,[(69,149),(332,149)],EDGE);line(d,[(69+(u-.43)/.34*263,149-v*20) for u,v in zip(zz,yy)],CYAN)
-  text(d,271,126,'GHOST',GOLD,True)
+ xx=lambda q:67+(q-lo)/(hi-lo)*263
+ line(d,[(67,111),(330,111)],EDGE)
+ line(d,[(xx(u),111-v*39) for u,v in zip(x,signal)],CYAN)
+ origin=xx(0);ghost=xx(.6)
+ line(d,[(origin,66),(origin,146)],GRID);line(d,[(ghost,66),(ghost,146)],GRID)
+ text(d,max(68,origin-15),56,'CENTER',MUTED,True);text(d,min(302,ghost-11),82,'GHOST',GOLD,True)
+ if t>.50:
+  extent=min(1,(t-.50)/.30);end=origin+(ghost-origin)*extent
+  line(d,[(origin,145),(end,145)],GOLD,2)
+  line(d,[(origin,140),(origin,150)],GOLD);line(d,[(ghost,140),(ghost,150)],GOLD)
+  if extent>.9:
+   poly(d,[(origin,145),(origin+5,142),(origin+5,148)],GOLD);poly(d,[(ghost,145),(ghost-5,142),(ghost-5,148)],GOLD)
+   text(d,(origin+ghost)/2-25,151,'SEPARATION',GOLD,True)
  return im
 
 def cv(t):
@@ -322,38 +327,61 @@ def trefoil(d,cx,cy,r=19):
  ellipse(d,(cx-r-3,cy-r-3,cx+r+3,cy+r+3),GOLD)
  for angle in [-90,30,150]:d.pieslice((cx-r,cy-r,cx+r,cy+r),angle-30,angle+30,fill=INK)
  ellipse(d,(cx-8,cy-8,cx+8,cy+8),GOLD);ellipse(d,(cx-4,cy-4,cx+4,cy+4),INK)
+# Illustrative pulse-height spectrum: photopeak, continuum and lower-energy structure.
+GAMMA_E=np.linspace(0,900,124)
+GAMMA_EDGE=662*(1-1/(1+2*662/511))
+GAMMA_SHAPE=(.12*(GAMMA_E< GAMMA_EDGE)*(1-.4*GAMMA_E/GAMMA_EDGE)
+ +.75*np.exp(-.5*((GAMMA_E-662)/17)**2)
+ +.23*np.exp(-.5*((GAMMA_E-184)/27)**2)
+ +.5*np.exp(-.5*((GAMMA_E-32)/12)**2))
+GAMMA_COUNTS=np.cumsum(np.random.default_rng(74).poisson(GAMMA_SHAPE*2,(N,len(GAMMA_E))),axis=0)
 def radiation(t):
- im,d=room('NUCLEAR CHEMISTRY / COUNT THE CLICKS','A SAMPLE / A DETECTOR / RANDOM EVENTS',t)
- trefoil(d,82,75,19);screen(d,(43,113,139,161))
- for j in range(24):
-  x=48+j*3;phase=(t*4+j*.139)%1;y=153-(18 if (j*7)%9<2 else 4)*math.exp(-phase*9);line(d,[(x,154),(x,y)],CYAN)
- hardware(d,(327,39,342,177));rect(d,(213,39,335,48),EDGE);line(d,[(215,40),(334,40)],MUTED)
- # Large cylindrical detector hangs above a source plate.
- rect(d,(193,60,268,123),'#344e62');ellipse(d,(193,51,268,69),'#5d7d91',MUTED);ellipse(d,(193,115,268,132),'#1f3448',MUTED);ellipse(d,(201,119,261,129),DEEP,EDGE)
- line(d,[(199,70),(199,113)],'#6a8b9b',3);line(d,[(264,69),(264,115)],'#1d3548',3)
- ellipse(d,(194,164,270,177),'#365060',MUTED);ellipse(d,(201,162,263,171),PANEL,EDGE);ellipse(d,(218,157,245,165),GOLD)
+ im,d=room('NUCLEAR CHEMISTRY / AN ENERGY FINGERPRINT','COUNTS BY ENERGY / A PHOTOPEAK EMERGES',t)
+ trefoil(d,83,69,18);screen(d,(39,104,174,166))
+ values=GAMMA_COUNTS[min(N-1,int(t*N))];scale=max(1,GAMMA_COUNTS[-1].max())
+ for j,count in enumerate(values):
+  x=44+j;line(d,[(x,157),(x,157-count/scale*43)],GOLD if 640<GAMMA_E[j]<685 else CYAN)
+ text(d,42,107,'COUNTS',MUTED,True);text(d,144,158,'keV',MUTED,True)
+ px=44+662/900*123;line(d,[(px,109),(px,115)],GOLD);text(d,px-5,106,'662',GOLD,True)
+ # Opaque red detector housing with black end caps, carrying handle and cable.
+ line(d,[(249,57),(239,39),(209,37),(186,52),(177,79),(168,93)],INK,5)
+ line(d,[(249,56),(238,39),(209,38),(187,52),(178,79)],EDGE)
+ rect(d,(325,45,339,177),PANEL,EDGE);rect(d,(273,45,335,50),EDGE)
+ rect(d,(215,70,279,151),'#b94e43')
+ for x,col in [(217,'#813c3b'),(220,'#dd6c50'),(225,'#e27d5c'),(230,'#c55b48'),(273,'#893d39')]:rect(d,(x,71,x+3,149),col)
+ ellipse(d,(215,62,279,78),'#192534',EDGE);rect(d,(215,63,279,70),'#192534')
+ ellipse(d,(215,145,279,159),'#13202e',EDGE);rect(d,(216,145,278,151),'#182432')
+ # Flat black bottom face, not an open or transparent vessel.
+ ellipse(d,(218,150,276,158),'#0a1420')
+ poly(d,[(234,63),(234,44),(242,40),(257,45),(261,63)],'#132131',EDGE)
+ poly(d,[(240,59),(240,47),(245,46),(253,49),(255,60)],INK)
+ rect(d,(227,58,231,67),MUTED);dot(d,229,61,GOLD,1)
+ ellipse(d,(210,173,286,180),'#365060',MUTED);ellipse(d,(220,170,276,176),PANEL,EDGE);ellipse(d,(238,166,258,172),GOLD)
  for j in range(7):
-  u=(t*2+j*.173)%1;x=232+(j%3-1)*u*24;y=158-u*31
+  u=(t*2+j*.173)%1;x=248+(j%3-1)*u*19;y=166-u*8
   dot(d,x,y,CYAN if j%2 else GOLD,1)
-  if u>.91:line(d,[(x-3,127),(x+3,127)],WHITE)
  return im
 
 def unknowns(t):
- im,d=room('FOUR UNKNOWNS / FOUR SMALL MYSTERIES','LOOK CLOSELY / CHOOSE YOUR NEXT QUESTION',t)
- hardware(d,(43,158,343,177))
- for j,x in enumerate([66,141,216,291]):
-  glass(d,x,71,29,85,['#243b47','#192e3d','#425d69','#19436a'][j],.65,True)
-  text(d,x+9,52,f'0{j+1}',GOLD,True)
-  if j==0:
-   for k in range(27):dot(d,x+6+(k*7)%18,146-(k*11)%23,WHITE if k%3 else MUTED,1)
-  elif j==1:
-   pts=[(x+8+2*math.sin(z*.2+t*math.tau),93+z) for z in range(49)];line(d,pts,'#abb9b5',5);line(d,[(px-1,py) for px,py in pts],WHITE)
-  elif j==2:
-   yy=112+2*math.sin(t*math.tau);rect(d,(x+5,yy,x+24,150),mix('#587b7d',GOLD,.3));line(d,[(x+5,yy),(x+24,yy)],GOLD)
-  else:
-   glow(im,x+14,128,26,42,BLUE,1+.4*math.sin(t*math.tau));d=ImageDraw.Draw(im)
-   line(d,[(x+8,91),(x+8,144)],BLUE,2)
-  rect(d,(x+3,163,x+26,167),GRID);dot(d,x+15,165,GREEN,1)
+ im,d=room('FOUR UNKNOWNS / CHOOSE A MEASUREMENT','TWO SOLUTIONS / TWO SOLIDS',t)
+ # Paired solution measurements in a stylized optical instrument.
+ hardware(d,(37,72,178,168));rect(d,(46,83,168,153),INK,GRID)
+ for j,x in enumerate([65,123]):
+  col=['#39788b','#7c5b85'][j];glass(d,x,99,24,45,col,.78)
+  beam(d,(48 if j==0 else 107,120),(x+3,120),t,GOLD)
+  beam(d,(x+12,116),(x+12,89),t,CYAN if j==0 else PINK)
+  rect(d,(x+4,81,x+20,87),EDGE);dot(d,x+12,84,CYAN if j==0 else PINK,1)
+ text(d,60,58,'SOLUTIONS',CYAN,True);text(d,76,155,'OPTICAL',MUTED,True)
+ # Two solid samples on a transmission/IR sampling stage, with a growing trace.
+ hardware(d,(200,72,349,168));rect(d,(209,81,339,134),INK,GRID)
+ for j,(cx,col) in enumerate([(239,GOLD),(303,GREEN)]):
+  ellipse(d,(cx-18,126,cx+18,131),EDGE)
+  poly(d,[(cx-11,119),(cx-4,109),(cx+7,110),(cx+12,121),(cx+4,125),(cx-9,124)],col,MUTED)
+  beam(d,(cx-24,116),(cx-9,116),t,CORAL)
+  beam(d,(cx+10,116),(cx+24,116),t,mix(CORAL,INK,.45))
+  signal=[(215+k,155-10*math.exp(-((k-(24 if j==0 else 69))/5)**2)) for k in range(min(120,int(t*140)+3))]
+  line(d,signal,col)
+ text(d,235,58,'SOLID SAMPLES',GREEN,True);text(d,253,155,'IR',MUTED,True)
  return im
 
 SCENES={
@@ -364,7 +392,7 @@ SCENES={
  'sweeping-the-voltage':cv,'a-mixture-over-one-hundred-percent':gc,
  'tea-and-an-unexpected-answer':tea,'a-half-life-in-noisy-counts':radiation,'four-unknowns':unknowns,
 }
-STILL_PHASES={'tonic-water-fluorescence':.23,'two-peaks-become-one':.48,'spinach-fluorescence':.4,'beyond-the-library-match':.78,'five-dyes-one-spectrum':.85,'ions-in-flight':.28,'a-reaction-in-fading-color':.32,'heat-by-a-different-route':.6,'isotopes-in-the-infrared':.21,'the-empty-cell-spectrum':.75,'sweeping-the-voltage':.85,'a-mixture-over-one-hundred-percent':.95,'tea-and-an-unexpected-answer':.22,'a-half-life-in-noisy-counts':.24,'four-unknowns':.23}
+STILL_PHASES={'tonic-water-fluorescence':.23,'two-peaks-become-one':.48,'spinach-fluorescence':.4,'beyond-the-library-match':.78,'five-dyes-one-spectrum':.85,'ions-in-flight':.28,'a-reaction-in-fading-color':.32,'heat-by-a-different-route':.6,'isotopes-in-the-infrared':.21,'the-empty-cell-spectrum':.92,'sweeping-the-voltage':.85,'a-mixture-over-one-hundred-percent':.95,'tea-and-an-unexpected-answer':.22,'a-half-life-in-noisy-counts':.83,'four-unknowns':.82}
 
 def main():
  OUT.mkdir(parents=True,exist_ok=True);SOURCE.mkdir(parents=True,exist_ok=True);manifest={};sheet=Image.new('RGB',(W*3,H*5),INK)

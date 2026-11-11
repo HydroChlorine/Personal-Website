@@ -1,6 +1,6 @@
 {
   "numericalChecks": {
-    "originalConcepts": 46,
+    "originalConcepts": 48,
     "studyPNGs": 15,
     "tonicPointCount": 7,
     "chlorophyllPointCount": 8,
@@ -1385,6 +1385,66 @@
         "gifBytes": 60568,
         "crispGifBytes": 291224,
         "frameContentSha256": "c67248154c087eaa3a4a6b6ba16053f3b8ed562263e1e3f8b444eef7fa0fd906"
+      }
+    },
+    "tonic-stern-volmer": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 35623,
+        "crispGifBytes": 185040,
+        "frameContentSha256": "7001f91cd5b5057e720781da2afcc1a0fcc154c34e028c21e3ddcb8e67b34b94"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 25924,
+        "crispGifBytes": 162862,
+        "frameContentSha256": "f3fa7ba6ac416717c221349fc5a8af15171cc78b152fd154f54d97b00d3e111c"
+      }
+    },
+    "gamma-energy": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 47495,
+        "crispGifBytes": 440824,
+        "frameContentSha256": "fd4a46beda2fbf6eb8b62ff1c523a43c879b27bdc995c5121c91d49c0b4f8d76"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 46420,
+        "crispGifBytes": 412764,
+        "frameContentSha256": "2ef133ea8711e41268d72fadaa8954c4990d71bc3176445954a69bfbca5752cf"
       }
     }
   }

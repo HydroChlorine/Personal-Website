@@ -78,8 +78,8 @@ export function ProjectArticle({ article }: { article: Article }) {
     <article
       className="panel project-article"
       aria-label={
-        article.kind === 'experience'
-          ? 'Laboratory experience'
+        article.kind === 'snippet'
+          ? 'Chemistry snippet'
           : article.kind === 'topic'
             ? article.subject === 'computer-science'
               ? 'Computer science article'
@@ -96,8 +96,8 @@ export function ProjectArticle({ article }: { article: Article }) {
       <nav className="article-contents" aria-label="In this article">
         <span className="small-label">
           Inside this{' '}
-          {article.kind === 'experience'
-            ? 'experience'
+          {article.kind === 'snippet'
+            ? 'snippet'
             : article.kind === 'topic'
               ? 'topic'
               : 'project'}
@@ -212,7 +212,7 @@ export function ProjectArticle({ article }: { article: Article }) {
               {section.sources && (
                 <div className="article-sources">
                   <span>
-                    {article.kind === 'topic' || article.kind === 'experience'
+                    {article.kind === 'topic' || article.kind === 'snippet'
                       ? 'Read further'
                       : article.subject === 'computer-science'
                         ? 'References & credits'

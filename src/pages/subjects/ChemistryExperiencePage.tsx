@@ -22,10 +22,8 @@ export function ChemistryExperiencePage() {
       <Panel eyebrow="ANOTHER MOMENT AT THE BENCH" title={next.title}>
         <p>{next.summary}</p>
         <div className="inline-links">
-          <Link to={`/chemistry/experiences/${next.slug}`}>
-            Next experience ↗
-          </Link>
-          <Link to="/chemistry">All laboratory experiences ↗</Link>
+          <Link to={`/chemistry/snippets/${next.slug}`}>Next snippet ↗</Link>
+          <Link to="/chemistry">All chemistry snippets ↗</Link>
           {index === 0 && (
             <Link to="/mathematics/topics/mind-the-edges">
               Where should the next experiment go? ↗

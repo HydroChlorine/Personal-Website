@@ -3,7 +3,7 @@ export const chemistryExperienceCards: {
   slug: string
   title: string
   summary: string
-  course: 'CHEM 3020' | 'CHEM 3030'
+  category: 'Analytical chemistry' | 'Physical chemistry'
   preview: string
   previewGif: string
   previewAlt: string
@@ -12,8 +12,8 @@ export const chemistryExperienceCards: {
     slug: 'tonic-water-fluorescence',
     title: 'Tonic water and a stubborn fluorimeter',
     summary:
-      'A glowing drink, a troublesome measurement, and a reason to rethink the model.',
-    course: 'CHEM 3020',
+      'Quinine, chloride and a linked fluorescence model for an ordinary bottle of tonic water.',
+    category: 'Analytical chemistry',
     preview:
       '/media/chemistry/experiences/tonic-water-fluorescence-preview.png',
     previewGif:
@@ -25,8 +25,8 @@ export const chemistryExperienceCards: {
     slug: 'two-peaks-become-one',
     title: 'Watching two NMR peaks become one',
     summary:
-      'A molecule keeps moving. The spectrum changes when our observational timescale catches up.',
-    course: 'CHEM 3030',
+      'Use temperature-dependent NMR line shapes to investigate restricted rotation around an amide bond.',
+    category: 'Physical chemistry',
     preview: '/media/chemistry/experiences/two-peaks-become-one-preview.png',
     previewGif: '/media/chemistry/experiences/two-peaks-become-one-preview.gif',
     previewAlt:
@@ -36,8 +36,8 @@ export const chemistryExperienceCards: {
     slug: 'spinach-fluorescence',
     title: 'Spinach under a different light',
     summary:
-      'Separating green pigments reveals a bright signal—and the point where more stops looking brighter.',
-    course: 'CHEM 3030',
+      'Extract chlorophyll, separate the pigments, and ask why fluorescence stops growing proportionally.',
+    category: 'Physical chemistry',
     preview: '/media/chemistry/experiences/spinach-fluorescence-preview.png',
     previewGif: '/media/chemistry/experiences/spinach-fluorescence-preview.gif',
     previewAlt:
@@ -47,8 +47,8 @@ export const chemistryExperienceCards: {
     slug: 'beyond-the-library-match',
     title: 'When the spectral library suggests the wrong compound',
     summary:
-      'An infrared search result is a lead to investigate, rather than an identification to accept.',
-    course: 'CHEM 3020',
+      'Berberine, a formulated tablet, and the chemical judgment behind an infrared identification.',
+    category: 'Analytical chemistry',
     preview:
       '/media/chemistry/experiences/beyond-the-library-match-preview.png',
     previewGif:
@@ -60,8 +60,8 @@ export const chemistryExperienceCards: {
     slug: 'five-dyes-one-spectrum',
     title: 'Five dyes in one color',
     summary:
-      'Can a crowded spectrum tell us how much of each colored ingredient is present?',
-    course: 'CHEM 3020',
+      'Fit a universal indicator as five overlapping spectra—and choose a pH that makes the ingredients visible.',
+    category: 'Analytical chemistry',
     preview: '/media/chemistry/experiences/five-dyes-one-spectrum-preview.png',
     previewGif:
       '/media/chemistry/experiences/five-dyes-one-spectrum-preview.gif',
@@ -72,8 +72,8 @@ export const chemistryExperienceCards: {
     slug: 'ions-in-flight',
     title: 'A molecule’s flight time',
     summary:
-      'A small instrument turns arrival times into clues about mass and ionization.',
-    course: 'CHEM 3030',
+      'Laser ionization, flight times and source tuning turn molecular ions into measurable arrival peaks.',
+    category: 'Physical chemistry',
     preview: '/media/chemistry/experiences/ions-in-flight-preview.png',
     previewGif: '/media/chemistry/experiences/ions-in-flight-preview.gif',
     previewAlt:
@@ -83,8 +83,8 @@ export const chemistryExperienceCards: {
     slug: 'a-reaction-in-fading-color',
     title: 'Following a reaction as its color fades',
     summary:
-      'Choose where to look, then let a changing color become a reaction clock.',
-    course: 'CHEM 3030',
+      'Bromination rates, isosbestic wavelengths and a hydrogen/deuterium comparison probe a mechanism.',
+    category: 'Physical chemistry',
     preview:
       '/media/chemistry/experiences/a-reaction-in-fading-color-preview.png',
     previewGif:
@@ -96,8 +96,8 @@ export const chemistryExperienceCards: {
     slug: 'heat-by-a-different-route',
     title: 'Two combustions and a missing heat',
     summary:
-      'Sometimes the quantity we want is hidden in the difference between two easier measurements.',
-    course: 'CHEM 3030',
+      'Compare combustion of methyl methacrylate and PMMA to ask about polymerization enthalpy.',
+    category: 'Physical chemistry',
     preview:
       '/media/chemistry/experiences/heat-by-a-different-route-preview.png',
     previewGif:
@@ -109,8 +109,8 @@ export const chemistryExperienceCards: {
     slug: 'isotopes-in-the-infrared',
     title: 'Changing an atom, shifting a spectrum',
     summary:
-      'Molecular motion leaves a fingerprint that changes when an isotope changes the mass.',
-    course: 'CHEM 3030',
+      'Use DCl, methane and CD₃H spectra to connect line patterns with molecular mass and motion.',
+    category: 'Physical chemistry',
     preview:
       '/media/chemistry/experiences/isotopes-in-the-infrared-preview.png',
     previewGif:
@@ -122,20 +122,20 @@ export const chemistryExperienceCards: {
     slug: 'the-empty-cell-spectrum',
     title: 'The empty cell had a spectrum',
     summary:
-      'An unexpected pattern turned an apparent background into something worth investigating.',
-    course: 'CHEM 3020',
+      'Interferogram echoes and spectral fringes turn an empty cell into an optical-distance measurement.',
+    category: 'Analytical chemistry',
     preview: '/media/chemistry/experiences/the-empty-cell-spectrum-preview.png',
     previewGif:
       '/media/chemistry/experiences/the-empty-cell-spectrum-preview.gif',
     previewAlt:
-      'An interferogram reveals a side ghost peak; a distance marker grows and a magnified view opens.',
+      'The view enlarges the full separation between an interferogram centerburst and its right-hand ghost; an animated line measures that interval.',
   },
   {
     slug: 'sweeping-the-voltage',
     title: 'Sweeping the voltage, watching the chemistry',
     summary:
-      'An electrode turns a changing electrical push into a record of chemical response.',
-    course: 'CHEM 3020',
+      'From ferricyanide to acetaminophen: connect a voltammogram with redox behavior and concentration.',
+    category: 'Analytical chemistry',
     preview: '/media/chemistry/experiences/sweeping-the-voltage-preview.png',
     previewGif: '/media/chemistry/experiences/sweeping-the-voltage-preview.gif',
     previewAlt:
@@ -145,8 +145,8 @@ export const chemistryExperienceCards: {
     slug: 'a-mixture-over-one-hundred-percent',
     title: 'A mixture that added up to more than 100 percent',
     summary:
-      'A beautiful chromatogram can still lead to an impossible composition.',
-    course: 'CHEM 3020',
+      'A solvent-mixture analysis separates peaks successfully, then fails a mass-balance check.',
+    category: 'Analytical chemistry',
     preview:
       '/media/chemistry/experiences/a-mixture-over-one-hundred-percent-preview.png',
     previewGif:
@@ -158,8 +158,8 @@ export const chemistryExperienceCards: {
     slug: 'tea-and-an-unexpected-answer',
     title: 'Tea, extraction, and an unexpected answer',
     summary:
-      'Two similar spectra turned a familiar drink into a sensitive measurement problem.',
-    course: 'CHEM 3020',
+      'Combine UV absorption and extraction to distinguish caffeine from a strongly overlapping absorber.',
+    category: 'Analytical chemistry',
     preview:
       '/media/chemistry/experiences/tea-and-an-unexpected-answer-preview.png',
     previewGif:
@@ -171,24 +171,24 @@ export const chemistryExperienceCards: {
     slug: 'a-half-life-in-noisy-counts',
     title: 'A half-life hidden in noisy counts',
     summary:
-      'Individual clicks are unpredictable. A statistical pattern can still emerge.',
-    course: 'CHEM 3030',
+      'Counting statistics, an exponential fit and a gamma spectrum help identify a short-lived nuclide.',
+    category: 'Physical chemistry',
     preview:
       '/media/chemistry/experiences/a-half-life-in-noisy-counts-preview.png',
     previewGif:
       '/media/chemistry/experiences/a-half-life-in-noisy-counts-preview.gif',
     previewAlt:
-      'A trefoil symbol and hanging cylindrical detector accompany radiation traveling upward from a sample plate.',
+      'An opaque red gamma detector with black end caps hangs over a sample; the screen accumulates an energy spectrum with a photopeak.',
   },
   {
     slug: 'four-unknowns',
-    title: 'Four unknowns on the final lab bench',
+    title: 'Four unknowns on the bench',
     summary:
-      'An open-ended practical brought identification, calibration, and judgment together.',
-    course: 'CHEM 3020',
+      'Choose infrared, absorption and fluorescence measurements for two solids and two solutions.',
+    category: 'Analytical chemistry',
     preview: '/media/chemistry/experiences/four-unknowns-preview.png',
     previewGif: '/media/chemistry/experiences/four-unknowns-preview.gif',
     previewAlt:
-      'Four unknown samples show powder, a flexible film, a moving liquid surface, and a softly glowing solution.',
+      'Two colored solutions undergo optical measurements beside two colored solid samples on an infrared sampling stage.',
   },
 ]

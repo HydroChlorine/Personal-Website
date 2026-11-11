@@ -1,18 +1,18 @@
-# Chemistry experiences / implementation
+# Chemistry snippets / implementation
 
 Implemented on `chemistry-section-implementation`, 2026-11-10. The source review and original fifteen-story plan remain in `CHEMISTRY_EXPERIENCES_PLAN.md`.
 
 ## Visitor experience
 
-`/chemistry` shows tonic water, NMR exchange, and spinach by default. An “Expand all experiences (12 more)” button reveals the other twelve; “Show fewer experiences” folds them again. Folded cards are unmounted so their GIFs are not requested by the collection. The whole PNG/title/summary card is one keyboard-accessible link. Every story lives at `/chemistry/experiences/:slug`, inherits the chemistry banner, has its own title, and links back to the collection and onward to another experience. Ring-closing research, Molecules in pictures, and Papers & presentations remain outside this implementation.
+`/chemistry` shows tonic water, NMR exchange, and spinach by default. An “Expand all snippets (12 more)” button reveals the other twelve; “Show fewer snippets” folds them again. Folded cards are unmounted so their GIFs are not requested by the collection. The whole animated-scene/title/summary card is one keyboard-accessible link. Every story lives at `/chemistry/snippets/:slug`, inherits the chemistry banner, has its own title, and links back to the collection and onward to another snippet. Ring-closing research, Molecules in pictures, and Papers & presentations remain outside this implementation.
 
-There are 46 figure concepts: four for tonic water and three for every other story. Each offers Pixel sketch (default) and Crisp diagram, both animated from exactly the same frame commands. The existing global motion setting substitutes static PNG/SVG companions for both styles. Figures load lazily; article bodies form a separate route chunk so other visitors do not download all the new prose upfront. The collection metadata is separate from the article bodies.
+There are 48 figure concepts: five for tonic water, four for radioactive counting, and three for every other story. Each offers Pixel sketch (default) and Crisp diagram, both animated from exactly the same frame commands. The existing global motion setting substitutes static PNG/SVG companions for both styles. Figures load lazily; article bodies form a separate route chunk so other visitors do not download all the new prose upfront. The collection metadata is separate from the article bodies.
 
 ## Content and assets
 
 - `src/content/chemistry/experiences/index.ts`: lightweight cards/titles/route slugs.
-- `src/content/chemistry/experiences/articles.ts`: fifteen short experiences, captions and optional notes.
-- `src/pages/subjects/ChemistryExperiencePage.tsx`: shared experience presentation and onward navigation.
+- `src/content/chemistry/experiences/articles.ts`: fifteen chemistry snippets, captions and optional notes.
+- `src/pages/subjects/ChemistryExperiencePage.tsx`: shared snippet presentation and onward navigation.
 - `scripts/draw-chemistry-experiences.py`: original scientific/physical drawing recipes and synthetic models.
 - `public/media/chemistry/experiences/`: fifteen animated teaser GIFs and PNG pause companions (768×432, drawn at 384×216), the original preview PNGs retained as legacy art; eight assets per body figure (wide/phone × pixel GIF, pixel PNG, crisp GIF and SVG), plus manifest.
 - `assets/art-source/chemistry/experiences/`: review contact sheets and browser screenshots.
@@ -82,3 +82,35 @@ python3 scripts/verify-chemistry-previews.py
 The spinach body now records the author's clarification: a 50:50 celite/granulated grocery sugar packing chosen for faster elution and larger sample loading. Broader article rewrites remain for a later content-focused round, as permitted in the request.
 
 Validation: all fifteen exported GIFs have visible motion, 12-second looping duration, exact 2× pixel grids and 768×432 pause companions. Rendered-behavior checks cover fluorescence loss, all three reaction vials clearing, three TOF arrivals and the two unequal thermometer rises. All 35 Node tests and the production build pass. Desktop 1280px and phone 390px browser checks verify 3→15→3 cards, keyboard Enter/Space operation, aria-expanded state, no horizontal overflow, all-GIF/all-PNG motion switching (including expansion while paused), the spinach text, and no console errors. Old article asset tests still pass. Browser proof: `revised-cards-desktop.png`, `revised-collection-desktop.png`, and `revised-collection-phone.png`.
+
+## Chemistry snippets / body rewrite, 2026-11-11
+
+The visitor-facing collection is now called **chemistry snippets**. Each of the fifteen bodies has been rewritten around a real question, the work done, the chemical/mathematical reasoning, and the supported outcome. Course-number labels are removed from cards and articles. The collection introduction now describes things learned and practiced as a chemist, including both satisfying results and questions needing more deliberation. The first three cards and expand/collapse behavior are retained.
+
+Canonical detail routes are `/chemistry/snippets/:slug`. Old `/chemistry/experiences/:slug` URLs redirect with query strings and fragments preserved. Internal asset/source directory names remain stable so existing media URLs keep working.
+
+The prose is grounded in the already reviewed private reports rather than invented experimental work. Specific anchors include the dimethylbenzamide derivative and 263–333 K variable-temperature NMR series; celite/sugar chlorophyll separation, 436 nm excitation and 662 nm absorbance measurements; KBr-prepared berberine and a formulated tablet; the universal-indicator reference spectra; VUV/TOF source behavior; cyclopentanone initial rates versus the distinct acetone isotope comparison; methyl methacrylate/PMMA combustion; methane/CD₃H line assignments; empty ZnSe-cell echoes; ferricyanide/ferrocyanide and acetaminophen voltammetry; the solvent after-wash mass balance; caffeine/theophylline extraction equations; the shared decay dataset; and the four unknown identification/concentration tasks.
+
+The tonic-water snippet now introduces and explains the Stern–Volmer relation before discussing the linked-dilution strategy. A new paired pixel/crisp animation shows F/F₀ falling while F₀/F becomes linear. A second new paired figure explains gamma-energy spectra and pulse-height sorting. This brings the body collection to **48 figure concepts / 96 wide-phone sets**. Both additions include moving styles and static pause companions.
+
+Scientific distinctions preserved or corrected in the new prose:
+
+- Fluorescence ratios require compatible fluorophore concentration, calibration and background; the first tonic-water reading already contains native chloride and is not an unquenched reference. The reported quinine estimate is identified as reported, and native chloride remains poorly constrained.
+- The NMR analysis used the supplied Igor exchange function; its authorship is not claimed. Reported barrier precision is not overstated.
+- Optical attenuation/reabsorption is distinguished from changes in intrinsic emission. Benzoquinone stock mixtures held chlorophyll concentration fixed.
+- Least-squares dye weights are reference-relative contributions, not percentages of the entire solvent-containing bottle; pH matching and weak visible phenolphthalein information are explained.
+- The calorimetry sign inconsistency is acknowledged; no precise successful polymerization heat is claimed.
+- A native GC reference is not declared inherently invalid; factors that cancel in a ratio are distinguished from those that remain.
+- Stephanie Chen's shared decay measurements are credited in the main text. The reported 2.56 ± 0.05 minute half-life is distinguished from the synthetic figures. The assigned 662 keV photopeak was a calibration anchor, not independent zero-error confirmation. The original report's near-180-keV Compton-edge assignment is not repeated; the ideal single-scatter electron-energy limit for 662 keV is about 478 keV.
+- The report's colored unknown used UV–vis, while its fluorescent unknown used fluorometry. The preview groups two colored solutions in a stylized optical measurement scene, as requested; the body retains the actual distinction. Powder identification is separated from the more tentative polymer subtype assignment.
+
+Primary reference checks: [IUPAC Stern–Volmer definition](https://goldbook.iupac.org/terms/view/S06004), [Brookhaven evaluated barium decay data](https://www.nndc.bnl.gov/nudat3/getdecaydataset.jsp?dsid=137cs+bM+decay&nucleus=137BA), and the previously linked NIST chromatography reference. Links are present in the relevant optional reading sections; private source reports are not republished.
+
+Preview revisions:
+
+1. The interferogram camera enlarges the full interval between the centerburst and right ghost, and the animated measurement spans those two features.
+2. Bottle label corrected to TONIC WATER.
+3. Detector redrawn as an opaque red housing with black caps, handle and cable, guided by the user's photograph. Its screen accumulates a physically motivated illustrative energy histogram with a photopeak, partial-energy continuum and low-energy structure. No product photograph is copied.
+4. Four unknowns redrawn as two colored solutions in an optical instrument and two colored solids in an IR sampling stage. The stills now capture a more developed phase of the animations.
+
+Validation: production build and 36 Node tests pass. Asset checks cover all fifteen preview loops and all 96 body layout/style sets, including motion parity, pause images, dimensions and label bounds. Browser checks cover the renamed collection, all fifteen canonical stories on desktop and phone, legacy-route redirects, the first-three disclosure, new figure controls, and absence of course labels/horizontal overflow. Screenshots are retained with the source artwork.

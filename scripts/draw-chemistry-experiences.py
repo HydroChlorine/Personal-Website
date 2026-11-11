@@ -571,7 +571,36 @@ def calibration(m,t):
   note(d,b,'small fit errors do not exclude a common bias')
  return d
 
+def stern_volmer(m,t):
+ d,bs=frame(m,'TURN A LOST GLOW INTO A RELATION','Simple dynamic quenching at fixed fluorophore concentration')
+ xx=np.linspace(0,1,180)
+ for j,b in enumerate(bs):
+  label(d,b,'The fluorescence decreases' if j==0 else 'The ratio becomes a line')
+  xy,p=plot(d,b,(0,1),(0,1.1) if j==0 else (1,4.3),'relative quencher concentration','F / F0' if j==0 else 'F0 / F')
+  yy=1/(1+3*xx) if j==0 else 1+3*xx
+  curve(d,xy,xx,yy,CYAN if j==0 else AMBER)
+  u=min(1,t*1.25);dot(d,*xy(u,1/(1+3*u) if j==0 else 1+3*u),AMBER,8)
+  note(d,b,'same model, different view of the response')
+ return d
+
+def gamma_energy(m,t):
+ d,bs=frame(m,'COUNTS HAVE AN ENERGY DISTRIBUTION','Illustrative scintillation response, not a measured spectrum')
+ energy=np.linspace(0,900,300);edge=662*(1-1/(1+2*662/511))
+ profile=.13*(energy<edge)*(1-.4*energy/edge)+.75*gp(energy,662,17)+.23*gp(energy,184,27)+.5*gp(energy,32,12)
+ b=bs[0];label(d,b,'A photopeak and partial-energy events');xy,p=plot(d,b,(0,900),(0,1),'deposited energy / keV','relative counts')
+ curve(d,xy,energy,profile*min(1,.2+t*1.3),CYAN)
+ line(d,[xy(662,0),xy(662,.91)],AMBER,1);text(d,p[2]-7,p[1]+18,'662 keV',AMBER,12,'end');note(d,b,'full-energy peak / Compton continuum')
+ b=bs[1];label(d,b,'Pulse height encodes deposited energy');x,y,w,h=b
+ for j,col in enumerate([CYAN,AMBER]):
+  baseline=y+135+j*95;xx=np.linspace(0,1,130);signal=np.exp(-((xx-.4)/.055)**2)*(55 if j==0 else 25)
+  line(d,[(x+30+u*(w-60),baseline-v) for u,v in zip(xx,signal)],col,2)
+  u=t;dot(d,x+30+u*(w-60),baseline-float(np.interp(u,xx,signal)),TEXT,6)
+ text(d,x+w/2,y+310,'sort many pulses into energy bins',MUTED,12)
+ note(d,b,'scattering need not deposit the full photon energy')
+ return d
+
 RECIPES={
+ 'tonic-stern-volmer':stern_volmer,'gamma-energy':gamma_energy,
  'tonic-quenching':quench,'tonic-dilution':dilution,'tonic-calibration':gain,'tonic-readings':tonic_points,
  'nmr-exchange':exchange,'nmr-coalescence':nmr_lines,'nmr-lineshapes':lineshapes,
  'spinach-separation':spinach,'chlorophyll-light':light_filter,'chlorophyll-readings':chl_points,
@@ -638,14 +667,14 @@ def study(i):
  return d
 
 def verify():
- assert len(RECIPES)==46 and len(STUDIES)==15
+ assert len(RECIPES)==48 and len(STUDIES)==15
  assert 2000/1000==200/100
  assert abs(sum([26.10,61.92,25.91])-113.93)<1e-10
  assert len(CHL_C)==len(CHL_F)==8
  for k in [1,10,100,500]:
   x,z=nmr_shape(k);assert np.isfinite(z).all() and min(z)>=0
  assert np.argmax(nmr_shape(500)[1]) in [159,160]
- return {'originalConcepts':46,'studyPNGs':15,'tonicPointCount':7,'chlorophyllPointCount':8,'sourceType':'two transcribed point plots; all other animations illustrative'}
+ return {'originalConcepts':48,'studyPNGs':15,'tonicPointCount':7,'chlorophyllPointCount':8,'sourceType':'two transcribed point plots; all other animations illustrative'}
 
 def make_studies():
  OUT.mkdir(parents=True,exist_ok=True);c.art.SCALE=.5

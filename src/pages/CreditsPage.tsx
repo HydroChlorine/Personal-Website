@@ -58,14 +58,14 @@ export function CreditsPage() {
           Catalyst Discovery source ↗
         </a>
       </Panel>
-      <Panel title="Laboratory experiences">
+      <Panel title="Chemistry snippets">
         <p>
-          The fifteen chemistry experiences draw on Lichen’s CHEM 3020 and CHEM
-          3030 laboratory work. Their fifteen animated midnight-laboratory
-          previews and 46 explanatory figure concepts were created for this
-          website with AI-assisted Python, NumPy, and Pillow code. Pixel and
-          crisp animations use the same drawing instructions, with separate
-          phone layouts and static pause companions.
+          The fifteen chemistry snippets draw on Lichen’s laboratory notes and
+          reports. Their fifteen animated midnight-laboratory previews and 48
+          explanatory figure concepts were created for this website with
+          AI-assisted Python, NumPy, and Pillow code. Pixel and crisp animations
+          use the same drawing instructions, with separate phone layouts and
+          static pause companions.
         </p>
         <p>
           Most curves are synthetic teaching examples. The tonic-water and
@@ -81,7 +81,7 @@ export function CreditsPage() {
           bottle is an original stylized drawing, without copied Schweppes
           artwork.
         </p>
-        <a href="/chemistry">Visit the laboratory experiences ↗</a>
+        <a href="/chemistry">Read the chemistry snippets ↗</a>
       </Panel>
       <Panel title="At the mathematics desk">
         <p>

@@ -5,7 +5,7 @@ import { chemistryExperienceCards } from '../../content/chemistry/experiences'
 import { EmptyShelf } from '../../components/ui/Panel'
 import { SubjectPage } from './SubjectPage'
 
-function ExperienceCard({
+function SnippetCard({
   item,
   featured = false,
   motion,
@@ -17,7 +17,7 @@ function ExperienceCard({
   return (
     <Link
       className={`math-sketch math-sketch-link laboratory-card ${featured ? 'math-featured laboratory-featured' : ''}`}
-      to={`/chemistry/experiences/${item.slug}`}
+      to={`/chemistry/snippets/${item.slug}`}
     >
       <img
         src={motion ? item.previewGif : item.preview}
@@ -30,9 +30,7 @@ function ExperienceCard({
         <span className="small-label">
           {featured
             ? 'START HERE / A DRINK BECOMES A MODEL'
-            : item.course === 'CHEM 3020'
-              ? 'ANALYTICAL CHEMISTRY / A LAB EXPERIENCE'
-              : 'PHYSICAL CHEMISTRY / A LAB EXPERIENCE'}
+            : `${item.category.toUpperCase()} / A CHEMISTRY SNIPPET`}
         </span>
         <h3>{item.title}</h3>
         <p>{item.summary}</p>
@@ -52,17 +50,17 @@ export function ChemistryPage() {
         <>
           <div className="laboratory-opening">
             <p className="eyebrow">FROM THE LABORATORY / SMALL DISCOVERIES</p>
-            <h3>Sometimes the interesting part wasn’t in the instructions.</h3>
+            <h3>Questions from the bench. A few things worth keeping.</h3>
             <p>
-              A few experiences from analytical and physical chemistry:
-              surprising signals, stubborn instruments, and small changes in how
-              I thought about an experiment. Follow a scene for a short
-              illustrated visit.
+              A few things I’ve learned and practiced along the way as a
+              chemist. Some gave satisfying answers; others needed more
+              deliberation. These snippets follow the questions, measurements,
+              and reasoning behind them.
             </p>
           </div>
           <div className="math-sketch-grid laboratory-grid">
             {chemistryExperienceCards.slice(0, 3).map((item, index) => (
-              <ExperienceCard
+              <SnippetCard
                 key={item.slug}
                 item={item}
                 featured={index === 0}
@@ -73,25 +71,25 @@ export function ChemistryPage() {
           <div className="laboratory-disclosure">
             <p className="small-note" role="status">
               {expanded
-                ? 'All 15 experiences'
+                ? 'All 15 snippets'
                 : 'Three moments at the bench. Twelve more to explore.'}
             </p>
             <button
               type="button"
               aria-expanded={expanded}
-              aria-controls="more-laboratory-experiences"
+              aria-controls="more-laboratory-snippets"
               onClick={() => setExpanded((value) => !value)}
             >
               {expanded
-                ? 'Show fewer experiences ↑'
-                : 'Expand all experiences (12 more) ↓'}
+                ? 'Show fewer snippets ↑'
+                : 'Expand all snippets (12 more) ↓'}
             </button>
           </div>
-          <div id="more-laboratory-experiences" hidden={!expanded}>
+          <div id="more-laboratory-snippets" hidden={!expanded}>
             {expanded && (
               <div className="math-sketch-grid laboratory-grid laboratory-more">
                 {chemistryExperienceCards.slice(3).map((item) => (
-                  <ExperienceCard key={item.slug} item={item} motion={motion} />
+                  <SnippetCard key={item.slug} item={item} motion={motion} />
                 ))}
               </div>
             )}

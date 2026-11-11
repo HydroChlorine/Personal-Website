@@ -15,7 +15,7 @@ test('all 15 laboratory experiences have unique routes, real sections, previews,
   assert.equal(new Set(chemistryExperiences.map((x) => x.slug)).size, 15)
   for (const item of chemistryExperiences) {
     assert.ok(existsSync(root + item.preview))
-    assert.equal(item.article.kind, 'experience')
+    assert.equal(item.article.kind, 'snippet')
     assert.equal(item.article.subject, 'chemistry')
     assert.ok(item.article.sections.length >= 3)
     assert.equal(
@@ -23,12 +23,12 @@ test('all 15 laboratory experiences have unique routes, real sections, previews,
       item.article.sections.length,
     )
     assert.equal(
-      sceneContext(`/chemistry/experiences/${item.slug}`, '', [], []),
+      sceneContext(`/chemistry/snippets/${item.slug}`, '', [], []),
       'chemistry',
     )
   }
 })
-test('46 figure concepts ship paired moving styles, phone layouts, and motion-free companions', () => {
+test('48 figure concepts ship paired moving styles, phone layouts, and motion-free companions', () => {
   const names = new Set<string>()
   for (const item of chemistryExperiences)
     for (const section of item.article.sections) {
@@ -61,7 +61,7 @@ test('46 figure concepts ship paired moving styles, phone layouts, and motion-fr
         )
       }
     }
-  assert.equal(names.size, 46)
+  assert.equal(names.size, 48)
   assert.deepEqual([...names].sort(), Object.keys(manifest.figures).sort())
 })
 test('recorded points remain distinct from illustrative teaching data', () => {
@@ -104,4 +104,38 @@ test('each collection card has its own animated teaser and matching pause compan
     assert.equal(previews[item.slug].durationMs, 12000)
     assert.deepEqual(previews[item.slug].size, [768, 432])
   }
+})
+
+test('snippets explain actual questions and methods without course labels', () => {
+  for (const item of chemistryExperiences) {
+    const copy = [
+      item.article.kicker,
+      ...item.article.introduction,
+      ...item.article.sections.flatMap((s) => [
+        s.title,
+        ...s.paragraphs,
+        ...(s.detailParagraphs ?? []),
+      ]),
+    ].join(' ')
+    assert.ok(!/CHEM 30[23]0|lab section|course summary/i.test(copy), item.slug)
+    assert.equal(item.article.kind, 'snippet')
+    assert.ok(item.article.introduction.join(' ').length > 120, item.slug)
+  }
+  assert.match(
+    chemistryExperiences[0]!.article.sections
+      .find((s) => s.id === 'stern-volmer')!
+      .paragraphs.join(' '),
+    /Stern–Volmer/,
+  )
+  const radio = chemistryExperiences.find(
+    (s) => s.slug === 'a-half-life-in-noisy-counts',
+  )!.article
+  assert.match(
+    radio.sections.find((s) => s.id === 'decay')!.paragraphs.join(' '),
+    /Stephanie Chen/,
+  )
+  assert.match(
+    radio.sections.find((s) => s.id === 'gamma')!.paragraphs.join(' '),
+    /calibration anchor/,
+  )
 })
