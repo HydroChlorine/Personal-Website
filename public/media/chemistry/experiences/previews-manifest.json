@@ -1,0 +1,242 @@
+{
+  "tonic-water-fluorescence": {
+    "gif": "tonic-water-fluorescence-preview.gif",
+    "still": "tonic-water-fluorescence-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 155211,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "two-peaks-become-one": {
+    "gif": "two-peaks-become-one-preview.gif",
+    "still": "two-peaks-become-one-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 158027,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "spinach-fluorescence": {
+    "gif": "spinach-fluorescence-preview.gif",
+    "still": "spinach-fluorescence-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 131171,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "beyond-the-library-match": {
+    "gif": "beyond-the-library-match-preview.gif",
+    "still": "beyond-the-library-match-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 146981,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "five-dyes-one-spectrum": {
+    "gif": "five-dyes-one-spectrum-preview.gif",
+    "still": "five-dyes-one-spectrum-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 24018,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "ions-in-flight": {
+    "gif": "ions-in-flight-preview.gif",
+    "still": "ions-in-flight-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 99942,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "a-reaction-in-fading-color": {
+    "gif": "a-reaction-in-fading-color-preview.gif",
+    "still": "a-reaction-in-fading-color-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 115921,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "heat-by-a-different-route": {
+    "gif": "heat-by-a-different-route-preview.gif",
+    "still": "heat-by-a-different-route-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 70798,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "isotopes-in-the-infrared": {
+    "gif": "isotopes-in-the-infrared-preview.gif",
+    "still": "isotopes-in-the-infrared-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 222350,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "the-empty-cell-spectrum": {
+    "gif": "the-empty-cell-spectrum-preview.gif",
+    "still": "the-empty-cell-spectrum-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 23665,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "sweeping-the-voltage": {
+    "gif": "sweeping-the-voltage-preview.gif",
+    "still": "sweeping-the-voltage-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 43429,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "a-mixture-over-one-hundred-percent": {
+    "gif": "a-mixture-over-one-hundred-percent-preview.gif",
+    "still": "a-mixture-over-one-hundred-percent-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 240791,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "tea-and-an-unexpected-answer": {
+    "gif": "tea-and-an-unexpected-answer-preview.gif",
+    "still": "tea-and-an-unexpected-answer-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 136344,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "a-half-life-in-noisy-counts": {
+    "gif": "a-half-life-in-noisy-counts-preview.gif",
+    "still": "a-half-life-in-noisy-counts-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 106385,
+    "source": "original procedural illustration; not experimental data"
+  },
+  "four-unknowns": {
+    "gif": "four-unknowns-preview.gif",
+    "still": "four-unknowns-preview.png",
+    "logicalSize": [
+      384,
+      216
+    ],
+    "size": [
+      768,
+      432
+    ],
+    "frames": 120,
+    "durationMs": 12000,
+    "bytes": 84267,
+    "source": "original procedural illustration; not experimental data"
+  }
+}

@@ -2,6 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import { chemistryExperienceCards } from '../src/content/chemistry/experiences/index.ts'
 import { chemistryExperiences } from '../src/content/chemistry/experiences/articles.ts'
 import { figureSources } from '../src/components/articles/figureSources.ts'
 import { sceneContext } from '../src/content/sceneContext.ts'
@@ -82,4 +83,25 @@ test('recorded points remain distinct from illustrative teaching data', () => {
       (x) => !/ring-closing|molecules-in-pictures/.test(x.slug),
     ),
   )
+})
+
+test('each collection card has its own animated teaser and matching pause companion', () => {
+  const previews = JSON.parse(
+    readFileSync(
+      `${root}/media/chemistry/experiences/previews-manifest.json`,
+      'utf8',
+    ),
+  )
+  assert.deepEqual(
+    Object.keys(previews).sort(),
+    chemistryExperienceCards.map((item) => item.slug).sort(),
+  )
+  for (const item of chemistryExperienceCards) {
+    assert.ok(existsSync(root + item.previewGif), item.slug)
+    assert.ok(existsSync(root + item.preview), item.slug)
+    assert.ok(item.previewGif.endsWith('-preview.gif'))
+    assert.ok(item.preview.endsWith('-preview.png'))
+    assert.equal(previews[item.slug].durationMs, 12000)
+    assert.deepEqual(previews[item.slug].size, [768, 432])
+  }
 })

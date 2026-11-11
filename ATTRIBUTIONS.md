@@ -156,3 +156,10 @@ Two point plots explicitly transcribe measured tonic-water and chlorophyll readi
 The counting-experiment report used a decay dataset shared by Stephanie Chen with TA approval after an original file was lost. The website credits this contribution and uses original synthetic curves instead of redistributing that data. Commercial spectral-library screenshots, course handouts, report PDFs and product photographs are not bundled. The bottle illustration is original: Schweppes/Wegmans identify the author’s recalled sample, not licensed bottle artwork or an exact verified package size. Contextual references: [Schweppes tonic water](https://schweppes.ca/en/products/tonic-water/) and [Wegmans product listing](https://www.wegmans.com/shop/product/43807).
 
 The Stern–Volmer definition and chromatography quantitation references are linked in the applicable story’s optional notes. No external figure was reproduced or adapted. Public acknowledgments also appear on `/credits`.
+
+
+### Animated chemistry experience previews (2026-11-10 revision)
+
+The fifteen new night-laboratory teaser scenes in `*-preview.gif` and their PNG pause companions are original Python/Pillow/NumPy artwork created for this site with AI assistance. Source: `scripts/animate-chemistry-previews.py`. They replace the plain study images in the collection while retaining the earlier files. No reference-site artwork, commercial instrument photo, logo, report screenshot or third-party implementation is reused.
+
+The user's supplied multicomponent-indicator figure guided the five-color stacked-spectrum composition; its animation uses newly drawn synthetic profiles and does not claim to reproduce the measured dataset. KBr mini-press and laser-ionization details were checked against the author's analytical/physical laboratory reports. The spinach story incorporates the author's explicit 50:50 celite/granulated-sugar packing clarification. Public artwork credits are updated on `/credits`. The scenes are illustrative, including the unequal calorimeter rises and conceptual methane vibrations.

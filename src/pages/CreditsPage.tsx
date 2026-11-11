@@ -61,11 +61,11 @@ export function CreditsPage() {
       <Panel title="Laboratory experiences">
         <p>
           The fifteen chemistry experiences draw on Lichen’s CHEM 3020 and CHEM
-          3030 laboratory work. Their fifteen pixel preview paintings and 46
-          explanatory figure concepts were created for this website with
-          AI-assisted Python, NumPy, and Pillow code. Pixel and crisp animations
-          use the same drawing instructions, with separate phone layouts and
-          static pause companions.
+          3030 laboratory work. Their fifteen animated midnight-laboratory
+          previews and 46 explanatory figure concepts were created for this
+          website with AI-assisted Python, NumPy, and Pillow code. Pixel and
+          crisp animations use the same drawing instructions, with separate
+          phone layouts and static pause companions.
         </p>
         <p>
           Most curves are synthetic teaching examples. The tonic-water and

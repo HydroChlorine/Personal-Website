@@ -7,6 +7,7 @@ export interface ChemistryExperience {
   summary: string
   course: 'CHEM 3020' | 'CHEM 3030'
   preview: string
+  previewGif: string
   previewAlt: string
   article: ProjectArticle
 }
@@ -190,7 +191,7 @@ export const chemistryExperiences: ChemistryExperience[] = [
         'separate',
         'Follow the color through the separation',
         [
-          'Extraction brought the pigments into solution; chromatography separated fractions with different appearances. A colored band was a useful guide, but it was not a complete identification or a guarantee of purity.',
+          'Extraction brought the pigments into solution; chromatography separated fractions with different appearances. Our column used a 50:50 mixture of celite and granulated grocery-store sugar, chosen for faster elution and the ability to load a relatively large amount of material. A colored band was a useful guide, but it was not a complete identification or a guarantee of purity.',
           'The next step was to ask how a selected chlorophyll-containing fraction behaved under light.',
         ],
         'spinach-separation',

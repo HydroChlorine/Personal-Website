@@ -4,7 +4,7 @@ Implemented on `chemistry-section-implementation`, 2026-11-10. The source review
 
 ## Visitor experience
 
-`/chemistry` now has a featured tonic-water experience followed by fourteen illustrated cards. The whole PNG/title/summary card is one keyboard-accessible link. Every story lives at `/chemistry/experiences/:slug`, inherits the chemistry banner, has its own title, and links back to the collection and onward to another experience. Ring-closing research, Molecules in pictures, and Papers & presentations remain outside this implementation.
+`/chemistry` shows tonic water, NMR exchange, and spinach by default. An “Expand all experiences (12 more)” button reveals the other twelve; “Show fewer experiences” folds them again. Folded cards are unmounted so their GIFs are not requested by the collection. The whole PNG/title/summary card is one keyboard-accessible link. Every story lives at `/chemistry/experiences/:slug`, inherits the chemistry banner, has its own title, and links back to the collection and onward to another experience. Ring-closing research, Molecules in pictures, and Papers & presentations remain outside this implementation.
 
 There are 46 figure concepts: four for tonic water and three for every other story. Each offers Pixel sketch (default) and Crisp diagram, both animated from exactly the same frame commands. The existing global motion setting substitutes static PNG/SVG companions for both styles. Figures load lazily; article bodies form a separate route chunk so other visitors do not download all the new prose upfront. The collection metadata is separate from the article bodies.
 
@@ -14,7 +14,7 @@ There are 46 figure concepts: four for tonic water and three for every other sto
 - `src/content/chemistry/experiences/articles.ts`: fifteen short experiences, captions and optional notes.
 - `src/pages/subjects/ChemistryExperiencePage.tsx`: shared experience presentation and onward navigation.
 - `scripts/draw-chemistry-experiences.py`: original scientific/physical drawing recipes and synthetic models.
-- `public/media/chemistry/experiences/`: fifteen 384×216 preview PNGs; eight assets per figure (wide/phone × pixel GIF, pixel PNG, crisp GIF and SVG), plus manifest.
+- `public/media/chemistry/experiences/`: fifteen animated teaser GIFs and PNG pause companions (768×432, drawn at 384×216), the original preview PNGs retained as legacy art; eight assets per body figure (wide/phone × pixel GIF, pixel PNG, crisp GIF and SVG), plus manifest.
 - `assets/art-source/chemistry/experiences/`: review contact sheets and browser screenshots.
 
 Wide figures use a 900×600 logical canvas; phone compositions use 450×1000 with vertically stacked panels. Crisp GIFs are independently rasterized at 4× and antialiased to 2× logical resolution, never upscaled from pixel frames. Each loop is 48 frames at 120 ms (5.76 seconds); GIF encoders may combine unchanged frames. The manifest records per-layout dimensions, sizes, durations and command hashes. Total new public artwork is about 36 MB, loaded selectively rather than all at once.
@@ -48,3 +48,37 @@ The read-only asset verifier checks model sanity, all 92 wide/phone sets, label 
 Browser QA: all fifteen routes checked at desktop 1280 px and phone 390 px, with three/four figures and pixel defaults; no horizontal overflow. Pixel→crisp uses the correct animated asset, including the 900×2000 phone GIF; global pause swaps styles to PNG/SVG. Collection cards, navigation, report-vs-illustration captions, unknown-route fallback and console errors are checked. Screenshots are retained with source art. Public credits and `ATTRIBUTIONS.md` record provenance.
 
 Validation result (2026-11-10): production build passed; 34 Node tests passed; 92 figure/layout sets passed the read-only asset validator. Browser checks found no console errors and no horizontal overflow at 1280 and 390 px. The production article route chunk is approximately 35.25 kB (13.54 kB gzip); the main chunk remains below Vite’s 500 kB warning threshold. Lint exits successfully with six pre-existing warnings in weather/footer/playground files; none originate in these changes. The temporary preview tab and owned preview server are closed after QA.
+
+
+## Animated preview revision / 2026-11-10
+
+All fifteen collection previews have been remade as original midnight laboratory scenes. Each 12-second loop is drawn at 384×216 and exported at 2× with nearest-neighbor scaling and a shared per-animation 96-color palette. Separate composed stills support the site's global pause and reduced-motion preference. Metadata uses `previewGif` for motion and `preview` for stills. The body figures and their pixel/crisp selectors are independent and unchanged.
+
+`animate-chemistry-previews.py` owns the new `*-preview.gif` and `*-preview.png` files and `previews-manifest.json`; the older body-figure generator does not overwrite them. Source contact sheets, three storyboard sheets and desktop/phone browser screenshots are in the art-source directory. Reproduce/check with:
+
+```sh
+python3 scripts/animate-chemistry-previews.py
+python3 scripts/verify-chemistry-previews.py
+```
+
+| Experience | Teaser animation |
+| --- | --- |
+| Tonic water | Bottle, UV source, blue-fluorescing tube, three spoonfuls of white salt, progressively disappearing glow; liquid volume remains constant. |
+| NMR | Computed two-site exchange curves merge as a thermometer rises. |
+| Spinach | A veined leaf bobs and stretches gently; concentration darkens a fixed-volume cuvette and shortens light penetration. A small packed column sits behind the leaf. |
+| Spectral library | KBr grinding, a mini-press with threaded bolt/socket wrench, then transmission through a thin disc with selected beam colors attenuated. |
+| Five dyes | Five colored contributions accumulate into a stacked spectral shape and shared outline, inspired by the author's supplied decomposition figure. Curves are stylized synthetic shapes, not transcribed measured spectra. |
+| TOF | A laser pulse initiates three particles with different speeds; each reaches and registers at the detector before reset. |
+| Reaction rates | Three stirred yellow solutions fade at different rates until all are clear, without draining their vials. |
+| Combustion | Two cutaway calorimeters compare separate and connected molecular units, ignition and different thermometer rises. The comparison is illustrative, not a numerical thermochemical prediction. |
+| Methane / IR | Symmetric stretching, asymmetric stretching and bending in tetrahedral molecule sketches. Motions are conceptual rather than fitted normal-mode eigenvectors. |
+| Empty cell | Full interferogram, growing center-to-ghost distance marker, highlighted ghost region and magnified side view. No disputed optical-path conversion is quoted. |
+| CV | Forward and reverse scans gradually draw the full voltammogram. |
+| GC | Paper scrolls upward beneath a horizontally moving stylus, drawing colored peaks with time along the vertical strip. |
+| Tea | Two nearly overlapping spectral shapes shift; their small difference and an estimate move across zero beside a steaming cup. |
+| Counting | Original trefoil, a suspended cylindrical detector above a sample plate, radiation dots and counting pulses. |
+| Unknowns | Powder, a flexing film strip, a moving liquid surface, and a softly glowing solution on one rack. |
+
+The spinach body now records the author's clarification: a 50:50 celite/granulated grocery sugar packing chosen for faster elution and larger sample loading. Broader article rewrites remain for a later content-focused round, as permitted in the request.
+
+Validation: all fifteen exported GIFs have visible motion, 12-second looping duration, exact 2× pixel grids and 768×432 pause companions. Rendered-behavior checks cover fluorescence loss, all three reaction vials clearing, three TOF arrivals and the two unequal thermometer rises. All 35 Node tests and the production build pass. Desktop 1280px and phone 390px browser checks verify 3→15→3 cards, keyboard Enter/Space operation, aria-expanded state, no horizontal overflow, all-GIF/all-PNG motion switching (including expansion while paused), the spinach text, and no console errors. Old article asset tests still pass. Browser proof: `revised-cards-desktop.png`, `revised-collection-desktop.png`, and `revised-collection-phone.png`.
