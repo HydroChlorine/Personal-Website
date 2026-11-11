@@ -146,3 +146,28 @@ The fireworks demo adapts the author's collaborative CS 4620 pattern and simulat
 CritterWorld's browser demo is independently written TypeScript inspired by the team project of Ibrahim Ahmed, Lichen Huang, John Karaca and Michael Zhang. No Java course implementation, original example program or JavaFX/course asset is copied. It is labeled a simplified browser edition, and credits appear in the demo and public credits. Playground card images are screenshots of these actual local canvases.
 
 [Michael Xing's website](https://michaelxing.com/) informed the separate-tab game-launch format. No source, artwork or styles were reused. The Godot entry links the existing collaborative project/release page; no unlicensed game source or export is redistributed. Source boundaries, engine assessment and tests: [PLAYGROUND.md](docs/PLAYGROUND.md).
+
+## Chemistry laboratory experiences (2026-11-10)
+
+The fifteen short laboratory experiences draw on Lichen Huang’s own CHEM 3020 and CHEM 3030 reports. The fifteen preview PNGs and 46 figure concepts in `public/media/chemistry/experiences/` are original procedural illustrations developed with AI-assisted Python, NumPy and Pillow code, using this repository’s own drawing primitives. Each concept has paired animated pixel/crisp views, responsive phone layouts and static pause companions. No external implementation or artwork is included.
+
+Two point plots explicitly transcribe measured tonic-water and chlorophyll readings. The GC percentage bars quote the report’s inconsistent estimates as an observation to investigate. Other plots and animations are synthetic teaching examples, not recovered experimental traces. Source report locations, numerical care and reproduction commands are recorded in [CHEMISTRY_EXPERIENCES.md](docs/CHEMISTRY_EXPERIENCES.md) and the preceding [planning review](docs/CHEMISTRY_EXPERIENCES_PLAN.md).
+
+The counting-experiment report used a decay dataset shared by Stephanie Chen with TA approval after an original file was lost. The website credits this contribution and uses original synthetic curves instead of redistributing that data. Commercial spectral-library screenshots, course handouts, report PDFs and product photographs are not bundled. The bottle illustration is original: Schweppes/Wegmans identify the author’s recalled sample, not licensed bottle artwork or an exact verified package size. Contextual references: [Schweppes tonic water](https://schweppes.ca/en/products/tonic-water/) and [Wegmans product listing](https://www.wegmans.com/shop/product/43807).
+
+The Stern–Volmer definition and chromatography quantitation references are linked in the applicable story’s optional notes. No external figure was reproduced or adapted. Public acknowledgments also appear on `/credits`.
+
+
+### Animated chemistry experience previews (2026-11-10 revision)
+
+The fifteen new night-laboratory teaser scenes in `*-preview.gif` and their PNG pause companions are original Python/Pillow/NumPy artwork created for this site with AI assistance. Source: `scripts/animate-chemistry-previews.py`. They replace the plain study images in the collection while retaining the earlier files. No reference-site artwork, commercial instrument photo, logo, report screenshot or third-party implementation is reused.
+
+The user's supplied multicomponent-indicator figure guided the five-color stacked-spectrum composition; its animation uses newly drawn synthetic profiles and does not claim to reproduce the measured dataset. KBr mini-press and laser-ionization details were checked against the author's analytical/physical laboratory reports. The spinach story incorporates the author's explicit 50:50 celite/granulated-sugar packing clarification. Public artwork credits are updated on `/credits`. The scenes are illustrative, including the unequal calorimeter rises and conceptual methane vibrations.
+
+### Chemistry snippets and revised instrument scenes (2026-11-11)
+
+The fifteen bodies were rewritten from Lichen's laboratory reports as short question–method–reasoning–outcome snippets, with course-number framing removed. Numerical results are attributed to the recorded work and uncertainty/contribution boundaries remain explicit. Stephanie Chen's shared decay dataset is credited in the body, not redistributed as new artwork.
+
+Two original paired figure concepts were added: Stern–Volmer intensity/ratio views and gamma-energy/pulse-height explanations. The gamma trace is a new illustrative model, not the measured report spectrum. These bring chemistry bodies to 48 concepts. The detector's opaque red housing, black caps, handle and cable use the user's attached photograph as a visual reference; no photograph, branding or product artwork is reproduced. The empty-cell interval camera, TONIC WATER label, and paired optical/IR unknown-sample scene are original revisions to the existing procedural pixel artwork.
+
+The Stern–Volmer definition is checked against and linked to the IUPAC Gold Book. The barium half-life reference links Brookhaven's evaluated nuclear data. The original report's one-point gamma calibration and lower-energy assignments are discussed with their actual limitations rather than promoted as independent confirmation. Private reports and course handouts remain outside the public assets.

@@ -58,6 +58,31 @@ export function CreditsPage() {
           Catalyst Discovery source ↗
         </a>
       </Panel>
+      <Panel title="Chemistry snippets">
+        <p>
+          The fifteen chemistry snippets draw on Lichen’s laboratory notes and
+          reports. Their fifteen animated midnight-laboratory previews and 48
+          explanatory figure concepts were created for this website with
+          AI-assisted Python, NumPy, and Pillow code. Pixel and crisp animations
+          use the same drawing instructions, with separate phone layouts and
+          static pause companions.
+        </p>
+        <p>
+          Most curves are synthetic teaching examples. The tonic-water and
+          chlorophyll point plots are explicitly labeled transcriptions of
+          report measurements. No course handouts, commercial spectral-library
+          images, product photographs, or full laboratory reports are
+          reproduced.
+        </p>
+        <p>
+          The original counting-experiment report used decay data shared by
+          Stephanie Chen with TA approval after an original file was lost. The
+          website uses newly generated illustrative data instead. The tonic
+          bottle is an original stylized drawing, without copied Schweppes
+          artwork.
+        </p>
+        <a href="/chemistry">Read the chemistry snippets ↗</a>
+      </Panel>
       <Panel title="At the mathematics desk">
         <p>
           The six illustrated topic stories add 46 original mathematical

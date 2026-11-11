@@ -1,9 +1,22 @@
 import { lazy, Suspense, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useParams,
+  Navigate,
+} from 'react-router'
 import { projects } from './content/projects'
 import { SiteLayout } from './components/SiteLayout'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
+const ChemistryExperiencePage = lazy(() =>
+  import('./pages/subjects/ChemistryExperiencePage').then((m) => ({
+    default: m.ChemistryExperiencePage,
+  })),
+)
+import { chemistryExperienceCards } from './content/chemistry/experiences'
 import { ChemistryPage } from './pages/subjects/ChemistryPage'
 import { MathematicsPage } from './pages/subjects/MathematicsPage'
 import { ComputerSciencePage } from './pages/subjects/ComputerSciencePage'
@@ -45,10 +58,15 @@ const titles: Record<string, string> = {
   '/contact': 'Contact',
   '/credits': 'Credits',
 }
+function LegacyChemistrySnippet() {
+  const { slug } = useParams()
+  const { search, hash } = useLocation()
+  return <Navigate replace to={`/chemistry/snippets/${slug}${search}${hash}`} />
+}
 function RouteEffects() {
   const { pathname } = useLocation()
   useEffect(() => {
-    document.title = `${titles[pathname] ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? csTopics.find((topic) => pathname === `/computer-science/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
+    document.title = `${titles[pathname] ?? chemistryExperienceCards.find((item) => pathname === `/chemistry/snippets/${item.slug}`)?.title ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? csTopics.find((topic) => pathname === `/computer-science/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
     window.scrollTo({ top: 0, behavior: 'instant' })
     document.getElementById('main-content')?.focus({ preventScroll: true })
   }, [pathname])
@@ -84,6 +102,20 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="chemistry" element={<ChemistryPage />} />
+          <Route
+            path="chemistry/snippets/:slug"
+            element={
+              <Suspense
+                fallback={<p role="status">Opening the laboratory notebook…</p>}
+              >
+                <ChemistryExperiencePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="chemistry/experiences/:slug"
+            element={<LegacyChemistrySnippet />}
+          />
           <Route path="mathematics" element={<MathematicsPage />} />
           <Route
             path="mathematics/topics/:slug"

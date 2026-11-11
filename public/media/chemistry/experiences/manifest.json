@@ -1,0 +1,1451 @@
+{
+  "numericalChecks": {
+    "originalConcepts": 48,
+    "studyPNGs": 15,
+    "tonicPointCount": 7,
+    "chlorophyllPointCount": 8,
+    "sourceType": "two transcribed point plots; all other animations illustrative"
+  },
+  "figures": {
+    "tonic-quenching": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 73334,
+        "crispGifBytes": 449642,
+        "frameContentSha256": "5a7f1ef5099f59edaacbe77657efbc384aeeeda36151e73a361bddf772c3ef76"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 77048,
+        "crispGifBytes": 458615,
+        "frameContentSha256": "920941ec6404b2fa232f546dba17916a541fa4b853293e061d1680dc035c5f05"
+      }
+    },
+    "tonic-dilution": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 47424,
+        "crispGifBytes": 228755,
+        "frameContentSha256": "9b607f3ca2145fc07ef2a7fe3f2587c1ea88b615b26f3cd7da5d34dfc5a07bb4"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 49906,
+        "crispGifBytes": 230567,
+        "frameContentSha256": "e9abdc909e7796bbfcdca2c5bf6538b5e601b7c60420c44ca0dbd039dd16b45e"
+      }
+    },
+    "tonic-calibration": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 26726,
+        "crispGifBytes": 178017,
+        "frameContentSha256": "0b6748f4b6577e2d42ae17d5ec4306efa49e10b990dbe851835227a3aed65cd9"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 50872,
+        "crispGifBytes": 228611,
+        "frameContentSha256": "1e92bd25a9dd91e13e38856332a02742748da7f63088bd4a8be955dbe108fda6"
+      }
+    },
+    "tonic-readings": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 12851,
+        "crispGifBytes": 79390,
+        "frameContentSha256": "c0d61778e9183fe9d5df2e29f2282400433854609df7496f7c6db95bb491f4e6"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 15756,
+        "crispGifBytes": 85772,
+        "frameContentSha256": "46cfa95eb1d979bebbf6ed2aaf9d7e8084bd7d3c3349870cc708df2e29096de1"
+      }
+    },
+    "nmr-exchange": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 39819,
+        "crispGifBytes": 219813,
+        "frameContentSha256": "d4ca2b863760efb3f8e23c0d5cada01155265b1234f45dfac15a0f739a937336"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 49075,
+        "crispGifBytes": 242042,
+        "frameContentSha256": "1460fae68f5bdf1143cc87841a95db65c0c90390bc909f7defd8024cf1007ab1"
+      }
+    },
+    "nmr-coalescence": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 79517,
+        "crispGifBytes": 642292,
+        "frameContentSha256": "a52e9f58b67ec87f9cb4d8fc27a7f43fdf4fb8764e4987264590456d8c603981"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 71124,
+        "crispGifBytes": 580102,
+        "frameContentSha256": "81ec76dff2918c7f507805964a4c221c4bedb5d83453559183c54698c66a2a39"
+      }
+    },
+    "nmr-lineshapes": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 36497,
+        "crispGifBytes": 216417,
+        "frameContentSha256": "2998d579f8ecf02933923ad9354e5e905adde30a71dac2b58170ab6b7ce403cd"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 31957,
+        "crispGifBytes": 209191,
+        "frameContentSha256": "5de0a422efa76648051c718ca28244256a01ee7fc38a6562447ee907d1ed9bf2"
+      }
+    },
+    "spinach-separation": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 34813,
+        "crispGifBytes": 181622,
+        "frameContentSha256": "8c706a5401f918b450b9cd1c8d7ee0b2d6fc73f3d99dd0b085c5376825e48334"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 44816,
+        "crispGifBytes": 211614,
+        "frameContentSha256": "af9856e7c1a2d09c374d4523144c245209cde7b4786f6c21bbfa78f6efd9aa91"
+      }
+    },
+    "chlorophyll-light": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 58216,
+        "crispGifBytes": 351571,
+        "frameContentSha256": "90cf5096e4d26ad79c570c0fe2ab1c6218bc465a676265fc51255ad2ff660ef4"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 61533,
+        "crispGifBytes": 372087,
+        "frameContentSha256": "8c677b110b5d716c680cba52baef98f4be9fa5034af3d333aed304f5eaf3771b"
+      }
+    },
+    "chlorophyll-readings": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 11872,
+        "crispGifBytes": 74753,
+        "frameContentSha256": "267014a4d0b0182d875941d62fb2e7c4289fe35d8a5377d6a6273d4d502dfcf9"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 14558,
+        "crispGifBytes": 79675,
+        "frameContentSha256": "879b87f56562a28b56544c10cf30cdd9c5aae4a49eab482328446582cf6f6f0d"
+      }
+    },
+    "library-clues": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 32374,
+        "crispGifBytes": 199097,
+        "frameContentSha256": "4c97d417e4ed018fd231e01d38b1f22e65a1a4fce903afda6537056da5cb7f9f"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 29867,
+        "crispGifBytes": 193500,
+        "frameContentSha256": "077280cf7a1f1a8b1ef929effbe0f8149d48267054d2965cbad7e41498001322"
+      }
+    },
+    "tablet-contributions": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 20886,
+        "crispGifBytes": 158125,
+        "frameContentSha256": "0df6fcaaeb6b4225e76fc009320f21473263e8cec3b2eed1bc87c6892183f9cb"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 19451,
+        "crispGifBytes": 150670,
+        "frameContentSha256": "96b69bf47eda2094a31d247d10a64935edc1241e373e3c4794870dbba8aaddda"
+      }
+    },
+    "ftir-sampling": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 22239,
+        "crispGifBytes": 153725,
+        "frameContentSha256": "177fd42fab0940eb5c7880fe7e134a0ecb923e8577feca407867462f34b9fed8"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 26930,
+        "crispGifBytes": 193033,
+        "frameContentSha256": "8cebba3d501eb6b09ceee90aef870f2deacda01c35a1c72ecc39c78a1e89c43e"
+      }
+    },
+    "dye-mixture": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 22273,
+        "crispGifBytes": 147367,
+        "frameContentSha256": "defd84563a874dbf3a715ae3de9fc438f3ce567a005e4bca63a4ea93ddf336e1"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 21036,
+        "crispGifBytes": 141512,
+        "frameContentSha256": "a815272d8adaa84751323b5f02883e6e1d9b7470209711b9a0071a5bff711f71"
+      }
+    },
+    "dye-visibility": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 18318,
+        "crispGifBytes": 112781,
+        "frameContentSha256": "a935693622eeb2825340742aebaa9b4aec524cf9aa1949b41c619b68b0140ec3"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 16332,
+        "crispGifBytes": 108573,
+        "frameContentSha256": "93f49d70cda35db5140eb820f039b3b34f8ca1cb8e247309aec7af464cfe7ebd"
+      }
+    },
+    "dye-tradeoffs": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 78946,
+        "crispGifBytes": 958486,
+        "frameContentSha256": "6fed9798f60f9a9d4ddae9c737bc13cb0783aae947bf14746591b624f0027b13"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 72141,
+        "crispGifBytes": 847661,
+        "frameContentSha256": "74311cefe9e213c58bf74f3868a0ce08e6bb8843d16db4ce829968d61a56f8f4"
+      }
+    },
+    "ion-flight": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 27748,
+        "crispGifBytes": 163000,
+        "frameContentSha256": "653042a44a0ea690f9dae96b399ad06bb41e3a6bf1b415c5213d10eb8f0bea95"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 26471,
+        "crispGifBytes": 158279,
+        "frameContentSha256": "646a97516db3926cfaf3f7e284114856630ed6d202bc31162de6d1964fb902ee"
+      }
+    },
+    "ion-focusing": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 44032,
+        "crispGifBytes": 209371,
+        "frameContentSha256": "81163f2bea5db62bc4ec79386dcf134870607a154eef23763e68f3fdfab2bf16"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 29106,
+        "crispGifBytes": 174278,
+        "frameContentSha256": "9158e9869489046711e4b832507a018bf0af7e6a0a816fd6b3be90a795030bc3"
+      }
+    },
+    "ion-threshold": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 52524,
+        "crispGifBytes": 235412,
+        "frameContentSha256": "e8be2a6ed8c952fe6f3e218030bbedb6aa1d885f5854f9be3a2420518fea87cb"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 52808,
+        "crispGifBytes": 225411,
+        "frameContentSha256": "cc7062b629518e2a4bf1b48ce5c864b033572195f3ed46b332bc8060f24f1ec2"
+      }
+    },
+    "reaction-crossing": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 117837,
+        "crispGifBytes": 853521,
+        "frameContentSha256": "aa24f2849b93a8db20b8c3916cb40a24d2c0429893ca5d7162b89a8ba126c617"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 114088,
+        "crispGifBytes": 873321,
+        "frameContentSha256": "9bbff5c6184e1b0f10fe5cb126b8d26cd923e6e3d563ecc7de9a482f252d340c"
+      }
+    },
+    "reaction-clock": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 39621,
+        "crispGifBytes": 204642,
+        "frameContentSha256": "d92cb23aaf7f7c415d255f8daee7e1caeb13e9e8ead8926c9da45838edaac346"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 51768,
+        "crispGifBytes": 228635,
+        "frameContentSha256": "8b4d5d87e58492589ce9be163121684a2e8b13fdfe11fb36d0a03043562a469f"
+      }
+    },
+    "reaction-isotopes": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 46898,
+        "crispGifBytes": 238516,
+        "frameContentSha256": "03de28bc4db9db1ccf8f5f96ec3bed9f7d6efeda9432d0823a8597d1f6746d73"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 32243,
+        "crispGifBytes": 202759,
+        "frameContentSha256": "825484af8a6890f32eebf1146f819024f1f8495492229174f2e319c4a95ffa5b"
+      }
+    },
+    "heat-cycle": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 69627,
+        "crispGifBytes": 319432,
+        "frameContentSha256": "8473b0361e4e050bb2254d7b13c475cb96feccbec85c9999aa7675b6969f3077"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 62348,
+        "crispGifBytes": 294164,
+        "frameContentSha256": "63604cb3a0a29da35d85e9bd503444eefe9859a45d684fb567add4543ab6a124"
+      }
+    },
+    "heat-trace": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 28014,
+        "crispGifBytes": 180219,
+        "frameContentSha256": "e71f6c7394c5441dcd3a9c7e1cfa352439336bc7543d11ffa3b2505489c50e77"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 27495,
+        "crispGifBytes": 175661,
+        "frameContentSha256": "e7fb9f2544e5b8de556728ccced30f8f5db1eb926020ce98f5dfe7dfbbfd5e11"
+      }
+    },
+    "heat-difference": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 14270,
+        "crispGifBytes": 122444,
+        "frameContentSha256": "8dfde33b27b4729ca414987926129ed26ed4a440e53ad78a57267136c411fc17"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 13446,
+        "crispGifBytes": 123104,
+        "frameContentSha256": "c409db4f2f96f5754ee09e56b0d6a520a5b712bc9324a9160a9962cfb015fefc"
+      }
+    },
+    "ir-isotopes": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 53544,
+        "crispGifBytes": 298359,
+        "frameContentSha256": "59522f1962d90cfd17876cafbda6cc3667ee95268767ba8331d77ffe2caded8b"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 62457,
+        "crispGifBytes": 329049,
+        "frameContentSha256": "21060651094627fcd99b098ae9f013d804e8b7e507bff44d9b1385d6fc56bfc9"
+      }
+    },
+    "ir-populations": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 40622,
+        "crispGifBytes": 226540,
+        "frameContentSha256": "d709d5d2ee6ab22dbec537b2a409bdf6008395e5d3dda89294203c632369c031"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 39654,
+        "crispGifBytes": 217101,
+        "frameContentSha256": "4ccb8c037ffe25aa8a193932b3f0538db839739a68176f45c43214a73299f07b"
+      }
+    },
+    "ir-assignments": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 20816,
+        "crispGifBytes": 105381,
+        "frameContentSha256": "abc07278320e29ea1504eefe2fd8bc85c96dcedab6e94e7d0e69ae9acdb027b7"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 18809,
+        "crispGifBytes": 97323,
+        "frameContentSha256": "dc0a7bd38e7471fcd08203002c00f94d9db0998b082ae551527bb0271e59b333"
+      }
+    },
+    "empty-cell-paths": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 25885,
+        "crispGifBytes": 151901,
+        "frameContentSha256": "41262a2b636fad67fdbdc9287bdaf3b58eaae1972bf0d5d330040d6396f2bb20"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 26732,
+        "crispGifBytes": 153788,
+        "frameContentSha256": "5c2e630021b786f7b5e6b0fc37936227c2330052e94f9111adebef68aed12443"
+      }
+    },
+    "empty-cell-fringes": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 175611,
+        "crispGifBytes": 1469006,
+        "frameContentSha256": "28d642b321961c086e72a5f0cfeab8ccfb057caf261f9c30feca1e659bc638a2"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 165761,
+        "crispGifBytes": 1333214,
+        "frameContentSha256": "89298e56e7e64ac448b9b0441f373ab6edc96977652ae250f49a324d52096698"
+      }
+    },
+    "mixture-residual": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 57199,
+        "crispGifBytes": 811594,
+        "frameContentSha256": "9c5ea402630ba0cb3e7b4f2a3f38f7b4b0f78b0e289c5d7f9d388f03ce7525b8"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 57519,
+        "crispGifBytes": 701330,
+        "frameContentSha256": "65e582c89c28f559a10371633845e8de23f5c8414a7d76f6229d38f420fbb4b3"
+      }
+    },
+    "cv-sweep": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 42559,
+        "crispGifBytes": 195516,
+        "frameContentSha256": "905a98dede0e4ccace3ccf6aa492192eedd28d132e96c1e78b89acedd3221131"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 40072,
+        "crispGifBytes": 185563,
+        "frameContentSha256": "4c27fa3fe4fa16390c17ac46fcd85f002f0a78e491c063f5c96dd51c421d0fc3"
+      }
+    },
+    "cv-speed": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 21843,
+        "crispGifBytes": 163550,
+        "frameContentSha256": "9c6a544b3b0823dd5f87bb0578f62ae465d2c5a0753c002e1fbcc4ba46f98c59"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 21035,
+        "crispGifBytes": 159157,
+        "frameContentSha256": "9094d4b0da1ec93396b97ed0cd8ff0a2d7c96a1a6e3fcf2c3936e4632b4a13ca"
+      }
+    },
+    "cv-solution": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 30632,
+        "crispGifBytes": 272282,
+        "frameContentSha256": "eb396938a6249cc3d79738d56e61368f0857667928b198c70c94172bed955259"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 28501,
+        "crispGifBytes": 259376,
+        "frameContentSha256": "721381ee0a4a4d82a62c6e0f620a13096b775332b62c1089aea0a4778606c307"
+      }
+    },
+    "gc-separation": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 55818,
+        "crispGifBytes": 554356,
+        "frameContentSha256": "627b9e6485635bcb29a986f27e01ec1796cb337edcba83f05e3286bfba21fecb"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 53344,
+        "crispGifBytes": 502137,
+        "frameContentSha256": "1064ca5440a74e7192eb560211debfe7a718ce726cfc82d81d9ea57a518f874f"
+      }
+    },
+    "gc-total": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 12476,
+        "crispGifBytes": 117649,
+        "frameContentSha256": "ffc017b4ad9418f7d5d216e2928427436b172ba4ef4a452c63239225441fc455"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 11712,
+        "crispGifBytes": 118426,
+        "frameContentSha256": "f5c4f84a90673e26b66f43627e64dbede0743918458ed55ae99c3875a4e0c864"
+      }
+    },
+    "gc-ratios": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 30489,
+        "crispGifBytes": 168515,
+        "frameContentSha256": "e4710f53f1162e92539ead8749c35c13e21aceca30a7f4073f44b8af23cd1a75"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 39071,
+        "crispGifBytes": 189393,
+        "frameContentSha256": "d3f319c02551ce0ddeb41ed17787dbb25992c6e95df4a637b29292b02fd234fd"
+      }
+    },
+    "tea-overlap": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 38054,
+        "crispGifBytes": 222395,
+        "frameContentSha256": "7ce2b62c8b33da151c578e185a6832d385173bc551462ef96360e97225309b8d"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 30164,
+        "crispGifBytes": 203902,
+        "frameContentSha256": "bf533dece79c7cb983fc5af04b05147edb61b19b4cb89509b666c238c798932c"
+      }
+    },
+    "tea-extraction": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 28171,
+        "crispGifBytes": 211237,
+        "frameContentSha256": "9cdd93918ac285135446e796f7c128293b57cfb5473137a5f941d20cb0f0e83b"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 26824,
+        "crispGifBytes": 213633,
+        "frameContentSha256": "1dcbd8da7c4f1b5b7973a8eea313ffabb16c3cfc20cb8ec7cea21abbaa2f0028"
+      }
+    },
+    "tea-estimates": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 124608,
+        "crispGifBytes": 995754,
+        "frameContentSha256": "bc018c0ed96a79a6eda4d9353bb1ce0fa13c025680cde69f6827efaa7911a83c"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 117621,
+        "crispGifBytes": 1020534,
+        "frameContentSha256": "7c26170c45019e27437fad03e9ba470f5f7410cf7eb96e326ff52f951034aaa6"
+      }
+    },
+    "count-distributions": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 31965,
+        "crispGifBytes": 182028,
+        "frameContentSha256": "54ddcb284fedf788cc1d537b537d33e03acb1138c396906b1b5fe13ac5748e29"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 27495,
+        "crispGifBytes": 172013,
+        "frameContentSha256": "c9b430c4fee7ed203a2408240aa2e7c4f14847e3621134a01a76e3568d5f83c2"
+      }
+    },
+    "count-decay": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 32348,
+        "crispGifBytes": 192545,
+        "frameContentSha256": "a4373a61af8e89d462f3cd94a5c96f492e78d67eee6e9346a8ee68421eedb19a"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 27800,
+        "crispGifBytes": 180810,
+        "frameContentSha256": "500a28ae5ac5cc8f958cad28bb7f0f1c2f2603355da5e244575b7c78458d5d0e"
+      }
+    },
+    "count-window": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 20235,
+        "crispGifBytes": 174788,
+        "frameContentSha256": "dd030a7845a6719703fe7aaa1da56b2c0a222099a3e9bd05c384e22a82160b26"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 19426,
+        "crispGifBytes": 172165,
+        "frameContentSha256": "bd3fc4835d35f58a95289e3c8516680bcc603c278cbb89a281c2950c7887ef7f"
+      }
+    },
+    "unknown-samples": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 23276,
+        "crispGifBytes": 113845,
+        "frameContentSha256": "433b966bb5b3ec430234f014597353449f1252d5e3a2ae836f0e43015185ceec"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 23372,
+        "crispGifBytes": 117423,
+        "frameContentSha256": "5caa9b25f54547f4d3f355fc9207be1fb2ef642fef2058b2319d43a6cf2e7397"
+      }
+    },
+    "unknown-wavelengths": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 18698,
+        "crispGifBytes": 116661,
+        "frameContentSha256": "6a44e3ace5b5b7de111626c4d34ef250a8d84e9d9520f888a24572e06a5c98c5"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 17973,
+        "crispGifBytes": 116055,
+        "frameContentSha256": "a6eba99e51bc16ea7235d2f9de707b4bef2a806dbda3f1b37c686fb9b5b270b3"
+      }
+    },
+    "unknown-calibration": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 37115,
+        "crispGifBytes": 229964,
+        "frameContentSha256": "809ecac3886ae7910567d6c19772ebae9a24aa2f60f084e9a80cf0ae4df2e04a"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 60568,
+        "crispGifBytes": 291224,
+        "frameContentSha256": "c67248154c087eaa3a4a6b6ba16053f3b8ed562263e1e3f8b444eef7fa0fd906"
+      }
+    },
+    "tonic-stern-volmer": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 35623,
+        "crispGifBytes": 185040,
+        "frameContentSha256": "7001f91cd5b5057e720781da2afcc1a0fcc154c34e028c21e3ddcb8e67b34b94"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 25924,
+        "crispGifBytes": 162862,
+        "frameContentSha256": "f3fa7ba6ac416717c221349fc5a8af15171cc78b152fd154f54d97b00d3e111c"
+      }
+    },
+    "gamma-energy": {
+      "wide": {
+        "size": [
+          900,
+          600
+        ],
+        "crispSize": [
+          1800,
+          1200
+        ],
+        "durationMs": 5760,
+        "gifBytes": 47495,
+        "crispGifBytes": 440824,
+        "frameContentSha256": "fd4a46beda2fbf6eb8b62ff1c523a43c879b27bdc995c5121c91d49c0b4f8d76"
+      },
+      "mobile": {
+        "size": [
+          450,
+          1000
+        ],
+        "crispSize": [
+          900,
+          2000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 46420,
+        "crispGifBytes": 412764,
+        "frameContentSha256": "2ef133ea8711e41268d72fadaa8954c4990d71bc3176445954a69bfbca5752cf"
+      }
+    }
+  }
+}
