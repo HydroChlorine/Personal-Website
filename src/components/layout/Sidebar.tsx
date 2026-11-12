@@ -1,6 +1,8 @@
 import { Link, NavLink } from 'react-router'
 import { site } from '../../config/site'
 import { profile } from '../../content/profile'
+import { MomentWidget } from '../widgets/MomentWidget'
+import { MoonWidget } from '../widgets/MoonWidget'
 import { PixelIcon } from '../ui/PixelIcon'
 import { AtmosphereSettings } from '../sky/AtmosphereSettings'
 import type {
@@ -51,6 +53,8 @@ export function Sidebar({
         <p>{profile.now}</p>
         <Link to="/notebook">Visit the notebook →</Link>
       </section>
+      <MomentWidget motion={motion} />
+      <MoonWidget />
       <AtmosphereSettings
         palette={palette}
         setPalette={setPalette}

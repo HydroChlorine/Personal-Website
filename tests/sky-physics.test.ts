@@ -150,13 +150,18 @@ test('shared wind is smooth and bounded, including in clear weather', () => {
     )
   }
 })
-test('surface response starts after 12 seconds and saturates at 90 seconds', () => {
-  assert.equal(WEATHER_SETTLE_DELAY, 12)
-  assert.equal(WEATHER_SETTLE_CAP, 90)
-  for (const age of [0, 5, 10, 12]) assert.equal(weatherExposure(age), 0)
-  assert.ok(weatherExposure(13) > 0)
-  assert.equal(weatherExposure(51), 0.5)
-  for (const age of [90, 120, 10000]) assert.equal(weatherExposure(age), 1)
+test('surface response grows through twenty 15-second steps and caps at five minutes', () => {
+  assert.equal(WEATHER_SETTLE_DELAY, 15)
+  assert.equal(WEATHER_SETTLE_CAP, 300)
+  for (const age of [0, 5, 12, 14.99]) assert.equal(weatherExposure(age), 0)
+  for (let level = 1; level <= 20; level++) {
+    assert.equal(weatherExposure(level * 15), level / 20)
+    assert.equal(weatherExposure(level * 15 + 14), level / 20)
+  }
+  assert.equal(weatherExposure(150), 0.5)
+  for (const age of [300, 360, 10000]) assert.equal(weatherExposure(age), 1)
+  assert.equal(weatherExposure(-10), 0)
+  assert.equal(weatherExposure(NaN), 0)
 })
 
 test('automatic weather uses the visitor local month at a timezone boundary', () => {

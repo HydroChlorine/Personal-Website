@@ -5,6 +5,7 @@ import { PageHeading } from '../components/ui/PageHeading'
 import { Panel, EmptyShelf } from '../components/ui/Panel'
 import { ProjectArticle } from '../components/articles/ProjectArticle'
 import { NotFoundPage } from './NotFoundPage'
+import { RelatedIdeas } from '../components/navigation/RelatedIdeas'
 import { SiteMiniature } from '../components/ui/SiteMiniature'
 export function ProjectDetailPage() {
   const { slug } = useParams()
@@ -70,6 +71,7 @@ export function ProjectDetailPage() {
           </EmptyShelf>
         </Panel>
       )}
+      <RelatedIdeas id={project.slug} />
       {project.links.length > 0 && (
         <Panel title="Further reading">
           <div className="inline-links">

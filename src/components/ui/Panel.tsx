@@ -32,7 +32,6 @@ export function EmptyShelf({
       </span>
       <h3>{title}</h3>
       <p>{children}</p>
-      <span className="small-label">A little more to come</span>
     </div>
   )
 }

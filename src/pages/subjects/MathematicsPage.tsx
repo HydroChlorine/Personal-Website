@@ -99,6 +99,23 @@ export function MathematicsPage() {
             . It starts with chemistry and asks what computation can help us
             explore.
           </p>
+          <p>
+            For a view from the bench, try{' '}
+            <Link to="/chemistry/snippets/five-dyes-one-spectrum">
+              five dyes in one spectrum
+            </Link>{' '}
+            or{' '}
+            <Link to="/chemistry/snippets/the-empty-cell-spectrum">
+              an empty cell with its own signal
+            </Link>
+            . For a view from software,{' '}
+            <Link to="/computer-science/topics/proofs-as-programs">
+              formal verification
+            </Link>{' '}
+            makes logical structure executable, and{' '}
+            <Link to="/projects/four-dimensions">the 4D game</Link> makes a
+            change of coordinates visible.
+          </p>
         </>
       }
     />

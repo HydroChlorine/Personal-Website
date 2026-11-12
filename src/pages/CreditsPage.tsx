@@ -206,6 +206,34 @@ export function CreditsPage() {
           Michael Xing’s games &amp; website ↗
         </a>
       </Panel>
+      <Panel title="The little instruments">
+        <p>
+          The mood dial and mechanical energy lever were drawn for this website.
+          The attention image is a new rendition of Nyan Cat, the character
+          created by Christopher Torres (prguitarman), with pixel-resolution
+          companions, with a shuffled-color view at its lowest setting. The
+          lever takes its mechanical cue from a reference supplied by Lichen.
+        </p>
+        <p>
+          The check-in values are maintained by Lichen. Adjustments change only
+          the visitor’s view for that visit.
+        </p>
+        <a href="https://knowyourmeme.com/editorials/interviews/qa-with-chris-torres-the-creator-of-nyan-cat">
+          Nyan Cat creator: Christopher Torres ↗
+        </a>
+      </Panel>
+      <Panel title="Moon over Ithaca">
+        <p>
+          Thank you to dimden for the lovely moon-widget idea and compact
+          pixel-moon presentation. This local interpretation uses newly drawn
+          lunar pixels and SunCalc by Volodymyr Agafonkin (BSD-2-Clause) for
+          Ithaca’s phase, azimuth and altitude. It is not the official embed;
+          dimden’s code, fonts and moon images are not bundled.
+        </p>
+        <a href="https://dimden.dev/moonwidget">
+          dimden’s original moon widget ↗
+        </a>
+      </Panel>
       <Panel title="The little sky">
         <p>
           The faint moon, constellations, palette experiments, pixel weather,

@@ -13,7 +13,6 @@ export const site = {
     { label: 'Projects', href: '/projects', icon: 'folder' },
     { label: 'Notebook', href: '/notebook', icon: 'book' },
     { label: 'Playground', href: '/playground', icon: 'play' },
-    { label: 'Personal corner', href: '/personal', icon: 'star' },
     { label: 'Contact', href: '/contact', icon: 'mail' },
   ],
 } as const

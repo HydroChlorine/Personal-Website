@@ -71,6 +71,28 @@ export function ComputerSciencePage() {
             claim about a program. I want this corner to hold both the things I
             make and the reasoning behind them.
           </p>
+          <p>
+            Follow{' '}
+            <Link to="/projects/paint-a-firework">particle graphics</Link> back
+            to{' '}
+            <Link to="/mathematics/topics/a-butterfly-made-of-motion">
+              dynamics and numerical time steps
+            </Link>
+            , or{' '}
+            <Link to="/computer-science/topics/proofs-as-programs">
+              checked proofs
+            </Link>{' '}
+            back to{' '}
+            <Link to="/mathematics/topics/patterns-into-rules">
+              algebraic rules
+            </Link>
+            . The{' '}
+            <Link to="/chemistry/snippets/five-dyes-one-spectrum">
+              five-dye fit
+            </Link>{' '}
+            is another reminder that numerical software often starts with a
+            question in the laboratory.
+          </p>
         </>
       }
     />

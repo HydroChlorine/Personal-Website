@@ -1,4 +1,3 @@
-import { Link } from 'react-router'
 import { profile } from '../content/profile'
 import { PageHeading } from '../components/ui/PageHeading'
 import { Panel, EmptyShelf } from '../components/ui/Panel'
@@ -18,7 +17,7 @@ export function AboutPage() {
           ))}
         </div>
       </Panel>
-      <Panel title="A few stops along the way">
+      <Panel title="Still me">
         <ol className="timeline">
           {profile.milestones.map((item) => (
             <li key={item.title}>
@@ -29,7 +28,7 @@ export function AboutPage() {
           ))}
         </ol>
       </Panel>
-      <Panel title="Away from the workbench">
+      <Panel title="Still me again">
         {profile.personalDetails.length ? (
           profile.personalDetails.map((item) => (
             <div key={item.label}>
@@ -38,13 +37,14 @@ export function AboutPage() {
             </div>
           ))
         ) : (
-          <EmptyShelf title="The other bits of me">
-            A few personal interests, favorites, and small stories will go here.
+          <EmptyShelf title="">
+            <p>* I love the moon and cloud over sumshine. </p>
+            <p>* Dim cozy spaces are where I create ideas. </p>
+            <p>* Though love rainy and snowy weathers, but hate moisture in rooms. </p>
+            <p>* Always want to eat healthy, but never succeeded. </p>
+            <p>* Don't really love sweet treats, but never turned any down.</p>
           </EmptyShelf>
         )}
-        <Link className="text-link" to="/personal">
-          Visit my personal corner →
-        </Link>
       </Panel>
     </>
   )
