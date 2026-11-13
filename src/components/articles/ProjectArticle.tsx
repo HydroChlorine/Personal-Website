@@ -2,8 +2,10 @@ import { usePanelTypography } from '../typography/typographyContext'
 import { useState } from 'react'
 import { useOutletContext } from 'react-router'
 import { TextStyleSwitch } from '../typography/Typography'
+import { PublicationBadge } from '../ui/PublicationBadge'
 import { figureSources } from './figureSources'
 import type {
+  Project,
   ArticleFigure as Figure,
   ProjectArticle as Article,
 } from '../../content/types'
@@ -74,7 +76,13 @@ function ArticleFigure({
     </figure>
   )
 }
-export function ProjectArticle({ article }: { article: Article }) {
+export function ProjectArticle({
+  article,
+  publication,
+}: {
+  article: Article
+  publication?: Project['publication']
+}) {
   const { motion } = useOutletContext<{ motion: boolean }>()
   const typography = usePanelTypography()
   return (
@@ -91,7 +99,10 @@ export function ProjectArticle({ article }: { article: Article }) {
             : 'Project story'
       }
     >
-      <div className="panel-typebar">
+      <div
+        className={`panel-typebar${publication ? ' publication-typebar' : ''}`}
+      >
+        {publication && <PublicationBadge publication={publication} />}
         <TextStyleSwitch {...typography} />
       </div>
       <header className="article-opening">

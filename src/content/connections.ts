@@ -9,21 +9,25 @@ export const ideaNodes = [
     id: p.slug,
     title: p.title,
     href: `/projects/${p.slug}`,
+    publication: p.publication,
   })),
   ...mathTopics.map((p) => ({
     id: p.slug,
     title: p.title,
     href: `/mathematics/topics/${p.slug}`,
+    publication: undefined,
   })),
   ...csTopics.map((p) => ({
     id: p.slug,
     title: p.title,
     href: `/computer-science/topics/${p.slug}`,
+    publication: undefined,
   })),
   ...chemistryExperienceCards.map((p) => ({
     id: p.slug,
     title: p.title,
     href: `/chemistry/snippets/${p.slug}`,
+    publication: undefined,
   })),
 ]
 export const ideaConnections: [string, string, string][] = [

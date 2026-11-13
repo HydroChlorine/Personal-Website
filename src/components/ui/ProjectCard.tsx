@@ -1,10 +1,14 @@
 import { Link } from 'react-router'
 import type { Project } from '../../content/types'
+import { PublicationBadge } from './PublicationBadge'
 import { SiteMiniature } from './SiteMiniature'
 export function ProjectCard({ project }: { project: Project }) {
   const demo = project.interactiveDemo === 'site-miniature'
   const content = (
     <>
+      {project.publication && (
+        <PublicationBadge publication={project.publication} />
+      )}
       <div className="project-card-top">
         <span className="small-label">{project.kind}</span>
         <span aria-hidden="true">↗</span>

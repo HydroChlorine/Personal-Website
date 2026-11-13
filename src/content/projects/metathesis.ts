@@ -6,6 +6,9 @@ export const metathesis: Project = {
   subjects: ['chemistry'],
   kind: 'From the laboratory / collaborative research',
   readiness: 'published',
+  publication: {
+    status: 'Research manuscript · preparing for journal submission',
+  },
   summary:
     'A hydrazine-mediated route to metal-free olefin ring closure: a new activation platform, useful ring families, and a designed catalytic example.',
   body: [],
