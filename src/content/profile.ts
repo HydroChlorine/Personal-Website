@@ -11,7 +11,7 @@ export const profile = {
   now: 'Building a home for my projects, experiments, and notes.',
   about: [
     'Hi there this is lichen, probably a chemist or alchemist, love dreaming and thinking about silly things.',
-    'Did chemistry, mathematics, and computer science for undergrad. Worked in a great group on organocatalysis.',
+    'Doing chemistry, mathematics, and computer science for undergrad. Working in a great group on organocatalysis.',
     '',
   ],
   // Personal favorites and hobbies can be added here once chosen.
