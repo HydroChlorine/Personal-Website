@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { connectedIdeas } from '../../content/connections'
+import { PublicationBadge } from '../ui/PublicationBadge'
 import { Panel } from '../ui/Panel'
 
 export default function RelatedIdeas({ id }: { id: string }) {
@@ -9,7 +10,15 @@ export default function RelatedIdeas({ id }: { id: string }) {
     <ul className="idea-connections">
       {items.map((item) => (
         <li key={item.id}>
-          <Link to={item.href}>{item.title} ↗</Link>
+          <Link to={item.href}>
+            {item.publication && (
+              <>
+                <PublicationBadge publication={item.publication} compact />
+                <br />
+              </>
+            )}
+            {item.title} ↗
+          </Link>
           <p>{item.reason}</p>
         </li>
       ))}

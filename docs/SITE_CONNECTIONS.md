@@ -2,7 +2,7 @@
 
 Updated 2026-11-12. The shared source is `src/content/connections.ts`; `RelatedIdeas` renders it at the end of every project, mathematics topic, CS topic and chemistry snippet. Subject overview pages carry short, hand-written cross-thread introductions. External references remain separate from internal connections.
 
-There are 30 entries and 47 curated, reciprocal connections. Every entry has at least one connection, every target is checked against the content registries, and each link explains why it is relevant. Four links are shown initially; additional links sit behind a disclosure. Work-in-progress entries stay labeled as such.
+There are 30 entries and 50 curated, reciprocal connections. Every entry has at least one connection, every target is checked against the content registries, and each link explains why it is relevant. Four links are shown initially; additional links sit behind a disclosure. Work-in-progress entries stay labeled as such.
 
 To maintain: add an entry to its normal content registry, then add pairs of node slugs and a shared explanation to `ideaConnections`. The regression test rejects missing targets, duplicate pairs and isolated entries. Keep links tied to the actual story rather than claiming that a tool or result was used when it was not.
 
@@ -10,7 +10,7 @@ To maintain: add an entry to its normal content registry, then add pairs of node
 
 ### Molecules, meet computation
 
-- [A different way to close a ring](/projects/metal-free-metathesis): Two threads in molecular discovery: making transformations in the laboratory and exploring candidates with software. The ring-closing story is still being prepared.
+- [A different way to close a ring](/projects/metal-free-metathesis): Two threads in molecular discovery: making transformations in the laboratory and exploring candidates with software. The ring-closing project follows a proposed hydrazonium relay into experiments.
 - [Mind the edges](/mathematics/topics/mind-the-edges): Choosing candidate molecules and choosing experimental conditions both ask where to search next.
 - [Same matrix, a new view](/mathematics/topics/same-matrix-new-view): Molecular calculations and small prediction models make numerical cost a practical concern.
 - [Two combustions and a missing heat](/chemistry/snippets/heat-by-a-different-route): Measured energy differences and computed molecular energies both need a clearly defined comparison.
@@ -22,7 +22,10 @@ To maintain: add an entry to its normal content registry, then add pairs of node
 
 ### A different way to close a ring
 
-- [Molecules, meet computation](/projects/catalyst-workflow): Two threads in molecular discovery: making transformations in the laboratory and exploring candidates with software. The ring-closing story is still being prepared.
+- [Mind the edges](/mathematics/topics/mind-the-edges): Substrate and condition screening makes the question of where to spend the next experiment concrete.
+- [Following a reaction as its color fades](/chemistry/snippets/a-reaction-in-fading-color): Product formation and carrier turnover raise kinetic questions; a time-resolved measurement offers another view of a reaction.
+- [Patterns into rules](/mathematics/topics/patterns-into-rules): Fused aromatic and helical frameworks connect molecular shape with the language of symmetry.
+- [Molecules, meet computation](/projects/catalyst-workflow): Two threads in molecular discovery: making transformations in the laboratory and exploring candidates with software. The ring-closing project follows a proposed hydrazonium relay into experiments.
 
 ### CritterWorld
 
@@ -53,6 +56,7 @@ To maintain: add an entry to its normal content registry, then add pairs of node
 
 ### Mind the edges
 
+- [A different way to close a ring](/projects/metal-free-metathesis): Substrate and condition screening makes the question of where to spend the next experiment concrete.
 - [Tonic water and a stubborn fluorimeter](/chemistry/snippets/tonic-water-fluorescence): A stubborn measurement raises a design question: which observations would actually distinguish the unknowns?
 - [Molecules, meet computation](/projects/catalyst-workflow): Choosing candidate molecules and choosing experimental conditions both ask where to search next.
 - [Same matrix, a new view](/mathematics/topics/same-matrix-new-view): Fitting a surface eventually becomes a numerical linear-algebra problem.
@@ -75,6 +79,7 @@ To maintain: add an entry to its normal content registry, then add pairs of node
 
 ### Patterns into rules
 
+- [A different way to close a ring](/projects/metal-free-metathesis): Fused aromatic and helical frameworks connect molecular shape with the language of symmetry.
 - [A family of curves](/mathematics/topics/a-family-of-curves): Symmetry constrains the shapes and modes a mathematical model can support.
 - [A butterfly made of motion](/mathematics/topics/a-butterfly-made-of-motion): Symmetry allows mirror-related outcomes; feedback asks whether a small imbalance can grow.
 - [Proofs as programs](/computer-science/topics/proofs-as-programs): Algebraic rules and checked proofs both make assumptions and allowed operations explicit.
@@ -142,6 +147,7 @@ To maintain: add an entry to its normal content registry, then add pairs of node
 
 ### Following a reaction as its color fades
 
+- [A different way to close a ring](/projects/metal-free-metathesis): Product formation and carrier turnover raise kinetic questions; a time-resolved measurement offers another view of a reaction.
 - [A butterfly made of motion](/mathematics/topics/a-butterfly-made-of-motion): A measured kinetic trace gives a simpler setting for thinking about evolution in time.
 - [Sweeping the voltage, watching the chemistry](/chemistry/snippets/sweeping-the-voltage): Following a chemical change in time and driving it with voltage give different views of reaction behavior.
 - [A half-life hidden in noisy counts](/chemistry/snippets/a-half-life-in-noisy-counts): Fading absorbance and radioactive counts share decay-fitting ideas, despite different physical mechanisms.

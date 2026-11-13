@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link, useOutletContext } from 'react-router'
 import { chemistry } from '../../content/subjects/chemistry'
 import { chemistryExperienceCards } from '../../content/chemistry/experiences'
-import { EmptyShelf } from '../../components/ui/Panel'
 import { SubjectPage } from './SubjectPage'
 
 function SnippetCard({
@@ -137,13 +136,6 @@ export function ChemistryPage() {
             These scenes are artistic illustrations of the experiments. Recorded
             readings are identified within the stories.
           </p>
-          <div className="shelf-list">
-            {chemistry.shelves.slice(1).map((shelf) => (
-              <EmptyShelf key={shelf.title} title={shelf.title}>
-                {shelf.description}
-              </EmptyShelf>
-            ))}
-          </div>
         </>
       }
     />

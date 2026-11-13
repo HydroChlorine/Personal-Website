@@ -17,6 +17,8 @@ export interface Project {
   body: string[]
   // Content readiness, not a claim about the status of the underlying work.
   readiness: 'outline' | 'published'
+  // Publication category; the status preserves manuscript/submission context.
+  publication?: { status: string }
   progress?: { expected?: string }
   bannerSubject?: SubjectId
   interactiveDemo?: 'site-miniature'

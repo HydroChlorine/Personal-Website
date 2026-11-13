@@ -722,3 +722,76 @@ figcaption {
 .laboratory-more {
   margin-bottom: 28px;
 }
+
+/* A hand-placed neon annotation; manuscript status remains available to readers. */
+.publication-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 7px;
+  width: max-content;
+  max-width: 100%;
+  margin: 13px 0 15px;
+  color: #ffe45b;
+  font: italic 600 19px/1.1 var(--body);
+  letter-spacing: 0.015em;
+  transform: rotate(-11deg);
+  transform-origin: left center;
+  isolation: isolate;
+}
+.publication-star {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  transform: rotate(-8deg) translateY(2px);
+  filter: drop-shadow(0 0 3px #fff2a5) drop-shadow(0 0 8px #e5af3277);
+  animation: publication-glimmer 3.8s ease-in-out infinite;
+}
+.publication-word {
+  color: #ffe45b;
+  background: linear-gradient(105deg, #ffe45b 10%, #fffbd3 43%, #ffe45b 70%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 8px #fbdc5855,
+    0 0 18px #edb33433;
+}
+.publication-typebar {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding-top: 8px;
+  margin-bottom: 23px;
+}
+.publication-typebar .publication-badge {
+  margin-bottom: 8px;
+}
+.publication-badge-compact {
+  font-size: 15px;
+  margin: 14px 0 9px;
+}
+.publication-badge-compact .publication-star {
+  flex-basis: 22px;
+  width: 22px;
+  height: 22px;
+}
+@keyframes publication-glimmer {
+  0%,
+  100% {
+    opacity: 0.86;
+    filter: drop-shadow(0 0 3px #fff2a5) drop-shadow(0 0 7px #e5af3266);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #fff2a5) drop-shadow(0 0 11px #e5af32aa);
+  }
+}
+.motion-paused .publication-star {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .publication-star {
+    animation: none;
+  }
+}

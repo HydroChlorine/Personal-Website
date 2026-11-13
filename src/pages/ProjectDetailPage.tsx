@@ -25,7 +25,11 @@ export function ProjectDetailPage() {
         </Panel>
       )}
       {project.article ? (
-        <ProjectArticle key={project.slug} article={project.article} />
+        <ProjectArticle
+          key={project.slug}
+          article={project.article}
+          publication={project.publication}
+        />
       ) : (
         <Panel>
           {project.progress && (

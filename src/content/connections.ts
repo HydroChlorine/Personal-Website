@@ -9,28 +9,48 @@ export const ideaNodes = [
     id: p.slug,
     title: p.title,
     href: `/projects/${p.slug}`,
+    publication: p.publication,
   })),
   ...mathTopics.map((p) => ({
     id: p.slug,
     title: p.title,
     href: `/mathematics/topics/${p.slug}`,
+    publication: undefined,
   })),
   ...csTopics.map((p) => ({
     id: p.slug,
     title: p.title,
     href: `/computer-science/topics/${p.slug}`,
+    publication: undefined,
   })),
   ...chemistryExperienceCards.map((p) => ({
     id: p.slug,
     title: p.title,
     href: `/chemistry/snippets/${p.slug}`,
+    publication: undefined,
   })),
 ]
 export const ideaConnections: [string, string, string][] = [
   [
     'metal-free-metathesis',
+    'mind-the-edges',
+    'Substrate and condition screening makes the question of where to spend the next experiment concrete.',
+  ],
+  [
+    'metal-free-metathesis',
+    'a-reaction-in-fading-color',
+    'Product formation and carrier turnover raise kinetic questions; a time-resolved measurement offers another view of a reaction.',
+  ],
+  [
+    'metal-free-metathesis',
+    'patterns-into-rules',
+    'Fused aromatic and helical frameworks connect molecular shape with the language of symmetry.',
+  ],
+
+  [
+    'metal-free-metathesis',
     'catalyst-workflow',
-    'Two threads in molecular discovery: making transformations in the laboratory and exploring candidates with software. The ring-closing story is still being prepared.',
+    'Two threads in molecular discovery: making transformations in the laboratory and exploring candidates with software. The ring-closing project follows a proposed hydrazonium relay into experiments.',
   ],
   [
     'mind-the-edges',

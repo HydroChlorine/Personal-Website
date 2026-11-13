@@ -1,0 +1,300 @@
+{
+  "numericalChecks": {
+    "cageHeavyAtoms": 8,
+    "cageBonds": 9,
+    "metalCycleAtomCount": 10,
+    "relayStatesChecked": 6,
+    "phenanthreneCarbons": 14,
+    "areneWaveCarbons": 22,
+    "couplingAlkeneAnglesDegrees": [
+      120,
+      120,
+      120
+    ],
+    "molecularValenceChecks": "passed",
+    "exchangeEndpointChecks": "passed",
+    "geometry": "Illustrative coordinates; no calculated reaction trajectories",
+    "source": "Supplied manuscript Figures 2\u20136; 222.gif visual reference only",
+    "reportedNMRSubstitution": [
+      44,
+      77
+    ],
+    "catalyticLoadingMolPercent": 20,
+    "catalyticIsolatedYieldPercent": 78,
+    "concepts": 8
+  },
+  "figures": {
+    "net-exchange": {
+      "wide": {
+        "size": [
+          900,
+          620
+        ],
+        "crispSize": [
+          1800,
+          1240
+        ],
+        "durationMs": 5760,
+        "gifBytes": 148898,
+        "crispGifBytes": 1142213,
+        "frameContentSha256": "2ce6fb8ef3e2e0394de743c8f1aa1e72432386e0640025cd22480424028c9810",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          760
+        ],
+        "crispSize": [
+          900,
+          1520
+        ],
+        "durationMs": 5760,
+        "gifBytes": 182383,
+        "crispGifBytes": 1399091,
+        "frameContentSha256": "f23578e6c10eceeb88b3913e53ea41304890d5f8897e9438ee60c75e6f5a6631",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    },
+    "two-platforms": {
+      "wide": {
+        "size": [
+          900,
+          620
+        ],
+        "crispSize": [
+          1800,
+          1240
+        ],
+        "durationMs": 5760,
+        "gifBytes": 295588,
+        "crispGifBytes": 2639075,
+        "frameContentSha256": "d5d4ee0ff27364c5dc5d28976796666d111974206e5b7be8bc26bd7a9f82f10a",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          1150
+        ],
+        "crispSize": [
+          900,
+          2300
+        ],
+        "durationMs": 5760,
+        "gifBytes": 317607,
+        "crispGifBytes": 2639764,
+        "frameContentSha256": "8025cfe8bff84684895da52e088b1df68f9dd0bf6d05df083b7a8796253180e5",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    },
+    "hydrazonium-relay": {
+      "wide": {
+        "size": [
+          900,
+          720
+        ],
+        "crispSize": [
+          1800,
+          1440
+        ],
+        "durationMs": 5760,
+        "gifBytes": 41746,
+        "crispGifBytes": 259566,
+        "frameContentSha256": "d74b75e9ed106cb98718f354abc156e6e7722a781d3bbd19dd53317a70ec46f6",
+        "pixelFrames": 6,
+        "crispFrames": 6
+      },
+      "mobile": {
+        "size": [
+          450,
+          850
+        ],
+        "crispSize": [
+          900,
+          1700
+        ],
+        "durationMs": 5760,
+        "gifBytes": 35847,
+        "crispGifBytes": 227695,
+        "frameContentSha256": "47fc74f7d84693c826efc2266b1331a42cda98b9bc97a68309e2d0fa12656318",
+        "pixelFrames": 6,
+        "crispFrames": 6
+      }
+    },
+    "reaction-development": {
+      "wide": {
+        "size": [
+          900,
+          720
+        ],
+        "crispSize": [
+          1800,
+          1440
+        ],
+        "durationMs": 5760,
+        "gifBytes": 112691,
+        "crispGifBytes": 1269751,
+        "frameContentSha256": "ce5710f972bab3fe103204f364093ac2f6bf5b56e89ba64fcc2fe67ffabe3a1d",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          1300
+        ],
+        "crispSize": [
+          900,
+          2600
+        ],
+        "durationMs": 5760,
+        "gifBytes": 111236,
+        "crispGifBytes": 1201798,
+        "frameContentSha256": "33b8ec1ac4656fe09bad4a06587c3b81f9d6fa0fb132160f7b9c7f44ff1555c7",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    },
+    "additive-compatibility": {
+      "wide": {
+        "size": [
+          900,
+          950
+        ],
+        "crispSize": [
+          1800,
+          1900
+        ],
+        "durationMs": 5760,
+        "gifBytes": 188204,
+        "crispGifBytes": 1638759,
+        "frameContentSha256": "ca689a039e5388ba379848174d028849989108b785e55b2d14284262eb013919",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          1560
+        ],
+        "crispSize": [
+          900,
+          3120
+        ],
+        "durationMs": 5760,
+        "gifBytes": 232602,
+        "crispGifBytes": 2650911,
+        "frameContentSha256": "70b144f272e39155edfbe57234dbeb98a872001e85b8cb88e4899dee08d3cffb",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    },
+    "ring-families": {
+      "wide": {
+        "size": [
+          900,
+          700
+        ],
+        "crispSize": [
+          1800,
+          1400
+        ],
+        "durationMs": 5760,
+        "gifBytes": 52239,
+        "crispGifBytes": 486784,
+        "frameContentSha256": "77fb4f3c7098bee4be099e718db15af5a72e3d8927b8e1aa4c62301da6dc8e1d",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          1450
+        ],
+        "crispSize": [
+          900,
+          2900
+        ],
+        "durationMs": 5760,
+        "gifBytes": 75197,
+        "crispGifBytes": 738970,
+        "frameContentSha256": "9cc5270ed5e0af842c4ea70bb60248d7c4d44a1a489760b0a3524a4310be16b5",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    },
+    "designed-turnover": {
+      "wide": {
+        "size": [
+          900,
+          720
+        ],
+        "crispSize": [
+          1800,
+          1440
+        ],
+        "durationMs": 5760,
+        "gifBytes": 303028,
+        "crispGifBytes": 3167283,
+        "frameContentSha256": "a8077652855e2d73e153ea750dc0e90d6e40830e945064d0e6bf85fad3b9826a",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          1250
+        ],
+        "crispSize": [
+          900,
+          2500
+        ],
+        "durationMs": 5760,
+        "gifBytes": 272747,
+        "crispGifBytes": 2790754,
+        "frameContentSha256": "6292f1bb459e1566e4b45aa15dadc4183efbc19dd6c02e3932ee3cf55738e199",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    },
+    "evidence-and-next": {
+      "wide": {
+        "size": [
+          900,
+          610
+        ],
+        "crispSize": [
+          1800,
+          1220
+        ],
+        "durationMs": 5760,
+        "gifBytes": 159355,
+        "crispGifBytes": 1758752,
+        "frameContentSha256": "560a702390272a90f33248220b37ed0de9b25c470ebf2e44821b76fb09a5d918",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      },
+      "mobile": {
+        "size": [
+          450,
+          1500
+        ],
+        "crispSize": [
+          900,
+          3000
+        ],
+        "durationMs": 5760,
+        "gifBytes": 149235,
+        "crispGifBytes": 1564214,
+        "frameContentSha256": "ca882b15d5eb70865f6abb34f6d2018a7f34d84d4b207efc1e77a725a6d08ff3",
+        "pixelFrames": 48,
+        "crispFrames": 48
+      }
+    }
+  }
+}

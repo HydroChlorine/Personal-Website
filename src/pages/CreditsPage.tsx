@@ -242,6 +242,22 @@ export function CreditsPage() {
           framework or third-party effect library is included.
         </p>
       </Panel>
+      <Panel title="A different way to close a ring">
+        <p>
+          The research story follows the Lambert Group manuscript “Metal-Free
+          Ring Closing Olefin Metathesis,” by Chengyi Fan, Lichen Huang and
+          Tristan Lambert, being prepared for journal submission.
+        </p>
+        <p>
+          The eight pixel/crisp figure concepts were drawn for this website with
+          AI assistance. Reported yields come from the supplied manuscript; the
+          ball-and-stick models, relay structures and growing aromatic chain are
+          explanatory illustrations. The molecular presentation was inspired by
+          the research animation supplied by Tristan Lambert; its frames are not
+          reproduced here. No external journal artwork or manuscript file is
+          bundled. Background papers are credited beside the discussion.
+        </p>
+      </Panel>
       <Panel title="The words on the page">
         <p>
           Pixelify Sans by Stefie Justprince and the Pixelify Sans Project
