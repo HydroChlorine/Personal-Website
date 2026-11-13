@@ -1,3 +1,4 @@
+import { SiteTextStyleSwitch } from '../typography/Typography'
 import { Link } from 'react-router'
 import { profile } from '../../content/profile'
 import { PixelIcon } from '../ui/PixelIcon'
@@ -12,6 +13,7 @@ export function SiteHeader() {
           hydrochlorine<span className="brand-domain"> / personal website</span>
         </span>
       </Link>
+      <SiteTextStyleSwitch />
       <div className="header-links">
         <a href={profile.github}>GitHub ↗</a>
         <Link to="/contact">Say hello ↗</Link>

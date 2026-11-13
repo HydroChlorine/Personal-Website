@@ -1,5 +1,7 @@
+import { usePanelTypography } from '../typography/typographyContext'
 import { useState } from 'react'
 import { useOutletContext } from 'react-router'
+import { TextStyleSwitch } from '../typography/Typography'
 import { figureSources } from './figureSources'
 import type {
   ArticleFigure as Figure,
@@ -74,9 +76,11 @@ function ArticleFigure({
 }
 export function ProjectArticle({ article }: { article: Article }) {
   const { motion } = useOutletContext<{ motion: boolean }>()
+  const typography = usePanelTypography()
   return (
     <article
       className="panel project-article"
+      data-text-style={typography.mode}
       aria-label={
         article.kind === 'snippet'
           ? 'Chemistry snippet'
@@ -87,6 +91,9 @@ export function ProjectArticle({ article }: { article: Article }) {
             : 'Project story'
       }
     >
+      <div className="panel-typebar">
+        <TextStyleSwitch {...typography} />
+      </div>
       <header className="article-opening">
         <p className="eyebrow">{article.kicker}</p>
         {article.introduction.map((paragraph) => (

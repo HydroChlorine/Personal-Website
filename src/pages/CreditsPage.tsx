@@ -242,6 +242,26 @@ export function CreditsPage() {
           framework or third-party effect library is included.
         </p>
       </Panel>
+      <Panel title="The words on the page">
+        <p>
+          Pixelify Sans by Stefie Justprince and the Pixelify Sans Project
+          Authors gives the pixel text its character. It is self-hosted under
+          the SIL Open Font License 1.1. Sharp mode uses the existing system
+          font stacks.
+        </p>
+        <p>
+          The sparse, hand-picked slanted letters in personal writing take
+          inspiration from dimden’s playful typography. Their placement and
+          implementation were created for this website.
+        </p>
+        <div className="inline-links">
+          <a href="https://github.com/google/fonts/tree/main/ofl/pixelifysans">
+            Pixelify Sans ↗
+          </a>
+          <a href="/licenses/PIXELIFY_SANS_OFL.txt">Read the font license ↗</a>
+          <a href="https://dimden.dev/">Typography inspiration: dimden ↗</a>
+        </div>
+      </Panel>
       <Panel title="Open-source foundations">
         <p>
           Built with React, React Router, TypeScript, and Vite. React and React

@@ -1,3 +1,4 @@
+import { PersonalText } from '../components/typography/Typography'
 import { profile } from '../content/profile'
 import { PageHeading } from '../components/ui/PageHeading'
 import { Panel, EmptyShelf } from '../components/ui/Panel'
@@ -12,8 +13,10 @@ export function AboutPage() {
       </PageHeading>
       <Panel>
         <div className="prose">
-          {profile.about.map((p) => (
-            <p key={p}>{p}</p>
+          {profile.about.map((p, index) => (
+            <p key={p}>
+              {index === 0 ? <PersonalText text={p} word="love" /> : p}
+            </p>
           ))}
         </div>
       </Panel>
@@ -38,9 +41,17 @@ export function AboutPage() {
           ))
         ) : (
           <EmptyShelf title="">
-            <p>* I love the moon and cloud over sumshine. </p>
+            <p>
+              <PersonalText
+                text="* I love the moon and cloud over sumshine. "
+                word="love"
+              />
+            </p>
             <p>* Dim cozy spaces are where I create ideas. </p>
-            <p>* Though love rainy and snowy weathers, but hate moisture in rooms. </p>
+            <p>
+              * Though love rainy and snowy weathers, but hate moisture in
+              rooms.{' '}
+            </p>
             <p>* Always want to eat healthy, but never succeeded. </p>
             <p>* Don't really love sweet treats, but never turned any down.</p>
           </EmptyShelf>

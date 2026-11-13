@@ -183,3 +183,9 @@ The Hello, world notebook entry is new, AI-assisted prose for Lichen's personal 
 ## Finer weather surfaces (2026-11-12)
 
 The connected snow blankets, branching frost and glass runoff textures are original code-native SVG artwork generated with the Python standard library in `scripts/draw-weather-surfaces.py`. Twenty-one assets in `public/art/weather/` use deterministic correlated noise and seeded branching/track geometry. No external photograph, texture, library or third-party art is included. Ground shading is CSS with flat surfaces and depth-only color. The comparison screenshot uses production CSS staged at 5, 10 and 20 accumulation levels, not a recording of elapsed weather.
+
+## Pixel text and letter accents (2026-11-12)
+
+Pixelify Sans by Stefie Justprince / the Pixelify Sans Project Authors is self-hosted, unmodified, at `public/fonts/PixelifySans.ttf` under SIL OFL 1.1. Its full notice is at `public/licenses/PIXELIFY_SANS_OFL.txt`, linked on `/credits`. Source and the matching specimen hash: `docs/design/typography/fonts/SOURCES.json`; upstream: https://github.com/google/fonts/tree/main/ofl/pixelifysans. The other typography-study fonts remain private planning assets and are not bundled in the website.
+
+The editorial single-letter obliques are independently implemented and explicitly inspired by dimden's homepage typography. No dimden font, source or CSS is bundled. Decorations preserve authored text and are not semantic emphasis.

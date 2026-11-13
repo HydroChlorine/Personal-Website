@@ -1,0 +1,30 @@
+[
+  {
+    "file": "PixelifySans.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pixelifysans/PixelifySans%5Bwght%5D.ttf",
+    "retrieved": "2026-11-12",
+    "sha256": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5",
+    "license": "PixelifySans-OFL.txt"
+  },
+  {
+    "file": "DotGothic16.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dotgothic16/DotGothic16-Regular.ttf",
+    "retrieved": "2026-11-12",
+    "sha256": "3ad9af88726d42b40f7f365f0dcac785af73cf20ea6f1d5b44e57cc21150b8f1",
+    "license": "DotGothic16-OFL.txt"
+  },
+  {
+    "file": "VT323.ttf",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/vt323/VT323-Regular.ttf",
+    "retrieved": "2026-11-12",
+    "sha256": "cf4de751ada78ceac033dbe16a687742939995b77bc2a052ae17a4957958594d",
+    "license": "VT323-OFL.txt"
+  },
+  {
+    "file": "DepartureMono.woff2",
+    "source": "https://raw.githubusercontent.com/rektdeckard/departure-mono/main/public/assets/DepartureMono-Regular.woff2",
+    "retrieved": "2026-11-12",
+    "sha256": "5b4fed1daa90708aa9c6ee1190abca9dc22164a1c1def0020386e46b61038cfb",
+    "license": "DepartureMono-OFL.txt"
+  }
+]

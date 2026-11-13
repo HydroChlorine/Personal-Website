@@ -1,3 +1,8 @@
+import { usePanelTypography } from '../components/typography/typographyContext'
+import {
+  TextStyleSwitch,
+  PersonalText,
+} from '../components/typography/Typography'
 import { Link } from 'react-router'
 import { profile } from '../content/profile'
 import { subjects } from '../content/subjects'
@@ -7,15 +12,21 @@ import { ProjectCard } from '../components/ui/ProjectCard'
 import { SubjectLink } from '../components/ui/SubjectLink'
 import { PixelIcon } from '../components/ui/PixelIcon'
 export function HomePage({ miniature = false }: { miniature?: boolean }) {
+  const typography = usePanelTypography()
   return (
     <>
-      <section className="welcome panel">
+      <section className="welcome panel" data-text-style={typography.mode}>
+        <div className="welcome-typebar">
+          <TextStyleSwitch {...typography} />
+        </div>
         <div>
           <p className="eyebrow">HELLO, WANDERER</p>
           <h1>
             Welcome. I’m Lichen<span className="accent">.</span>
           </h1>
-          <p>{profile.introduction}</p>
+          <p>
+            <PersonalText text={profile.introduction} word="learn" />
+          </p>
           <Link className="text-link" to="/about">
             A little more about me <span aria-hidden="true">→</span>
           </Link>
