@@ -46,6 +46,45 @@ export function ChemistryPage() {
   return (
     <SubjectPage
       subject={chemistry}
+      overlap={
+        <>
+          <p>
+            A spectrum is a chemical observation and a mathematical signal. A
+            model is useful only when it respects what the instrument and the
+            sample can actually do.
+          </p>
+          <p>
+            In{' '}
+            <Link to="/chemistry/snippets/tonic-water-fluorescence">
+              the tonic-water story
+            </Link>
+            , a difficult measurement led to a different fit.{' '}
+            <Link to="/mathematics/topics/mind-the-edges">
+              Choosing the next experiment
+            </Link>{' '}
+            takes that question further: which conditions would teach us the
+            most?
+          </p>
+          <p>
+            <Link to="/chemistry/snippets/five-dyes-one-spectrum">
+              Separating five dyes
+            </Link>{' '}
+            gives{' '}
+            <Link to="/mathematics/topics/same-matrix-new-view">
+              matrix methods
+            </Link>{' '}
+            something tangible to solve.{' '}
+            <Link to="/mathematics/topics/a-signal-unfolded">
+              Fourier transforms
+            </Link>{' '}
+            connect NMR and infrared measurements, while{' '}
+            <Link to="/projects/catalyst-workflow">
+              Molecules, meet computation
+            </Link>{' '}
+            turns a chemical search into a small software workflow.
+          </p>
+        </>
+      }
       explore={
         <>
           <div className="laboratory-opening">

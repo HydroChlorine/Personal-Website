@@ -6,8 +6,7 @@ export function NotebookPage() {
   return (
     <>
       <PageHeading eyebrow="LOOSE LEAVES & SIDE QUESTS" title="The notebook">
-        Explanations, observations, project stories, and ideas I want to return
-        to.
+        Passing thoughts, loose ends, and things I want to remember.
       </PageHeading>
       <Panel>
         {notes.length ? (

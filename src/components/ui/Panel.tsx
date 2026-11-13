@@ -1,4 +1,6 @@
+import { usePanelTypography } from '../typography/typographyContext'
 import type { ReactNode } from 'react'
+import { TextStyleSwitch } from '../typography/Typography'
 export function Panel({
   title,
   eyebrow,
@@ -10,8 +12,12 @@ export function Panel({
   children: ReactNode
   className?: string
 }) {
+  const typography = usePanelTypography()
   return (
-    <section className={`panel ${className}`}>
+    <section className={`panel ${className}`} data-text-style={typography.mode}>
+      <div className="panel-typebar">
+        <TextStyleSwitch {...typography} />
+      </div>
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       {title && <h2>{title}</h2>}
       {children}
@@ -30,9 +36,12 @@ export function EmptyShelf({
       <span className="shelf-mark" aria-hidden="true">
         + + +
       </span>
-      <h3>{title}</h3>
-      <p>{children}</p>
-      <span className="small-label">A little more to come</span>
+      {title && <h3>{title}</h3>}
+      {typeof children === 'string' ? (
+        <p>{children}</p>
+      ) : (
+        <div className="shelf-description">{children}</div>
+      )}
     </div>
   )
 }

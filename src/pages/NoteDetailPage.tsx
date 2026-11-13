@@ -1,3 +1,4 @@
+import { PersonalText } from '../components/typography/Typography'
 import { Link, useParams } from 'react-router'
 import { notes } from '../content/notes'
 import { PageHeading } from '../components/ui/PageHeading'
@@ -17,8 +18,14 @@ export function NoteDetailPage() {
       </PageHeading>
       <Panel>
         <article className="prose">
-          {note.paragraphs.map((p) => (
-            <p key={p}>{p}</p>
+          {note.paragraphs.map((p, index) => (
+            <p key={p}>
+              {note.slug === 'hello-world' && index === 0 ? (
+                <PersonalText text={p} word="Hello" letterIndex={2} />
+              ) : (
+                p
+              )}
+            </p>
           ))}
         </article>
       </Panel>

@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router'
 import { csTopics } from '../../content/computer-science'
 import { ProjectArticle } from '../../components/articles/ProjectArticle'
 import { PageHeading } from '../../components/ui/PageHeading'
-import { Panel } from '../../components/ui/Panel'
+import { RelatedIdeas } from '../../components/navigation/RelatedIdeas'
 import { NotFoundPage } from '../NotFoundPage'
 
 export function ComputerScienceTopicPage() {
@@ -21,14 +21,7 @@ export function ComputerScienceTopicPage() {
         {topic.summary}
       </PageHeading>
       <ProjectArticle key={topic.slug} article={topic.article} />
-      <Panel title="From ideas to things that work">
-        <div className="inline-links">
-          <Link to="/projects/critterworld">CritterWorld ↗</Link>
-          <Link to="/mathematics/topics/patterns-into-rules">
-            Patterns into rules ↗
-          </Link>
-        </div>
-      </Panel>
+      <RelatedIdeas id={topic.slug} />
     </>
   )
 }

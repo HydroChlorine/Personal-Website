@@ -206,6 +206,34 @@ export function CreditsPage() {
           Michael Xing’s games &amp; website ↗
         </a>
       </Panel>
+      <Panel title="The little instruments">
+        <p>
+          The mood dial and mechanical energy lever were drawn for this website.
+          The attention image is a new rendition of Nyan Cat, the character
+          created by Christopher Torres (prguitarman), with pixel-resolution
+          companions, with a shuffled-color view at its lowest setting. The
+          lever takes its mechanical cue from a reference supplied by Lichen.
+        </p>
+        <p>
+          The check-in values are maintained by Lichen. Adjustments change only
+          the visitor’s view for that visit.
+        </p>
+        <a href="https://knowyourmeme.com/editorials/interviews/qa-with-chris-torres-the-creator-of-nyan-cat">
+          Nyan Cat creator: Christopher Torres ↗
+        </a>
+      </Panel>
+      <Panel title="Moon over Ithaca">
+        <p>
+          Thank you to dimden for the lovely moon-widget idea and compact
+          pixel-moon presentation. This local interpretation uses newly drawn
+          lunar pixels and SunCalc by Volodymyr Agafonkin (BSD-2-Clause) for
+          Ithaca’s phase, azimuth and altitude. It is not the official embed;
+          dimden’s code, fonts and moon images are not bundled.
+        </p>
+        <a href="https://dimden.dev/moonwidget">
+          dimden’s original moon widget ↗
+        </a>
+      </Panel>
       <Panel title="The little sky">
         <p>
           The faint moon, constellations, palette experiments, pixel weather,
@@ -213,6 +241,26 @@ export function CreditsPage() {
           is inspired by Lichen’s own particle-simulation work; no course
           framework or third-party effect library is included.
         </p>
+      </Panel>
+      <Panel title="The words on the page">
+        <p>
+          Pixelify Sans by Stefie Justprince and the Pixelify Sans Project
+          Authors gives the pixel text its character. It is self-hosted under
+          the SIL Open Font License 1.1. Sharp mode uses the existing system
+          font stacks.
+        </p>
+        <p>
+          The sparse, hand-picked slanted letters in personal writing take
+          inspiration from dimden’s playful typography. Their placement and
+          implementation were created for this website.
+        </p>
+        <div className="inline-links">
+          <a href="https://github.com/google/fonts/tree/main/ofl/pixelifysans">
+            Pixelify Sans ↗
+          </a>
+          <a href="/licenses/PIXELIFY_SANS_OFL.txt">Read the font license ↗</a>
+          <a href="https://dimden.dev/">Typography inspiration: dimden ↗</a>
+        </div>
       </Panel>
       <Panel title="Open-source foundations">
         <p>

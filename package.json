@@ -18,7 +18,8 @@
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-router": "^8.5.1"
+    "react-router": "^8.5.1",
+    "suncalc": "^2.1.4"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",

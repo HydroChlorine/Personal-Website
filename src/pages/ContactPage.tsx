@@ -22,8 +22,15 @@ export function ContactPage() {
       </Panel>
       <Panel title="For the formal details">
         {profile.cvUrl ? (
-          <a className="text-link" href={profile.cvUrl}>
-            Read my CV ↗
+          <a
+            className="text-link"
+            href={profile.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            type="application/pdf"
+            aria-label="Read my CV (PDF, opens in a new tab)"
+          >
+            Read my CV (PDF) ↗
           </a>
         ) : (
           <p>A public CV will be added here when it’s ready.</p>

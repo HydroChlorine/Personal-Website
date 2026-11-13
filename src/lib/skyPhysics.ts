@@ -203,13 +203,11 @@ export function stepPrecipitation(
   if (p.x > width + 12) p.x = -10
   return { x: vx, y: p.speed }
 }
-export const WEATHER_SETTLE_DELAY = 12
-export const WEATHER_SETTLE_CAP = 90
+export const WEATHER_SETTLE_DELAY = 15
+export const WEATHER_SETTLE_CAP = 300
 export function weatherExposure(seconds: number): number {
-  return clamp(
-    (seconds - WEATHER_SETTLE_DELAY) /
-      (WEATHER_SETTLE_CAP - WEATHER_SETTLE_DELAY),
-    0,
-    1,
-  )
+  // Twenty visible steps: the first at 15 seconds, the last at five minutes.
+  return Number.isFinite(seconds)
+    ? clamp(Math.floor(seconds / WEATHER_SETTLE_DELAY) / 20, 0, 1)
+    : 0
 }

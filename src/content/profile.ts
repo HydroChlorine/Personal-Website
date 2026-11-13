@@ -6,13 +6,13 @@ export const profile = {
     "Hi, I'm Lichen. I study chemistry, mathematics, and computer science at Cornell. This is a place for the things I make, the questions I get caught up in, and whatever I learn along the way.",
   email: 'lh728@cornell.edu',
   github: 'https://github.com/HydroChlorine',
-  // Add a public PDF to public/documents, then set this to its URL.
-  cvUrl: null as string | null,
+  // Replace this PDF in place when a new public CV is ready.
+  cvUrl: '/documents/lichen-huang-cv.pdf',
   now: 'Building a home for my projects, experiments, and notes.',
   about: [
-    'Hi there this is lichen, someone who should primarily be categorized as a chemist, love dreaming and thinking about silly things.',
-    'During undergrad, I study chemistry, mathematics, and computer science. Work in the Lambert Group on organocatalysis.',
-    'This site is just getting started. Over time, I want it to hold research stories, class projects, small experiments, and a few things that don’t belong on a CV.',
+    'Hi there this is lichen, probably a chemist or alchemist, love dreaming and thinking about silly things.',
+    'Did chemistry, mathematics, and computer science for undergrad. Worked in a great group on organocatalysis.',
+    '',
   ],
   // Personal favorites and hobbies can be added here once chosen.
   personalDetails: [] as { label: string; text: string }[],
@@ -26,7 +26,7 @@ export const profile = {
     {
       date: '2025–present',
       title: 'Lambert Group',
-      detail: 'Undergraduate research in organocatalysis',
+      detail: 'Undergraduate researcher',
     },
     {
       date: 'Summer 2025',
@@ -35,9 +35,9 @@ export const profile = {
     },
     {
       date: '2023',
-      title: 'Nanjing University',
+      title: 'Nanjing University - Guo Group',
       detail:
-        'Earlier research involving fluorescent probes and photosensitizers',
+        'Earlier research on fluorescent probes and photosensitizers',
     },
   ],
 }

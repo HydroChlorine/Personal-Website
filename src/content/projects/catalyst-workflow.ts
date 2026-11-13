@@ -1,5 +1,5 @@
 import type { Project } from '../types'
-import { catalystArticle } from './catalyst-article'
+import { catalystArticle } from './catalyst-article.ts'
 export const catalystWorkflow: Project = {
   slug: 'catalyst-workflow',
   title: 'Molecules, meet computation',

@@ -5,6 +5,8 @@
 @import './styles/article.css';
 @import './styles/sky.css';
 @import './styles/weather-surfaces.css';
+@import './styles/widgets.css';
+@import './styles/typography.css';
 
 * {
   box-sizing: border-box;

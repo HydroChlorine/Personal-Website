@@ -8,6 +8,7 @@ import {
   Navigate,
 } from 'react-router'
 import { projects } from './content/projects'
+import { notes } from './content/notes'
 import { SiteLayout } from './components/SiteLayout'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
@@ -25,7 +26,6 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { NotebookPage } from './pages/NotebookPage'
 import { NoteDetailPage } from './pages/NoteDetailPage'
 import { PlaygroundPage } from './pages/PlaygroundPage'
-import { PersonalPage } from './pages/PersonalPage'
 import { ContactPage } from './pages/ContactPage'
 import { CreditsPage } from './pages/CreditsPage'
 import { NotFoundPage } from './pages/NotFoundPage'
@@ -54,7 +54,6 @@ const titles: Record<string, string> = {
   '/playground': 'Playground',
   '/playground/fireworks': 'Paint a firework',
   '/playground/critterworld': 'CritterWorld / browser edition',
-  '/personal': 'Personal corner',
   '/contact': 'Contact',
   '/credits': 'Credits',
 }
@@ -66,7 +65,7 @@ function LegacyChemistrySnippet() {
 function RouteEffects() {
   const { pathname } = useLocation()
   useEffect(() => {
-    document.title = `${titles[pathname] ?? chemistryExperienceCards.find((item) => pathname === `/chemistry/snippets/${item.slug}`)?.title ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? csTopics.find((topic) => pathname === `/computer-science/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
+    document.title = `${titles[pathname] ?? notes.find((note) => pathname === `/notebook/${note.slug}`)?.title ?? chemistryExperienceCards.find((item) => pathname === `/chemistry/snippets/${item.slug}`)?.title ?? mathTopics.find((topic) => pathname === `/mathematics/topics/${topic.slug}`)?.title ?? csTopics.find((topic) => pathname === `/computer-science/topics/${topic.slug}`)?.title ?? projects.find((project) => pathname === `/projects/${project.slug}`)?.title ?? 'Explore'} · Lichen Huang`
     window.scrollTo({ top: 0, behavior: 'instant' })
     document.getElementById('main-content')?.focus({ preventScroll: true })
   }, [pathname])
@@ -131,7 +130,7 @@ export default function App() {
           <Route path="notebook" element={<NotebookPage />} />
           <Route path="notebook/:slug" element={<NoteDetailPage />} />
           <Route path="playground" element={<PlaygroundPage />} />
-          <Route path="personal" element={<PersonalPage />} />
+          <Route path="personal" element={<Navigate to="/about" replace />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="credits" element={<CreditsPage />} />
           <Route path="*" element={<NotFoundPage />} />
