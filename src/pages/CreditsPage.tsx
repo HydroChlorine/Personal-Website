@@ -242,7 +242,7 @@ export function CreditsPage() {
           framework or third-party effect library is included.
         </p>
       </Panel>
-      <Panel title="A different way to close a ring">
+      <Panel title="Metal-Free Ring Closing Metathesis">
         <p>
           The research story follows the Lambert Group manuscript “Metal-Free
           Ring Closing Olefin Metathesis,” by Chengyi Fan, Lichen Huang and
@@ -257,13 +257,19 @@ export function CreditsPage() {
           reproduced here. No external journal artwork or manuscript file is
           bundled. Background papers are credited beside the discussion.
         </p>
+        <p>
+          The ring-closing preview uses the authors’ original TOC illustration,
+          with a dark color treatment and moving-dot accents. Its chemical
+          structures are unchanged. The candidate-generation preview is an
+          original illustration of the computation project’s search loop.
+        </p>
       </Panel>
       <Panel title="The words on the page">
         <p>
-          Pixelify Sans by Stefie Justprince and the Pixelify Sans Project
-          Authors gives the pixel text its character. It is self-hosted under
-          the SIL Open Font License 1.1. Sharp mode uses the existing system
-          font stacks.
+          DotGothic16 by the DotGothic16 Project Authors gives the default text
+          a finer pixel grid. It is self-hosted under the SIL Open Font License
+          1.1. Sharp mode uses the system font stacks. Chakra Petch and Pixelify
+          Sans are retained as earlier typography assets.
         </p>
         <p>
           The sparse, hand-picked slanted letters in personal writing take
@@ -271,10 +277,17 @@ export function CreditsPage() {
           implementation were created for this website.
         </p>
         <div className="inline-links">
-          <a href="https://github.com/google/fonts/tree/main/ofl/pixelifysans">
-            Pixelify Sans ↗
+          <a href="https://github.com/google/fonts/tree/main/ofl/dotgothic16">
+            DotGothic16 ↗
           </a>
-          <a href="/licenses/PIXELIFY_SANS_OFL.txt">Read the font license ↗</a>
+          <a href="/licenses/DOTGOTHIC16_OFL.txt">DotGothic16 license ↗</a>
+          <a href="https://github.com/google/fonts/tree/main/ofl/chakrapetch">
+            Chakra Petch ↗
+          </a>
+          <a href="/licenses/CHAKRA_PETCH_OFL.txt">Chakra Petch license ↗</a>
+          <a href="/licenses/PIXELIFY_SANS_OFL.txt">
+            Earlier Pixelify Sans license ↗
+          </a>
           <a href="https://dimden.dev/">Typography inspiration: dimden ↗</a>
         </div>
       </Panel>

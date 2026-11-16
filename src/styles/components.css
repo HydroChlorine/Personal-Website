@@ -285,11 +285,11 @@
   color: var(--gold);
 }
 .project-card h3 {
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 11px;
 }
 .project-card p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -794,4 +794,166 @@ figcaption {
   .publication-star {
     animation: none;
   }
+}
+
+/* A paper file peeks out from the familiar laboratory stamp. */
+.welcome-copy {
+  flex: 1;
+  min-width: 0;
+}
+.cv-link {
+  position: relative;
+  display: block;
+  flex: 0 0 154px;
+  width: 154px;
+  height: 192px;
+  margin: 12px 2px 0 6px;
+  color: var(--accent);
+}
+.cv-file {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 104px;
+  height: 142px;
+  padding: 20px 12px 10px;
+  border: 1px solid var(--accent);
+  background: linear-gradient(150deg, var(--panel-raised), var(--panel));
+  transform: rotate(8deg);
+  transform-origin: bottom center;
+  box-shadow: 4px 4px 0 var(--shadow);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms;
+}
+.cv-file strong {
+  font: 700 34px/1 var(--body);
+  color: var(--text);
+}
+.cv-file-corner {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background: var(--selected);
+  border-left: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+.cv-file-lines {
+  display: block;
+  font: 9px/1.8 var(--sharp-mono);
+  color: var(--line-bright);
+  margin-top: 8px;
+}
+.cv-file-format {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font: 10px/1 var(--sharp-mono);
+}
+.cv-link .welcome-stamp {
+  position: absolute;
+  display: grid;
+  left: 0;
+  top: 45px;
+  width: 85px;
+  height: 116px;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.cv-link-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font: 11px/1.5 var(--sharp-mono);
+  border-bottom: 1px solid var(--line-bright);
+  padding-bottom: 4px;
+}
+.cv-link:is(:hover, :focus-visible) {
+  color: var(--text);
+}
+.cv-link:is(:hover, :focus-visible) .cv-file {
+  transform: translate(4px, -9px) rotate(5deg) scale(1.08);
+  border-color: var(--text);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--accent) 35%, transparent),
+    4px 4px 0 var(--shadow);
+}
+.cv-link:is(:hover, :focus-visible) .cv-link-caption {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.project-card-illustrated {
+  position: relative;
+  padding-top: 64px;
+  border-color: var(--line-bright);
+}
+.project-card-illustrated > .publication-badge {
+  position: absolute;
+  left: 24px;
+  top: 17px;
+  margin: 0;
+  z-index: 1;
+}
+.project-card-media {
+  margin: 10px 0 20px;
+  border: 1px solid var(--line);
+  background: #0c1521;
+  overflow: hidden;
+}
+.project-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: contain;
+}
+.project-card-media img.pixel-project-preview {
+  image-rendering: pixelated;
+}
+.project-card-illustrated p {
+  font-size: 16px;
+}
+.project-card-illustrated:hover .project-card-media {
+  border-color: var(--accent);
+}
+@media (max-width: 600px) {
+  .welcome {
+    flex-wrap: wrap;
+  }
+  .welcome-copy {
+    flex-basis: 100%;
+  }
+  .cv-link {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+}
+.motion-paused .cv-file {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv-file {
+    transition: none;
+  }
+}
+
+/* The original paper artwork stays intact; only its presentation is color-treated. */
+.project-card-media-layered {
+  position: relative;
+}
+.project-card-media-layered .publication-original {
+  filter: invert(1) hue-rotate(180deg) brightness(1.4);
+  mix-blend-mode: screen;
+}
+.project-card-media-layered img.project-card-dot-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }

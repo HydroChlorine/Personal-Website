@@ -10,7 +10,7 @@ import { projects } from '../content/projects'
 import { Panel } from '../components/ui/Panel'
 import { ProjectCard } from '../components/ui/ProjectCard'
 import { SubjectLink } from '../components/ui/SubjectLink'
-import { PixelIcon } from '../components/ui/PixelIcon'
+import { CvLink } from '../components/ui/CvLink'
 export function HomePage({ miniature = false }: { miniature?: boolean }) {
   const typography = usePanelTypography()
   return (
@@ -19,7 +19,7 @@ export function HomePage({ miniature = false }: { miniature?: boolean }) {
         <div className="welcome-typebar">
           <TextStyleSwitch {...typography} />
         </div>
-        <div>
+        <div className="welcome-copy">
           <p className="eyebrow">HELLO, WANDERER</p>
           <h1>
             Welcome. I’m Lichen<span className="accent">.</span>
@@ -31,14 +31,7 @@ export function HomePage({ miniature = false }: { miniature?: boolean }) {
             A little more about me <span aria-hidden="true">→</span>
           </Link>
         </div>
-        <div className="welcome-stamp" aria-hidden="true">
-          <PixelIcon name="chemistry" />
-          <span>
-            Lab
-            <br />
-            APPROVED
-          </span>
-        </div>
+        <CvLink />
       </section>
       <section className="explore-section">
         <div className="section-label">

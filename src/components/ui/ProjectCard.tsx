@@ -1,8 +1,10 @@
-import { Link } from 'react-router'
+import { Link, useOutletContext } from 'react-router'
 import type { Project } from '../../content/types'
 import { PublicationBadge } from './PublicationBadge'
 import { SiteMiniature } from './SiteMiniature'
 export function ProjectCard({ project }: { project: Project }) {
+  const { motion } = useOutletContext<{ motion: boolean }>()
+  const preview = project.preview
   const demo = project.interactiveDemo === 'site-miniature'
   const content = (
     <>
@@ -21,6 +23,43 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       </h3>
       <p>{project.summary}</p>
+      {preview && (
+        <div
+          className={`project-card-media${preview.overlay ? ' project-card-media-layered' : ''}`}
+        >
+          <img
+            src={
+              preview.overlay
+                ? preview.still
+                : motion
+                  ? preview.gif
+                  : preview.still
+            }
+            width={preview.width}
+            height={preview.height}
+            alt={preview.alt}
+            loading="lazy"
+            className={
+              preview.overlay
+                ? 'publication-original'
+                : preview.pixelated
+                  ? 'pixel-project-preview'
+                  : undefined
+            }
+          />
+          {preview.overlay && motion && (
+            <img
+              className="project-card-dot-overlay"
+              src={preview.gif}
+              width={preview.width}
+              height={preview.height}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
+          )}
+        </div>
+      )}
       <div className="project-card-bottom">
         <span>
           {project.subjects
@@ -55,7 +94,10 @@ export function ProjectCard({ project }: { project: Project }) {
       <SiteMiniature />
     </article>
   ) : (
-    <Link className="project-card" to={`/projects/${project.slug}`}>
+    <Link
+      className={`project-card${preview ? ' project-card-illustrated' : ''}`}
+      to={`/projects/${project.slug}`}
+    >
       {content}
     </Link>
   )

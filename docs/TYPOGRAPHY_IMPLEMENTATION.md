@@ -1,3 +1,5 @@
+> Updated 16 November 2026: the default Pixel/retro setting now uses DotGothic16, between the original Pixelify Sans and the smoother Chakra Petch trial. Sharp mode and existing preference keys remain. See [the current implementation notes](PROFILE_AND_PROJECT_PREVIEWS.md). The original Pixelify Sans implementation record follows.
+
 # Pixel / Sharp text
 
 Implemented 12–13 November 2026. Pixelify Sans is the default, using the user's chosen left-hand specimen. DotGothic16, Departure Mono and VT323 remain planning alternatives, not production fonts.

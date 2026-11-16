@@ -19,6 +19,15 @@ export interface Project {
   readiness: 'outline' | 'published'
   // Publication category; the status preserves manuscript/submission context.
   publication?: { status: string }
+  preview?: {
+    gif: string
+    still: string
+    width: number
+    height: number
+    alt: string
+    pixelated?: boolean
+    overlay?: boolean
+  }
   progress?: { expected?: string }
   bannerSubject?: SubjectId
   interactiveDemo?: 'site-miniature'
