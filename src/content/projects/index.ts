@@ -6,7 +6,7 @@ import { csProjects } from '../computer-science/index.ts'
 // Add entries here when actual projects have been selected.
 export const projects: Project[] = [
   catalystWorkflow,
-  algebraDiscussion,
   metathesis,
+  algebraDiscussion,
   ...csProjects,
 ]

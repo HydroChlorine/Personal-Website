@@ -1,0 +1,23 @@
+{
+  "catalyst-discovery": {
+    "size": [
+      1000,
+      600
+    ],
+    "durationMs": 7200,
+    "pixelated": true,
+    "frames": 48,
+    "sha256": "6cc167112fd08e68f15219042506ce8d6ffa37d51c37d6513bc6310fcb1eb3fb"
+  },
+  "metal-free-rcm": {
+    "size": [
+      1898,
+      700
+    ],
+    "durationMs": 7200,
+    "frames": 60,
+    "rendering": "Original PNG plus CSS color treatment and transparent GIF overlay",
+    "originalSha256": "9b682780886c724a61b9ba02da925d78a57df8145e61869ea4ff15c9b4d6dab2",
+    "overlaySha256": "08b3667e6a03c6a6e760af455332db22b3c4ccf0cae14ea4bdd73292aef2079b"
+  }
+}

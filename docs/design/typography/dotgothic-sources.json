@@ -1,0 +1,20 @@
+[
+  {
+    "file": "DotGothic16-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/dotgothic16/v22/v6-QGYjBJFKgyw5nSoDAGH7M6X8.woff2",
+    "cssSource": "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap",
+    "retrieved": "2026-11-16",
+    "sha256": "d29abf817463fdba7e9e87fc954cfa2b60ea6534e8a79c46e858a0dc5aa6a6f6",
+    "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+    "license": "/licenses/DOTGOTHIC16_OFL.txt"
+  },
+  {
+    "file": "DotGothic16-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/dotgothic16/v22/v6-QGYjBJFKgyw5nSoDAGH7C6X9oPA.woff2",
+    "cssSource": "https://fonts.googleapis.com/css2?family=DotGothic16&display=swap",
+    "retrieved": "2026-11-16",
+    "sha256": "1640fece67968044c08bcecbf66c8e04873ba7beac70ea2bb0842a7cb20ecb81",
+    "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+    "license": "/licenses/DOTGOTHIC16_OFL.txt"
+  }
+]

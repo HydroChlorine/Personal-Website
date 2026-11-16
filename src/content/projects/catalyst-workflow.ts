@@ -8,6 +8,14 @@ export const catalystWorkflow: Project = {
   readiness: 'published',
   summary:
     'A first-year Python project connecting molecular generation, calculation inputs, and a small energy-prediction model.',
+  preview: {
+    gif: '/media/project-previews/catalyst-discovery.gif',
+    still: '/media/project-previews/catalyst-discovery.png',
+    width: 1000,
+    height: 600,
+    alt: 'A catalyst scaffold branches into candidate molecules, flows through a predictor, and returns a ranked candidate to the search loop.',
+    pixelated: true,
+  },
   body: [],
   article: catalystArticle,
   links: [

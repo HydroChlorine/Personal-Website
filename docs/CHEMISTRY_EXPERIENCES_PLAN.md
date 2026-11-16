@@ -10,7 +10,7 @@ The collection’s distinctive thread is already present in these reports: **I d
 
 Start with **five experiences**: tonic-water fluorescence as the featured story, variable-temperature NMR, spinach/chlorophyll fluorescence, the self-chosen FTIR samples, and universal-indicator decomposition. Keep ten further candidates in the backlog below. Fifteen is a content pool, not a recommendation to fill the first page with fifteen unfinished cards.
 
-Only the “From the laboratory” part is being planned. Keep the existing research projects, “A different way to close a ring,” “Molecules in pictures,” and “Papers & presentations” outside this work. The reports and compilation are research material for writing; do not automatically offer them as public downloads.
+Only the “From the laboratory” part is being planned. Keep the existing research projects, “Metal-Free Ring Closing Metathesis,” “Molecules in pictures,” and “Papers & presentations” outside this work. The reports and compilation are research material for writing; do not automatically offer them as public downloads.
 
 ## Review and branch state
 
